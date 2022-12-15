@@ -1,16 +1,16 @@
-body {       
-    font-family: 'Raleway';
+*{
+    font-family: var(--fuente_principal);
+}
+body {        
     margin: 0;
     padding: 0;
-    line-height: 1;
-    overflow-y: hidden;
+    line-height: 1;    
     overflow-x: hidden;
 }
 .app{    
     display: grid;
     width: 100vw;
-    height: 100vh; 
-    font-family: Arial, Helvetica, sans-serif;
+    height: auto;     
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: repeat(4, auto);
     grid-template-areas: 

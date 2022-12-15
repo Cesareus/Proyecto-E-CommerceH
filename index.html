@@ -3,29 +3,135 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" Content="IE=edge">
+    <meta name="viewport" Content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/normalize.css">
+    <link rel="stylesheet" href="./assets/css/index/indexMain.css">
     <link rel="stylesheet" href="./assets/css/gridGeneral.css">
     <link rel="stylesheet" href="./assets/css/index/index.css">
+  
+    
+    <!-- Fuente del Proyecto Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fuente del Proyecto Raleway -->
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
-    <title>e-commerce hunteando principal</title>
-</head>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+  
+
+    <!-- jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
+    
+    
+    <title>Talyx</title>
+  </head>
 
 <body class="app">
-    <header class="encabezado">
-    </header>
-    <main class="contenido">
+  <script>
+    function imgErrorHTML(image) {
+      image.src = './assets/img/main/destacados/default-img.png';
+    }
+</script>
+  <header class="header">
 
-    </main>
-    <footer class="rodapie">
+  </header>
+  
+  <main class="main">
+    <section class="mainBanner__superior bannerBox">
+      <img src="./assets/img/main/Banner superior.svg" alt="" class="mainBanner__superior--img imgBanner" />
+    </section>
+  
+    <section class="mainProductos">
+  
+      <div class="mainFeatured mainProductsBox">
+        <h1 class="mainFeatured__title subProductsBox__title">Destacados</h1>
+  
+        <div class="subProductsBox">
+  
+          <button class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft" id="bt__SliderLeft-Featured">
+            <div class="mainFeatured__Container--buttonleftbox btbox__Slider">
+              <img src="./assets/img/main/flechaIzquierda.svg" alt=""
+                class="mainFeatured__Container--buttonleftimg btnimg__Slider">
+            </div>
+          </button>
+  
+          <div class="mainFeatured__Container container__Products" id="container__Products" mainDestacadosP>
+  
+            <!-- <div class="mainFeatured__Container--Card card">
+                  <img src="./assets/img/main/destacados/image 9.svg" alt=""
+                    class="mainFeatured__Container--cardImg cardImg" />
+                  <div class="mainFeatured__Container--CardDescriptionBox cardDBox">
+                    <span class="mainFeatured__Container--CardDescription cardDescription">GRASA SILICONADA DELTA (CON
+                      PARTICULAS DE PLATA)</span>
+                    <span class="mainFeatured__Container--CardPrice cardPrice">$694,44</span>
+                  </div>
+                </div>-->
+  
+  
+          </div>
+  
+          <button class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight" id="bt__SliderRight-Featured">
+            <div class="mainFeatured__Container--buttonrightbox btbox__Slider">
+              <img src="./assets/img/main/flechaDerecha.svg" alt=""
+                class="mainFeatured__Container--buttonrigthimg btnimg__Slider">
+            </div>
+          </button>
+  
+        </div>
+      </div>
+      </div>
+  
+      <div class="mainPowertp mainProductsBox">
+        <h1 class="mainPowertp__title subProductsBox__title">Potencia tu PC</h1>
+  
+        <div class="subProductsBox">
+  
+          <button class="mainPowertp__Container--buttonleft bt__Slider" id="bt__SliderLeft-Power">
+            <div class="mainPowertp__Container--buttonleftbox btbox__Slider">
+              <img src="./assets/img/main/flechaIzquierda.svg" alt=""
+                class="mainPowertp__Container--buttonleftimg btnimg__Slider">
+            </div>
+          </button>
+  
+          <div class="mainPowertp__Container container__Products" id="container__Power" mainPowertpP>
+  
+  
+            <!--<div class="mainPowerP__Container--Card card">
+                  <img src="./assets/img/main/potencia/image 10.svg" alt=""
+                    class="mainPowerP__Container--CardImg cardImg" />
+                  <div class="mainFeatured__Container--CardDescriptionBox cardDBox">
+                    <span class="mainPowerP__Container--CardDescription cardDescription">BASE- NOTEBOOK K -8068F</span>
+                    <span class="mainPowerP__Container--CardPrice cardPrice">$4.517,07</span>
+                  </div>
+                </div> -->
+  
+          </div>
+  
+          <button class="mainPowertp__Container--buttonrigth bt__Slider" id="bt__SliderRigth-Power">
+            <div class="mainPowertp__Container--buttonrigthbox btbox__Slider">
+              <img src="./assets/img/main/flechaDerecha.svg" alt=""
+                class="mainPowertp__Container--buttonrigthimg btnimg__Slider">
+            </div>
+          </button>
+  
+        </div>
+    </section>
+  
+    <section class="mainBanner__Bottom bannerBox">
+      <img src="./assets/img/main/Banner inferior.svg" alt="" class="mainBanner__Bottom--img imgBanner" />
+    </section>
+  
+  </main>
+  
+  <footer class = "footer">
+    
+  </footer>
 
-    </footer>
+
 
 </body>
-
+    <script src="./assets/Js/slider.js"></script>
+    <script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
 </html>

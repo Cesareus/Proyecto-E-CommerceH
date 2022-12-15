@@ -1,15 +1,16 @@
-.encabezado{
+.header{
     grid-area: header;
-    width: 100%;   
+    width: 100%;
+    height: 20vh;   
     background-color: red;  
 }
-.contenido{
+.main{
     grid-area: contenido;
-    width: 100%;
-    background-color: green;
+    width: 100%;    
 }
-.rodapie{
+.footer{
     grid-area: footer;
     width: 100%; 
+    height: 20vh;   
     background-color: blue;   
 }

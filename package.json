@@ -1,5 +1,23 @@
 {
+  "name": "e-commerce-hunteando-nuestro",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cesareus/Proyecto-Hunteando-E-Commerce.git"
+  },
+  "author": "",
+  "license": "ISC", 
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Cesareus/Proyecto-Hunteando-E-Commerce/issues"
+  },
+  "homepage": "https://github.com/Cesareus/Proyecto-Hunteando-E-Commerce#readme",
   "dependencies": {
-    "create-react-app": "^5.0.1"
+    "mysql": "^2.18.1"
   }
 }
