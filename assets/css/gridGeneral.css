@@ -1,0 +1,21 @@
+body {       
+    font-family: 'Raleway';
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.app{    
+    display: grid;
+    width: 100vw;
+    height: 100vh; 
+    font-family: Arial, Helvetica, sans-serif;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+        "header     header      header"
+        "contenido  contenido   contenido"
+        "contenido  contenido   contenido"
+        "footer     footer      footer";    
+}

@@ -1,0 +1,9 @@
+:root {
+    --color_fondo_claro: #EAF2FD;
+    --fuente_principal: 'Raleway', sans-serif;
+    --color_fondo-o-letra_botones-2: #2A7AE4;
+    --color_letras-H2: #464646;
+    --color_placeholder: rgba(36,57,85,0.11);
+    --boton-active:  inset 0 0 30px 8px #0c72d6, 0 0 5px 1px #000000;
+    --color-fondo-grisclaro: #E5E5E5;
+}
