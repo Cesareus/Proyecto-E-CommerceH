@@ -1,0 +1,45 @@
+a { 
+    color: #DEDBDB;
+    text-decoration: none;
+    
+
+}
+
+.footerLinks{
+    /* footerLinks */
+    background: #2D2D33;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+}
+
+.footerLinks__List{
+    
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: 100%;
+    padding: 20px;
+}
+
+.footerInfo{
+     background: #2E367B;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     padding: 30px;
+}
+
+h5{
+    color: #FF4F11
+}
+
+strong, p {
+    color: #FFFFFF;
+}
+
+
+.footerInfo__subscribe--input{
+    border-radius: 3.19583px;
+    color: #B3B1B1;
+    width: 90%;
+}
