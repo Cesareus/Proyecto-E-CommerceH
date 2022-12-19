@@ -10,7 +10,39 @@
 }
 .footer{
     grid-area: footer;
-    width: 100%; 
-    height: 20vh;   
-    background-color: blue;   
+    width: auto; 
+    height: auto;   
+    background-color: var(--fondo-azul);   
+}
+
+
+a { 
+    color: #DEDBDB;
+
+}
+
+.article{
+    /* footerLinks */
+    background: #2D2D33;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    height: 8vh;
+}
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    padding: 0 30px 0 30px !important
+    
+}
+.article2{
+     background: #2E367B;
+}
+h5{
+    color: #FF4F11
+}
+
+strong, p {
+    color: #FFFFFF;
 }
