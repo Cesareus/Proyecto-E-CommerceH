@@ -1,25 +1,31 @@
-a { 
+.footerLinks__A { 
     color: #DEDBDB;
     text-decoration: none;
-    
-
 }
+
+
 
 .footerLinks{
     /* footerLinks */
     background: #2D2D33;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    width: auto;
+
+   
 }
 
+.footerLinks__li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: auto */
+}
 .footerLinks__List{
     list-style:none;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     width: 100%;
     padding: 1rem;
+    
 }
 
 .footerInfo{
@@ -29,19 +35,19 @@ a {
      padding: 0 2rem ;
 }
 
-h5{
+.footerInfo__H5{
     color: #FF4F11
 }
 
-strong, p {
+.footerInfo__str-p {
     color: #FFFFFF;
 }
 
 
 .footerInfo__subscribe--input{
-    border-radius: 3.19583px;
+    border-radius: 0.5em;
     color: #B3B1B1;
-    width: 90%;
+    width: 80%;
 }
 
 
