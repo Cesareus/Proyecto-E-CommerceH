@@ -15,18 +15,18 @@ a {
 }
 
 .footerLinks__List{
-    
+    list-style:none;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     width: 100%;
-    padding: 20px;
+    padding: 1rem;
 }
 
 .footerInfo{
      background: #2E367B;
      display: grid;
      grid-template-columns: repeat(3, 1fr);
-     padding: 30px;
+     padding: 0 2rem ;
 }
 
 h5{
@@ -43,3 +43,5 @@ strong, p {
     color: #B3B1B1;
     width: 90%;
 }
+
+
