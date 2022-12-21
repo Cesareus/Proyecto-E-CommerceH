@@ -3,7 +3,7 @@ import { productosServices } from "../servicesJS/services.js";
 const eliminar= (id) => {  
 
   productosServices
-    .ajax("./assets/php/controllersproductos/eliminar.php", { data: id })
+    .ajax('./assets/mvc/controller/productos.php?op=delete', { data: id })
     .done(function (info) {
       console.log(info);
       if (info) {
@@ -14,4 +14,4 @@ const eliminar= (id) => {
     });
 };
 
-eliminar(29);
+eliminar(34);

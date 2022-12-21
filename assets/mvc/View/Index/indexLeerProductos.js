@@ -24,7 +24,7 @@ let clase;
 const render = () => {
   console.log("listarProductos ejecutado"); 
   try {    
-      productosServices.ajax('./assets/mvc/controller/productos.php?op=listar', '').done(function (info) {
+      productosServices.ajax('./assets/mvc/controller/productos.php?op=list', '').done(function (info) {
         console.log(info);
         let lista = JSON.parse(info);
         let listaProductos =lista;
