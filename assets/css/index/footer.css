@@ -1,4 +1,11 @@
 
+.footer{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    width: auto;
+}
+
+
 
 .footerLinks__li > a,
 .footerLinks__A {
@@ -7,10 +14,11 @@
 }
 
 
-.footerLinks{
+.footer >.footerLinks {
     /* footerLinks */
+    grid-column: 1/7;
     background: #2D2D33;
-    display: flex;
+  
 
    
 }
@@ -19,7 +27,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* width: auto */
+    width: auto
 }
 .footerLinks__List{
     list-style:none;
@@ -30,14 +38,17 @@
     
 }
 
-.footerInfo{
+.footerInfo,
+.subscribe,
+.copyright{
+    grid-column: span 2;
      background: #2E367B;
-     display: grid;
-     grid-template-columns: repeat(3, 1fr);
      padding: 0 2rem ;
 }
 
-.footerInfo__H5{
+
+
+.footer__H5{
     color: #FF4F11
 }
 
