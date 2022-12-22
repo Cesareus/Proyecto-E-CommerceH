@@ -1,8 +1,10 @@
-.footerLinks__A { 
+
+
+.footerLinks__li > a,
+.footerLinks__A {
     color: #DEDBDB;
     text-decoration: none;
 }
-
 
 
 .footerLinks{
@@ -42,6 +44,8 @@
 .footerInfo__str-p {
     color: #FFFFFF;
 }
+
+
 
 
 .footerInfo__subscribe--input{
