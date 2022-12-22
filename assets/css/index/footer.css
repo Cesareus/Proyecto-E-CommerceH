@@ -27,14 +27,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: auto
+    /* width: auto */
 }
 .footerLinks__List{
     list-style:none;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     width: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
     
 }
 
