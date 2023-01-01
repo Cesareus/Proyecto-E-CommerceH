@@ -1,117 +1,145 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+		<link rel="stylesheet" href="./assets/css/normalize.css" />
+		<link rel="stylesheet" href="./assets/css/index/indexMain.css" />
+		<link rel="stylesheet" href="./assets/css/gridGeneral.css" />
+		<link rel="stylesheet" href="./assets/css/index/index.css" />
+		<link rel="stylesheet" href="./assets/css/index/indexHeader.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" Content="IE=edge">
-    <meta name="viewport" Content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
-    <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/index/indexMain.css">
-    <link rel="stylesheet" href="./assets/css/gridGeneral.css">
-    <link rel="stylesheet" href="./assets/css/index/index.css">
-    <link rel="stylesheet" href="./assets/css/index/header.css">
-  
-    
-    <!-- Fuente del Proyecto Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    
-  
+		<!-- Fuente del Proyecto Poppins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 
-    <!-- jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
-    
-    
-    <title>Talyx</title>
-</head>
+		<!-- KIT Fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/8e46837a7d.js"
+			crossorigin="anonymous"
+		></script>
 
-<body class="app">
-  <script>
-    function imgErrorHTML(image) {
-      image.src = './assets/img/main/destacados/default-img.png';
-    }
-  </script>
-  <header class="header">
-    <nav class="superior">
-      <div class="help">
-        <a class="iconsHeader" href="#">
-          <img class="icons" src="./assets/img/header/comentario-alt.svg" alt="Centro Ayuda">
-          Centro de ayuda
-        </a>
-      </div>
-      <div class="follow-up">
-        <a class="iconsHeader" href="#">
-          <img class="icons" src="./assets/img/header/camion.svg" alt="Seguimiento Compra">
-          Seguí tu compra
-        </a>
-      </div>
-      <div class="withdraw">
-        <a class="iconsHeader" href="#">
-          <img class="icons" src="./assets/img/header/tienda.svg" alt="Seguimiento Compra">
-          Retirá tu compra
-        </a>
-      </div>
-    </nav>
-    <section class="medium">
-      <img class="logo" src="./assets/img/logo/logo_talyx.svg" alt="marca">
-      <input class="search" type="text" placeholder="¿Qué estás buscando?">
-      <a class="welcome iconsHeader" href="#">
-        <img class="icons" src="./assets/img/header/usuario.svg" alt="login">
-        <p>Bienvenido/a Usuario</p>
-      </a>
-      <a class="cart iconsHeader" href="#">
-        <img class="icons" src="./assets/img/header/carrito-de-compras.svg" alt="cart">
-        <p>Mi Carro</p>
-      </a>
-    </section>
-    <ul class="inferior">
-      <li class="category">
-        <a href="#" class="">CATEGORIAS</a><i class=""></i>
-        <div class="ul-list">
-          <a href="#">Componentes de PC</a>
-          <a href="#">Notebook</a>
-          <a href="#">Perifericos</a>
-        </div>
-      </li>
-      <ul class="items">
-        <li class=""><a href="#">PC Escritorio</a></li>
-        <li class=""><a href="#">Notebooks</a></li>
-        <li class=""><a href="#">Placa de Video</a></li>
-        <li class=""><a href="#">Monitores</a></li>
-        <li class=""><a href="#">Micros</a></li>
-        <li class=""><a href="#">Otros</a></li>
-      </ul>
-        <li class="oportunity"><a href="#">Oportunidades</a></li>
-        <li class="armado"><a href="#">Armá tu PC</a></li>
-</ul>
-  </header>
-  
-  <main class="main">
-    <section class="mainBanner__superior bannerBox">
-      <img src="./assets/img/main/Banner superior.svg" alt="" class="mainBanner__superior--img imgBanner" />
-    </section>
-  
-    <section class="mainProductos">
-  
-      <div class="mainFeatured mainProductsBox">
-        <h1 class="mainFeatured__title subProductsBox__title">Destacados</h1>
-  
-        <div class="subProductsBox">
-  
-          <button class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft" id="bt__SliderLeft-Featured">
-            <div class="mainFeatured__Container--buttonleftbox btbox__Slider">
-              <img src="./assets/img/main/flechaIzquierda.svg" alt=""
-                class="mainFeatured__Container--buttonleftimg btnimg__Slider">
-            </div>
-          </button>
-  
-          <div class="mainFeatured__Container container__Products" id="container__Products" mainDestacadosP>
-  
-            <!-- <div class="mainFeatured__Container--Card card">
+		<!-- Despliegue Lista Header -->
+		<script type="module" src="./assets/js/indexHeader.js"></script>
+
+		<!-- jQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<title>Talyx</title>
+	</head>
+
+	<body class="app">
+		<script>
+			function imgErrorHTML(image) {
+				image.src = './assets/img/main/destacados/default-img.png';
+			}
+		</script>
+
+		<header class="header">
+			<nav class="header__nav">
+				<a class="header__nav-help header__links" href="#">
+					<i class="fa-solid fa-message header__icons"></i>
+					<p class="header__p">Centro de ayuda</p>
+				</a>
+				<a class="header__nav-follow header__links" href="#">
+					<i class="fa-solid fa-truck-fast header__icons"></i>
+					<p class="header__p">Seguí tu compra</p>
+				</a>
+				<a class="header__nav-withdraw header__links" href="#">
+					<i class="fa-solid fa-store header__icons"></i>
+					<p class="header__p">Retirá tu compra</p>
+				</a>
+			</nav>
+			<!--header__nav-->
+
+			<div class="header__logo">
+				<img class="header__logo-img" src="./assets/img/logo/logo_talyx.svg" alt="Logo Talyx" />
+			</div>
+			<!--header__logo-->
+
+			<section class="header__search">
+				<input class="header__search-input" type="text" placeholder="¿Qué estás buscando?" />
+			</section>
+			<!--header__search-->
+
+			<nav class="header__user">
+				<a class="header__user-welcome header__links" href="#">
+					<i class="fa-solid fa-circle-user header__icons"></i>
+					<p class="header__p">Bienvenido/a Usuario</p>
+				</a>
+				<a class="header__user-cart header__links" href="#">
+					<i class="fa-solid fa-cart-shopping header__icons"></i>
+					<p class="header__p">Mi Carro</p>
+				</a>
+			</nav>
+			<!--header__user-->
+
+			<nav class="header__category">
+				<a class="header_text" href="#">CATEGORIAS</a>
+				<i class="fa fa-angle-down header__category-down"></i>
+				<ul class="header__category-list">
+					<li><a class="header_text" href="#">Componentes de PC</a></li>
+					<li><a class="header_text" href="#">Notebook</a></li>
+					<li><a class="header_text" href="#">Perifericos</a></li>
+				</ul>
+			</nav>
+			<!--header__category-->
+
+			<nav class="header__list">
+				<li class=""><a class="header_text" href="#">PC Escritorio</a></li>
+				<li class=""><a class="header_text" href="#">Notebooks</a></li>
+				<li class=""><a class="header_text" href="#">Placa de Video</a></li>
+				<li class=""><a class="header_text" href="#">Monitores</a></li>
+				<li class=""><a class="header_text" href="#">Micros</a></li>
+				<li class=""><a class="header_text" href="#">Otros</a></li>
+			</nav>
+			<!--header__list-->
+
+			<nav class="header__others">
+				<a class="header__others-oportunity header_text" href="#">Oportunidades</a>
+				<a class="header__others-armed header_text" href="#">Armá tu PC</a>
+			</nav>
+			<!--header__others-->
+		</header>
+		<main class="main">
+			<section class="mainBanner__superior bannerBox">
+				<img
+					src="./assets/img/main/Banner superior.svg"
+					alt=""
+					class="mainBanner__superior--img imgBanner"
+				/>
+			</section>
+
+			<section class="mainProductos">
+				<div class="mainFeatured mainProductsBox">
+					<h1 class="mainFeatured__title subProductsBox__title">Destacados</h1>
+
+					<div class="subProductsBox">
+						<button
+							class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft"
+							id="bt__SliderLeft-Featured"
+						>
+							<div class="mainFeatured__Container--buttonleftbox btbox__Slider">
+								<img
+									src="./assets/img/main/flechaIzquierda.svg"
+									alt=""
+									class="mainFeatured__Container--buttonleftimg btnimg__Slider"
+								/>
+							</div>
+						</button>
+
+						<div
+							class="mainFeatured__Container container__Products"
+							id="container__Products"
+							mainDestacadosP
+						>
+							<!-- <div class="mainFeatured__Container--Card card">
                   <img src="./assets/img/main/destacados/image 9.svg" alt=""
                     class="mainFeatured__Container--cardImg cardImg" />
                   <div class="mainFeatured__Container--CardDescriptionBox cardDBox">
@@ -120,70 +148,82 @@
                     <span class="mainFeatured__Container--CardPrice cardPrice">$694,44</span>
                   </div>
                 </div>-->
-  
-  
-          </div>
-  
-          <button class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight" id="bt__SliderRight-Featured">
-            <div class="mainFeatured__Container--buttonrightbox btbox__Slider">
-              <img src="./assets/img/main/flechaDerecha.svg" alt=""
-                class="mainFeatured__Container--buttonrigthimg btnimg__Slider">
-            </div>
-          </button>
-  
-        </div>
-      </div>
-      </div>
-  
-      <div class="mainPowertp mainProductsBox">
-        <h1 class="mainPowertp__title subProductsBox__title">Potencia tu PC</h1>
-  
-        <div class="subProductsBox">
-  
-          <button class="mainPowertp__Container--buttonleft bt__Slider" id="bt__SliderLeft-Power">
-            <div class="mainPowertp__Container--buttonleftbox btbox__Slider">
-              <img src="./assets/img/main/flechaIzquierda.svg" alt=""
-                class="mainPowertp__Container--buttonleftimg btnimg__Slider">
-            </div>
-          </button>
-  
-          <div class="mainPowertp__Container container__Products" id="container__Power" mainPowertpP>
-  
-  
-            <!--<div class="mainPowerP__Container--Card card">
-                  <img src="./assets/img/main/potencia/image 10.svg" alt=""
-                    class="mainPowerP__Container--CardImg cardImg" />
-                  <div class="mainFeatured__Container--CardDescriptionBox cardDBox">
-                    <span class="mainPowerP__Container--CardDescription cardDescription">BASE- NOTEBOOK K -8068F</span>
-                    <span class="mainPowerP__Container--CardPrice cardPrice">$4.517,07</span>
-                  </div>
-                </div> -->
-  
-          </div>
-  
-          <button class="mainPowertp__Container--buttonrigth bt__Slider" id="bt__SliderRigth-Power">
-            <div class="mainPowertp__Container--buttonrigthbox btbox__Slider">
-              <img src="./assets/img/main/flechaDerecha.svg" alt=""
-                class="mainPowertp__Container--buttonrigthimg btnimg__Slider">
-            </div>
-          </button>
-  
-        </div>
-    </section>
-  
-    <section class="mainBanner__Bottom bannerBox">
-      <img src="./assets/img/main/Banner inferior.svg" alt="" class="mainBanner__Bottom--img imgBanner" />
-    </section>
-  
-  </main>
-  
-  <footer class = "footer">
-    
-  </footer>
+						</div>
 
+						<button
+							class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight"
+							id="bt__SliderRight-Featured"
+						>
+							<div class="mainFeatured__Container--buttonrightbox btbox__Slider">
+								<img
+									src="./assets/img/main/flechaDerecha.svg"
+									alt=""
+									class="mainFeatured__Container--buttonrigthimg btnimg__Slider"
+								/>
+							</div>
+						</button>
+					</div>
+				</div>
 
+				<div class="mainPowertp mainProductsBox">
+					<h1 class="mainPowertp__title subProductsBox__title">Potencia tu PC</h1>
 
-</body>
-    <script src="./assets/Js/slider.js"></script>
-    <script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
+					<div class="subProductsBox">
+						<button
+							class="mainPowertp__Container--buttonleft bt__Slider"
+							id="bt__SliderLeft-Power"
+						>
+							<div class="mainPowertp__Container--buttonleftbox btbox__Slider">
+								<img
+									src="./assets/img/main/flechaIzquierda.svg"
+									alt=""
+									class="mainPowertp__Container--buttonleftimg btnimg__Slider"
+								/>
+							</div>
+						</button>
+
+						<div
+							class="mainPowertp__Container container__Products"
+							id="container__Power"
+							mainPowertpP
+						>
+							<!--<div class="mainPowerP__Container--Card card">
+              <img src="./assets/img/main/potencia/image 10.svg" alt=""
+              class="mainPowerP__Container--CardImg cardImg" />
+              <div class="mainFeatured__Container--CardDescriptionBox cardDBox">
+                <span class="mainPowerP__Container--CardDescription cardDescription">BASE- NOTEBOOK K -8068F</span>
+                <span class="mainPowerP__Container--CardPrice cardPrice">$4.517,07</span>
+              </div>
+            </div> -->
+						</div>
+
+						<button
+							class="mainPowertp__Container--buttonrigth bt__Slider"
+							id="bt__SliderRigth-Power"
+						>
+							<div class="mainPowertp__Container--buttonrigthbox btbox__Slider">
+								<img
+									src="./assets/img/main/flechaDerecha.svg"
+									alt=""
+									class="mainPowertp__Container--buttonrigthimg btnimg__Slider"
+								/>
+							</div>
+						</button>
+					</div>
+				</div>
+			</section>
+
+			<section class="mainBanner__Bottom bannerBox">
+				<img
+					src="./assets/img/main/Banner inferior.svg"
+					alt=""
+					class="mainBanner__Bottom--img imgBanner"
+				/>
+			</section>
+		</main>
+
+		<footer class="footer"></footer>
+	</body>
+	<script src="./assets/Js/slider.js"></script>
+	<script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
 </html>
