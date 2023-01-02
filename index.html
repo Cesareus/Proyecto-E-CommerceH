@@ -25,7 +25,7 @@
 
     <!-- jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/assets/Js/animatedHamburger.js"></script>
+    <script src="./assets/Js/animatedHamburger.js"></script>
     
     
     <title>Talyx</title>
@@ -55,6 +55,7 @@
               <a href="#">Componentes de PC</a>
               <a href="#">Notebook</a>
               <a href="#">Perifericos</a>
+            </div>
           </li>
           <li class="op2 Menu-Content"><a href="">PC Escritorio</a></li>
           <li class="op3 Menu-Content"><a href="">Notebooks</a></li>
@@ -236,15 +237,7 @@
       <div class="mainFeatured mainProductsBox">
         <h1 class="mainFeatured__title subProductsBox__title">Destacados</h1>
   
-        <div class="subProductsBox">
-  
-          <button class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft" id="bt__SliderLeft-Featured">
-            <div class="mainFeatured__Container--buttonleftbox btbox__Slider">
-              <img src="./assets/img/main/flechaIzquierda.svg" alt=""
-                class="mainFeatured__Container--buttonleftimg btnimg__Slider">
-            </div>
-          </button>
-  
+        <div class="subProductsBox">  
           <div class="mainFeatured__Container container__Products" id="container__Products" mainDestacadosP>
   
             <!-- <div class="mainFeatured__Container--Card card">
@@ -256,55 +249,27 @@
                     <span class="mainFeatured__Container--CardPrice cardPrice">$694,44</span>
                   </div>
                 </div>-->
-  
-  
+                
+              </div> 
+            </div>
+            
+          <div class="botones">
+            <button class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft" id="bt__SliderLeft-Featured">
+              <div class="mainFeatured__Container--buttonleftbox btbox__Slider">
+                <img src="./assets/img/main/flechaIzquierda.svg" alt=""
+                  class="mainFeatured__Container--buttonleftimg btnimg__Slider">
+              </div>
+            </button>
+            <button class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight" id="bt__SliderRight-Featured">
+              <div class="mainFeatured__Container--buttonrightbox btbox__Slider" id="bt__SliderLeft-Featured">
+                <img src="./assets/img/main/flechaDerecha.svg" alt=""
+                  class="mainFeatured__Container--buttonrigthimg btnimg__Slider">
+              </div>
+            </button>
           </div>
-  
-          <button class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight" id="bt__SliderRight-Featured">
-            <div class="mainFeatured__Container--buttonrightbox btbox__Slider">
-              <img src="./assets/img/main/flechaDerecha.svg" alt=""
-                class="mainFeatured__Container--buttonrigthimg btnimg__Slider">
-            </div>
-          </button>
-  
-        </div>
       </div>
-      </div>
-  
-      <div class="mainPowertp mainProductsBox">
-        <h1 class="mainPowertp__title subProductsBox__title">Potencia tu PC</h1>
-  
-        <div class="subProductsBox">
-  
-          <button class="mainPowertp__Container--buttonleft bt__Slider" id="bt__SliderLeft-Power">
-            <div class="mainPowertp__Container--buttonleftbox btbox__Slider">
-              <img src="./assets/img/main/flechaIzquierda.svg" alt=""
-                class="mainPowertp__Container--buttonleftimg btnimg__Slider">
-            </div>
-          </button>
-  
-          <div class="mainPowertp__Container container__Products" id="container__Power" mainPowertpP>
-  
-  
-            <!--<div class="mainPowerP__Container--Card card">
-                  <img src="./assets/img/main/potencia/image 10.svg" alt=""
-                    class="mainPowerP__Container--CardImg cardImg" />
-                  <div class="mainFeatured__Container--CardDescriptionBox cardDBox">
-                    <span class="mainPowerP__Container--CardDescription cardDescription">BASE- NOTEBOOK K -8068F</span>
-                    <span class="mainPowerP__Container--CardPrice cardPrice">$4.517,07</span>
-                  </div>
-                </div> -->
-  
-          </div>
-  
-          <button class="mainPowertp__Container--buttonrigth bt__Slider" id="bt__SliderRigth-Power">
-            <div class="mainPowertp__Container--buttonrigthbox btbox__Slider">
-              <img src="./assets/img/main/flechaDerecha.svg" alt=""
-                class="mainPowertp__Container--buttonrigthimg btnimg__Slider">
-            </div>
-          </button>
-  
-        </div>
+      </div> 
+
     </section>
   
     <section class="mainBanner__Bottom bannerBox">
@@ -360,6 +325,8 @@
 
 </body>
     <script src="./assets/Js/hamburger.js"></script>
+    <script src="./assets/Js/animatedHamburger.js"></script>
     <script src="./assets/Js/slider.js"></script>
-    <script type="module" src="./assets/Js/controllersJS/indexLeerProductos.js"></script>
+    <script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
+    <script type="module" src="./assets/mvc/View/Index/pagination.js"></script>
 </html>

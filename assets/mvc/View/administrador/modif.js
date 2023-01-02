@@ -1,4 +1,4 @@
-import { productosServices } from "./servicesJS/services.js";
+import { productosServices } from "../servicesJS/services.js";
 
 const modificar = ( id, categoria, subcategoria, dir_imagen, titulo, descripcion, precio) => {
   let data = JSON.stringify({

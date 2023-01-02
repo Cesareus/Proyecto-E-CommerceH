@@ -1,4 +1,4 @@
-import { productosServices } from "./servicesJS/services.js";
+import { productosServices } from "../servicesJS/services.js";
 
 const eliminar= (id) => {  
 
