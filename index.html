@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="./assets/img/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+		<link rel="stylesheet" href="./assets/css/normalize.css" />
+		<link rel="stylesheet" href="./assets/css/index/indexMain.css" />
+		<link rel="stylesheet" href="./assets/css/gridGeneral.css" />
+		<link rel="stylesheet" href="./assets/css/index/index.css" />
+		<link rel="stylesheet" href="./assets/css/index/indexHeader.css" />
+		<link rel="stylesheet" href="./assets/css/index/indexfooter.css" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" Content="IE=edge">
-    <meta name="viewport" Content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/font-awesome/css/font-awesome.min.css">
-    <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
-    <link rel="stylesheet" href="./assets/css/reset.css">
-    <link rel="stylesheet" href="./assets/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/index/indexMain.css">
-    <link rel="stylesheet" href="./assets/css/gridGeneral.css">
-    <link rel="stylesheet" href="./assets/css/index/index.css">
-    <link rel="stylesheet" href="./assets/css/index/indexHeader.css">
-    <link rel="stylesheet" href="./assets/css/index/IndexHeaderMobile.css">
-    <link rel="stylesheet" href="assets/css/index/indexFooter.css">  
-    
-    <!-- Fuente del Proyecto Poppins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    
-  
+		<!-- Fuente del Proyecto Poppins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- KIT Fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/8e46837a7d.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- Despliegue Lista Header -->
+		<script type="module" src="./assets/js/indexHeader.js"></script>
 
     <!-- jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/assets/Js/animatedHamburger.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>    
     
     
     <title>Talyx</title>
@@ -37,193 +43,8 @@
       image.src = './assets/img/main/destacados/default-img.png';
     }
 </script>
-  <header class="headerMobile">
-    <section class="hamburger">
-      <div class="animatedHamburger">
-        <a class="McButton" data="hamburger-menu">
-          <b></b>
-          <b></b>
-          <b></b>
-        </a>
-      </div>
-      <div class="hamburgerMenu">
-        <ul class="ul">
-          <li class="header__MenuNav-Dropdown Menu-Content">
-            <a href="#" class="header__MenuNav-Dropbtn" style="font-weight: bold;">CATEGORIAS</a><i
-              class="fa fa-angle-down"></i>
-            <div class="header__MenuNav-Dropdown-Content">
-              <a href="#">Componentes de PC</a>
-              <a href="#">Notebook</a>
-              <a href="#">Perifericos</a>
-          </li>
-          <li class="op2 Menu-Content"><a href="">PC Escritorio</a></li>
-          <li class="op3 Menu-Content"><a href="">Notebooks</a></li>
-          <li class="op4 Menu-Content"><a href="">Placa de Video</a></li>
-          <li class="op5 Menu-Content"><a href="">Monitores</a></li>
-          <li class="op6 Menu-Content"><a href="">Micros</a></li>
-          <li class="op7 Menu-Content"><a href="">Otros</a></li>
-          <li class="op8 Menu-Content"><a href="" style="font-weight: 600;">Oportunidades</a></li>
-          <li class="op9 Menu-Content"><a href="" style="font-weight: 600;">Armá tu PC</a></li>
-        </ul>
-      </div>
-    </section>
-    <section class="isologo">
-      <div class="isologoSvgContainer">
-        <img class="isologoSvg" src="./assets/img/logo/logo_talyx.svg" alt="Logo Talyx">
-      </div>
-    </section>
-    <section class="searchBar">
-      <div class="searchSvgContainer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="searchSvg" viewBox="0 0 16 16">
-          <path
-            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-        </svg>
-      </div>
-    </section>
-    <section class="favorite">
-      <div class="favsSvgContainer">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="favsSvg" viewBox="0 0 16 16">
-          <path
-            d="M4 1c2.21 0 4 1.755 4 3.92C8 2.755 9.79 1 12 1s4 1.755 4 3.92c0 3.263-3.234 4.414-7.608 9.608a.513.513 0 0 1-.784 0C3.234 9.334 0 8.183 0 4.92 0 2.755 1.79 1 4 1z" />
-        </svg>
-      </div>
-    </section>
-    <section class="shoppingChart">
-      <div class="chartSvgContainer">
-        <svg width="52" height="52" viewBox="-1 0 16 16" fill="white" class="chartSvg" xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-        </svg>
-      </div>
-    </section>
-  </header>
   <header class="header">
-    <section class="header__Help ">
-      <ul class="header__Help-Menu">
-        <li class="header__HelpLi">
-          <div class="helpSvgContainer">
-            <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M22.6403 1.94965H5.14392C4.28987 1.95208 3.47149 2.29242 2.86758 2.89633C2.26368 3.50024 1.92333 4.31862 1.9209 5.17267V16.223C1.92333 17.0771 2.26368 17.8955 2.86758 18.4994C3.47149 19.1033 4.28987 19.4436 5.14392 19.4461H7.44608V24.0504L12.84 19.5531C12.9229 19.4839 13.0274 19.446 13.1353 19.4461H22.6403C23.4944 19.4436 24.3128 19.1033 24.9167 18.4994C25.5206 17.8955 25.8609 17.0771 25.8634 16.223V5.17267C25.8609 4.31862 25.5206 3.50024 24.9167 2.89633C24.3128 2.29242 23.4944 1.95208 22.6403 1.94965V1.94965Z"
-                stroke="white" stroke-width="2" stroke-linejoin="round" />
-              <path class="dot"
-                d="M8.36687 12.5396C9.38403 12.5396 10.2086 11.715 10.2086 10.6978C10.2086 9.68068 9.38403 8.85611 8.36687 8.85611C7.34972 8.85611 6.52515 9.68068 6.52515 10.6978C6.52515 11.715 7.34972 12.5396 8.36687 12.5396Z"
-                fill="white" />
-              <path class="dot"
-                d="M13.892 12.5396C14.9092 12.5396 15.7337 11.715 15.7337 10.6978C15.7337 9.68068 14.9092 8.85611 13.892 8.85611C12.8749 8.85611 12.0503 9.68068 12.0503 10.6978C12.0503 11.715 12.8749 12.5396 13.892 12.5396Z"
-                fill="white" />
-              <path class="dot"
-                d="M19.4172 12.5396C20.4343 12.5396 21.2589 11.715 21.2589 10.6978C21.2589 9.68068 20.4343 8.85611 19.4172 8.85611C18.4 8.85611 17.5754 9.68068 17.5754 10.6978C17.5754 11.715 18.4 12.5396 19.4172 12.5396Z"
-                fill="white" />
-            </svg>
-          </div>
-  
-  
-          <a href="" class="text-decoration-none">
-            Ayuda</a>
-        </li>
-        <li class="header__FollowLi">
-  
-          <div class="helpSvgContainer">
-            <svg width="28" height="24" viewBox="0 0 28 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M14 14H15.1667C16.45 14 17.5 13.1 17.5 12V2H7.00001C5.25001 2 3.72168 2.83 2.92834 4.05"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M2.33337 17C2.33337 18.66 3.89671 20 5.83337 20H7.00004C7.00004 18.9 8.05004 18 9.33337 18C10.6167 18 11.6667 18.9 11.6667 20H16.3334C16.3334 18.9 17.3834 18 18.6667 18C19.95 18 21 18.9 21 20H22.1667C24.1034 20 25.6667 18.66 25.6667 17V14H22.1667C21.525 14 21 13.55 21 13V10C21 9.45 21.525 9 22.1667 9H23.6717L21.6767 6.01C21.4712 5.70402 21.1755 5.44968 20.8192 5.27243C20.4629 5.09518 20.0586 5.00124 19.6467 5H17.5V12C17.5 13.1 16.45 14 15.1667 14H14"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M2.33337 8H9.33337M2.33337 11H7.00004M2.33337 14H4.66671M9.33337 22C9.95221 22 10.5457 21.7893 10.9833 21.4142C11.4209 21.0391 11.6667 20.5304 11.6667 20C11.6667 19.4696 11.4209 18.9609 10.9833 18.5858C10.5457 18.2107 9.95221 18 9.33337 18C8.71454 18 8.12104 18.2107 7.68346 18.5858C7.24587 18.9609 7.00004 19.4696 7.00004 20C7.00004 20.5304 7.24587 21.0391 7.68346 21.4142C8.12104 21.7893 8.71454 22 9.33337 22V22ZM18.6667 22C19.2855 22 19.879 21.7893 20.3166 21.4142C20.7542 21.0391 21 20.5304 21 20C21 19.4696 20.7542 18.9609 20.3166 18.5858C19.879 18.2107 19.2855 18 18.6667 18C18.0479 18 17.4544 18.2107 17.0168 18.5858C16.5792 18.9609 16.3334 19.4696 16.3334 20C16.3334 20.5304 16.5792 21.0391 17.0168 21.4142C17.4544 21.7893 18.0479 22 18.6667 22ZM25.6667 12V14H22.1667C21.525 14 21 13.55 21 13V10C21 9.45 21.525 9 22.1667 9H23.6717L25.6667 12Z"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
-          <a href="">Segui tu compra</a>
-        </li>
-        <li class="header__WithdrawLi">
-  
-          <div class="helpSvgContainer">
-            <svg width="26" height="24" viewBox="0 0 26 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M3.26086 11.22V15.71C3.26086 20.2 5.21086 22 10.075 22H15.9142C20.7784 22 22.7284 20.2 22.7284 15.71V11.22"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M13 12C14.9825 12 16.445 10.51 16.25 8.68L15.535 2H10.4758L9.74999 8.68C9.55499 10.51 11.0175 12 13 12Z"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-              <path
-                d="M19.8358 12C22.0242 12 23.6275 10.36 23.4108 8.35L23.1075 5.6C22.7175 3 21.6342 2 18.7958 2H15.4917L16.25 9.01C16.4342 10.66 18.0483 12 19.8358 12ZM6.10999 12C7.8975 12 9.51166 10.66 9.68499 9.01L9.92333 6.8L10.4433 2H7.13916C4.30083 2 3.21749 3 2.82749 5.6L2.53499 8.35C2.31833 10.36 3.92166 12 6.10999 12ZM13 17C11.1908 17 10.2917 17.83 10.2917 19.5V22H15.7083V19.5C15.7083 17.83 14.8092 17 13 17Z"
-                stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
-          <a href="">Retira tu compra</a>
-        </li>
-      </ul>
-    </section>
-  
-    <section class="header__Container">
-      <div class="header__Logo">
-        <img src="./assets/img/logo/logo_talyx.svg" alt="Logo Talyx">
-      </div>
-      <div class="header__Search-Container ">
-        <input type="search" id="form1" class="header__Search" placeholder="¿Qué estás buscando?" aria-label="Search" />
-      </div>
-      <div class="header__LoginMenu">
-        <ul class="header__LoginMenu--List">
-          <li class="header__LoginMenu--User ">
-            <div class="helpSvgContainer">
-  
-              <svg width="52" height="52" viewBox="-1 -1 17 17" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path fill-rule="evenodd"
-                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-              </svg>
-            </div>
-            <a href="">Bienvenida/o Usuario</a>
-          </li>
-  
-          <li class="header__ShoppingCart">
-            <div class="helpSvgContainer">
-  
-              <svg width="52" height="52" viewBox="-1 0 16 16" fill="#ffffff" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l.5 2H5V5H3.14zM6 5v2h2V5H6zm3 0v2h2V5H9zm3 0v2h1.36l.5-2H12zm1.11 3H12v2h.61l.5-2zM11 8H9v2h2V8zM8 8H6v2h2V8zM5 8H3.89l.5 2H5V8zm0 5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
-              </svg>
-            </div>
-            <a href="">
-              Mi Carro</a>
-          </li>
-        </ul>
-      </div>
-    </section>
-    
-    <section class="header__Menu section">
-      <button class="header__Menu-Button" id="hamburgerButton">
-        <svg class="svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-        </svg>
-      </button>
-  
-      <nav class="header__MenuNav">
-        <ul class="ul">
-          <li class="op1 header__MenuNav-Dropdown Menu-Content">
-            <a href="#" class="header__MenuNav-Dropbtn" style="font-weight: bold;">CATEGORIAS</a><i
-              class="fa fa-angle-down"></i>
-            <div class="header__MenuNav-Dropdown-Content">
-              <a href="#">Componentes de PC</a>
-              <a href="#">Notebook</a>
-              <a href="#">Perifericos</a>
-          </li>
-          <li class="op2 Menu-Content"><a href="">PC Escritorio</a></li>
-          <li class="op3 Menu-Content"><a href="">Notebooks</a></li>
-          <li class="op4 Menu-Content"><a href="">Placa de Video</a></li>
-          <li class="op5 Menu-Content"><a href="">Monitores</a></li>
-          <li class="op6 Menu-Content"><a href="">Micros</a></li>
-          <li class="op7 Menu-Content"><a href="">Otros</a></li>
-          <li class="op8 Menu-Content"><a href="" style="font-weight: 600;">Oportunidades</a></li>
-          <li class="op9 Menu-Content"><a href="" style="font-weight: 600;">Armá tu PC</a></li>
-        </ul>
-      </nav>
-    </section>
+
   </header>
   
   <main class="main">
@@ -313,53 +134,13 @@
   
   </main>
   
-  <footer>
-    <section class="footPage">
-      <article class="footer__menu-container">
-        <ul class="footer__menu">
-          <li><a href="">Quiénes somos</a></li>
-          <li><a href="">Términos y condiciones</a></li>
-          <li><a href="">Politica de privacidad</a></li>
-          <li><a href="">Garantia y devoluciones</a></li>
-          <li><a href="">Promociones y sorteos</a></li>
-          <li><a href="">Empresas</a></li>
-        </ul>
-      </article>
-      <article class="footer__Info">
-        <div class="footer__Info-Contact">
-          <h5>Atención al cliente:</h5>
-          <strong>0810-555-99999</strong>
-          <br>
-          <a href="mailto:">consultas@ecommerce.com</a>
-          <p>WhatsApp +54 9 10 2030-0949 Lun. a Vie. <br>de 9 a 18h.</p>
-        </div>
-        <div class="footer__Info-Suscription">
-          <h5>Suscribite y recibí las mejores promos!</h5>
-          <input type="email" name="" id="" placeholder="direccion de email...">
-        </div>
-        <div class="footer__Info-Copyright">
-          <h5>Copyright © 2022 Talyx</h5>
-          <svg width="129" height="68" viewBox="0 0 129 68" fill="none" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <rect width="129" height="68" fill="url(#pattern0)" />
-            <defs>
-              <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
-                <use xlink:href="#image0_73_63" transform="scale(0.00775194 0.0147059)" />
-              </pattern>
-              <image id="image0_73_63" width="129" height="68"
-                xlink:href="data:image/png;base64,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" />
-            </defs>
-          </svg>
-  
-        </div>
-      </article>
-    </section>
+  <footer class = "footer">
+    
   </footer>
 
 
 
 </body>
-    <script src="./assets/Js/hamburger.js"></script>
     <script src="./assets/Js/slider.js"></script>
-    <script type="module" src="./assets/Js/controllersJS/indexLeerProductos.js"></script>
+    <script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
 </html>
