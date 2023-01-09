@@ -9,7 +9,7 @@ function guardar(categoria, subcategoria, dir_imagen, titulo, descripcion, preci
         descripcion: descripcion,
         precio: precio,
       });
-    productosServices.ajax("./assets/mvc/controller/productos.php?op=create",{data: data})
+    productosServices.ajax("./assets/php/controllersproductos/guardar.php",{data: data})
     .done(function(info){
         if(info){
             //$("#data_enviada").html(`<h3 class ="text-success">Se han registrado los datos</h3>`);
@@ -45,4 +45,4 @@ function guardar(categoria, subcategoria, dir_imagen, titulo, descripcion, preci
     });
 }
 
-//guardar("Destacados","Manijas", "./assets/img/main/destacados/image 9.png", "papa", "pechofrio", 1234);
+//guardar("Destacados","Manijas", "./assets/img/main/destacados/image 9.png", "papa", "saracatunga", 1234);

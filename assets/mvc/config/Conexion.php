@@ -6,10 +6,10 @@
 		protected $dbhost;
 		
 
-			protected function Connection(){
+			protected function Conexion(){
 				try{
-					$cnn = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce","cesar","cesar");
-					return $cnn;
+					$conectar = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce;port=3310;","cesar","cesar");
+					return $conectar;
 	
 				}catch(Exception $e){
 					print "¡Error BD!: " . $e->getMessage() . "<br/>";

@@ -12,7 +12,7 @@ const modificar = ( id, categoria, subcategoria, dir_imagen, titulo, descripcion
   });
 
   productosServices
-    .ajax("./assets/mvc/controller/productos.php?op=modify", { data: data })
+    .ajax("./assets/php/controllersproductos/modificar.php", { data: data })
     .done(function (info) {
         console.log(info);
       if (info) {
@@ -24,11 +24,11 @@ const modificar = ( id, categoria, subcategoria, dir_imagen, titulo, descripcion
 };
 
 modificar(
-  36,
+  32,
   "computadoras",
   "Intel",
   "../img/main/destacados/image 10.png",
   "AMD-K6",
-  "Paralelepipedo escalonado",
+  "Microprocesador con alta funcionalidad",
   12345
 );
