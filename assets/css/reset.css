@@ -24,10 +24,3 @@ a:hover, button:hover {
 
 /* el selector * es universal */ 
 
-
-html{
-    font-size: 65.5%;
-    /* esta linea indica que un REM es igual a 10px* lo que nos permite usar el rem como unidad de medida estandar para todo el proyecto */
-}
-/*AGREGAR ESTA PARTE Al inicio de  TODOS LOS ARCHIVOS CSS*/
-/* usar rem como unidad de edida para las dimensiones no spermite tener un mejor control del tamaño*/
