@@ -155,14 +155,14 @@
     border-bottom: 0.3rem solid #000000;
     
 }
-.cardDBox{    
+.mainFeatured__Container--CardDescriptionBox{    
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 2.3fr 1fr;
     row-gap: 0.5vw;
 }
 
-.cardDescription{
+.mainFeatured__Container--CardDescription, .mainPowerP__Container--CardDescription{
     font-family: 'Poppins';
     font-size: 14px;
     font-style: normal;
@@ -170,7 +170,7 @@
     line-height: 21px;
 }
 
-.cardPrice{
+.mainFeatured__Container--CardPrice, .mainPowerP__Container--CardPrice{
     font-family: 'Poppins';
     font-size: 14px;
     font-style: bold;
