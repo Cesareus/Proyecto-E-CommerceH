@@ -4,18 +4,19 @@
 	class Conectar{
 
 		protected $dbhost;
+		protected $conectar;
 		
 
-			protected function Conexion(){
+			protected function Connection(){
 				try{
-					$conectar = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce;port=3310;","cesar","cesar");
+					$conectar = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce;port=3306;","cesar","cesar");
 					return $conectar;
 	
 				}catch(Exception $e){
 					print "¡Error BD!: " . $e->getMessage() . "<br/>";
 					die();
 				}finally{
-					$this->conexion = null;
+					$this->conectar = null;
 				}		
 			}
 
