@@ -1,11 +1,11 @@
 <?php
 include '../conection/Conexion.php';
 
-$conexion = new Conexion();
+$conexion = new Conectar();
 $id = $_POST["data"];
 
 try{
-$cnn = $conexion->getConexion();
+$cnn = $conexion->Connection();
 $sql = "DELETE FROM `productos` WHERE `ID`=:id";
 $statement = $cnn->prepare($sql);
 $statement -> bindParam(':id', $id, PDO::PARAM_INT);
