@@ -4,7 +4,7 @@ const down = document.querySelector('.header__category-down');
 const list = document.querySelector('.header__category-list');
 
 down.addEventListener('mouseover', function () {
-	list.style.display = 'flex';
+	list.style.visibility = 'visible';
 });
 
 list.addEventListener('mouseover', function () {
@@ -13,7 +13,7 @@ list.addEventListener('mouseover', function () {
 
 list.addEventListener('mouseout', function () {
 	timeout = setTimeout(function () {
-		list.style.display = 'none';
+		list.style.visibility = 'hidden';
 	}, 800);
 });
 
