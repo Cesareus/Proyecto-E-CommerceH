@@ -132,7 +132,7 @@
 } 
  */
 
- .card {	    
+ .mainFeatured__Container--Card {	    
     
     border: 1px solid #DEDBDB;
     border-radius: 5%;
@@ -146,13 +146,13 @@
     /* background-color: yellow; */
  }
 
-.card:hover{    
+ .mainFeatured__Container--Card:hover{    
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     transform: scale(1.1);
     transition: all 0.8s ease
 }
 
-.cardImg{
+.mainFeatured__Container--cardImg{
     width:90%;    
     height: 11vw;
     padding: 1vw 0;
@@ -166,7 +166,7 @@
     row-gap: 0.5vw;
 }
 
-.mainFeatured__Container--CardDescription, .mainPowerP__Container--CardDescription{
+.mainFeatured__Container--CardDescription{
     font-family: 'Poppins';
     font-size: 14px;
     font-style: normal;
@@ -174,7 +174,7 @@
     line-height: 21px;
 }
 
-.mainFeatured__Container--CardPrice, .mainPowerP__Container--CardPrice{
+.mainFeatured__Container--CardPrice{
     font-family: 'Poppins';
     font-size: 14px;
     font-style: bold;

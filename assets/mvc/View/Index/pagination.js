@@ -41,16 +41,15 @@ const addProduct = (title, price, imgPath, className) => {
     /* console.log("nuevoProductos ejecutado"); */
     const card = document.createElement("div");
     const content = ` 
-    <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg} cardImg" /> 
-    <div class="${className.classDiv} cardDBox">
-    <span class="${className.classDescrip} cardDescripcion">${title}</span>
-    <span class="${className.ClassPrice} cardPrecio">${price}</span>
+    <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
+    <div class="${className.classDiv}">
+    <span class="${className.classDescrip}">${title}</span>
+    <span class="${className.ClassPrice}">${price}</span>
     </div>
     `;
     
     card.innerHTML = content;
-    card.classList.add(className.s);
-    card.classList.add("card");
+    card.classList.add(className.classCard);    
     return card;
 };
 
