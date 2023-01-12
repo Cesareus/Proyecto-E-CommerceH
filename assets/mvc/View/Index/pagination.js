@@ -1,9 +1,12 @@
 import {listProducts} from "./indexLeerProductos.js"
 
+const list_element = document.querySelector("[mainDestacadosP]")
+const pagination_element  =document.getElementById("pages")
 const prevPage = document.querySelector("#bt__SliderLeft-Featured")
 const nextPage = document.querySelector("#bt__SliderRight-Featured")
-const products = document.querySelector("[mainDestacadosP]")
-const parent =document.getElementById("pages")
+
+let current_page = 1;
+let rows = 10;
 
 const className ={
     classCard:"mainFeatured__Container--Card",
@@ -13,32 +16,51 @@ const className ={
     ClassPrice:"mainFeatured__Container--CardPrice"
 }
 
-let offset = 0 //el primer producto de la pagina --K
-let limit = 9//ultimo producto de la pagina --K
-let page = 1
+export function DisplayList (items=listProducts, wrapper=list_element, rows_per_page=rows, page=current_page) {
+	wrapper.innerHTML = "";
+	page--;
+	let start = rows_per_page * page;
+	let end = start + rows_per_page;
+	let paginatedItems = items.slice(start, end);
 
-prevPage.addEventListener("click", () =>{
-    if(offset != 0){
-        offset=offset - 10
-        removePageNumber()
-        loadPage(listProducts,offset,limit)
+	for (let i = 0; i < paginatedItems.length; i++) {
+        wrapper.appendChild(
+            addProduct(paginatedItems[i].titulo, paginatedItems[i].precio, paginatedItems[i].dir_imagen, className)
+            )
+	}
+}
 
-    } /** TO DO : colocar un else para inhabilidar el boton 😁 */
-})
+export function SetupPagination (items, wrapper=pagination_element, rows_per_page=rows) {
+	wrapper.innerHTML = "";
 
-nextPage.addEventListener('click', () => {
-    offset += limit+1
-    if(listProducts.length>=offset){
-    console.log(listProducts.length<offset);
-    removeProducts(products);
-    addPageNumber()
-    loadPage(listProducts,offset,limit)
-    }else{
-        offset-=limit+1
-    }})
+	let page_count = Math.ceil(items.length / rows_per_page);
+	for (let i = 1; i < page_count + 1; i++) {
+		let btn = PaginationButton(i, items);
+		wrapper.appendChild(btn);
+	}
+}
+
+function PaginationButton (page, items) {
+	let button = document.createElement('button')
+    button.classList.add("mainFeatured__Container--pagenumbers--button");
+    button.innerText = page;
+
+	if (current_page === page) button.classList.add('active');
+    
+    
+	button.addEventListener('click', function () {
+		current_page = page;
+		DisplayList(items, list_element, rows, current_page);
+        
+		let current_btn = document.querySelector('.mainFeatured__Container--pagenumbers button.active');
+		current_btn.classList.remove('active');
+		button.classList.add('active');
+	});    
+    
+	return button;
+}    
 
 const addProduct = (title, price, imgPath, className) => {
-    /* console.log("nuevoProductos ejecutado"); */
     const card = document.createElement("div");
     const content = ` 
     <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
@@ -53,44 +75,3 @@ const addProduct = (title, price, imgPath, className) => {
     return card;
 };
 
-let numMaxPages
-export const loadPage = (listProducts,offset=0,limit=9) =>{
-    //recorremos la lista de productos iniciando el recorrido de la indice con el valor de "offset" hasta que el indice sea igual a "offset" + "limit" --K
-    for (let i = offset; i <= offset+limit; i++){
-        //si no hay nada en "listProducts" o en la posicion "i" de "listProducts" hace un "return" --K
-        if(!listProducts || !listProducts[i]) return
-        products.appendChild(
-            addProduct(listProducts[i].titulo, listProducts[i].precio, listProducts[i].dir_imagen, className)
-            )
-        }
-        numMaxPages = Math.ceil(listProducts.length / 10)
-        parent.innerHTML = `Pagina ${page} de ${numMaxPages}`
-    }
-    
-    function removeProducts(parent){
-        //mientras haya productos en el contenedor "products" se eliminaran hasta que de false --K
-        while (parent.firstChild){
-            parent.removeChild(parent.firstChild);
-            
-        }
-    }
-
-
-
-function addPageNumber() {
-    page+=1
-    parent.innerHTML = `Pagina ${page} de ${numMaxPages}`
-}
-
-function removePageNumber() {
-    while (parent.firstChild){
-        parent.removeChild(parent.firstChild)
-    }
-    page-=1
-    if(page ===0){
-    page=1
-    parent.innerHTML = `Pagina ${page} de ${numMaxPages}`
-    return
-    }
-    parent.innerHTML = `Pagina ${page} de ${numMaxPages}`
-}
