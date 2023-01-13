@@ -181,7 +181,20 @@
     font-weight: 800;
     line-height: 21px;
 }
-
+.mainFeatured__Container--pagenumbers--button{
+    background-color: #ffffff;
+    border: 1px solid var(--color-primary);
+    width: 2.1rem;
+    cursor: pointer;
+    appearance: none;
+    transition: 0.5s;
+}
+.mainFeatured__Container--pagenumbers--button:hover{
+    background-color: var(--color-primary);
+}
+.mainFeatured__Container--pagenumbers--button.active{
+    background-color: var(--color-primary);
+}
 .mainBanner__bottom{   
     margin-top:5vh; 
 }
