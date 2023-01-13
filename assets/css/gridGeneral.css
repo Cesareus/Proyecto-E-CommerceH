@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+body {       
+    font-family: var(--fuente_principal);
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1; 
+    /* overflow-y: hidden; */
+    overflow-x: hidden;   
+}
+.app{    
+    display: grid;
+    width: 100vw;
+    height: auto; 
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-template-areas: 
+        "headerMobile headerMobile headerMobile"
+        "header     header      header"
+        "contenido  contenido   contenido"
+        "contenido  contenido   contenido"
+        "footer     footer      footer";    
+} 
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+@media screen and (max-width:1375px){
+    body { 
+        font-size: 1.1vw;
+    }
+    
+}

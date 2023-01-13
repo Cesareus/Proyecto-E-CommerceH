@@ -1,0 +1,15 @@
+.header {
+	grid-area: header;
+	width: 100%;
+	height: auto;
+}
+.main {
+	grid-area: contenido;
+	width: 100%;
+}
+.footer {
+	grid-area: footer;
+	width: 100%;
+	height: auto;
+	background-color: var(--fondo-blue);
+}
