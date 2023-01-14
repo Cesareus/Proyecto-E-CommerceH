@@ -16,7 +16,7 @@ const list = document.querySelector('.header__category-list');
 // down.addEventListener('mouseout', function () {
 // 	timeout = setTimeout(function () {
 // 		list.style.visibility = 'hidden';
-// 	}, 800);
+// 	}, 200);
 // });
 
 // list.addEventListener('mouseover', function () {
@@ -26,9 +26,8 @@ const list = document.querySelector('.header__category-list');
 // list.addEventListener('mouseout', function () {
 // 	timeout = setTimeout(function () {
 // 		list.style.visibility = 'hidden';
-// 	}, 800);
+// 	}, 600);
 // });
-
 
 let timeout;
 
@@ -40,19 +39,18 @@ down.addEventListener('mouseover', function () {
 });
 
 down.addEventListener('mouseout', function () {
-    timeout = setTimeout(() => {
-        list.style.visibility = 'hidden';
-    }, 200);
+	timeout = setTimeout(() => {
+		list.style.visibility = 'hidden';
+	}, 200);
 });
 
 list.addEventListener('mouseover', function () {
-    clearTimeout(timeout);
-    list.style.visibility = 'visible';
+	clearTimeout(timeout);
+	list.style.visibility = 'visible';
 });
 
 list.addEventListener('mouseout', function () {
-    timeout = setTimeout(() => {
-        list.style.visibility = 'hidden';
-    }, 600);
+	timeout = setTimeout(() => {
+		list.style.visibility = 'hidden';
+	}, 600);
 });
-

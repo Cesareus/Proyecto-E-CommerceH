@@ -1,5 +1,5 @@
 import { productosServices } from "../servicesJS/services.js";
-import  {loadPage}  from "./pagination.js";
+import { DisplayList, SetupPagination } from "./pagination.js";
 
 export let listProducts
 
@@ -14,7 +14,9 @@ const getProducts= async () =>{
 
 const render = async () => {
     await getProducts()
-    loadPage(listProducts)
+//    loadPage(listProducts)
+    DisplayList(listProducts)
+    SetupPagination(listProducts)
         }
 
 render();
