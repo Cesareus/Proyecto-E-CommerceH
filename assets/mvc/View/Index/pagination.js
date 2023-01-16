@@ -1,11 +1,11 @@
 import {listProducts} from "./indexLeerProductos.js"
 
-const list_element = document.querySelector("[mainDestacadosP]")
-const pagination_element  =document.getElementById("pages")
+const listElement = document.querySelector("[mainDestacadosP]")
+const paginationElement  =document.getElementById("pages")
 const prevPage = document.querySelector("#bt__SliderLeft-Featured")
 const nextPage = document.querySelector("#bt__SliderRight-Featured")
 
-let current_page = 1;
+let currentPage = 1;
 let rows = 10;
 
 const className ={
@@ -16,11 +16,11 @@ const className ={
     ClassPrice:"mainFeatured__Container--CardPrice"
 }
 
-export function DisplayList (items=listProducts, wrapper=list_element, rows_per_page=rows, page=current_page) {
+export function displayList (items=listProducts, wrapper=listElement, rowsPerPage=rows, page=currentPage) {
 	wrapper.innerHTML = "";
 	page--;
-	let start = rows_per_page * page;
-	let end = start + rows_per_page;
+	let start = rowsPerPage * page;
+	let end = start + rowsPerPage;
 	let paginatedItems = items.slice(start, end);
 
 	for (let i = 0; i < paginatedItems.length; i++) {
@@ -30,10 +30,10 @@ export function DisplayList (items=listProducts, wrapper=list_element, rows_per_
 	}
 }
 
-export function SetupPagination (items, wrapper=pagination_element, rows_per_page=rows) {
+export function setupPagination (items, wrapper=paginationElement, rowsPerPage=rows) {
 	wrapper.innerHTML = "";
 
-	let page_count = Math.ceil(items.length / rows_per_page);
+	let page_count = Math.ceil(items.length / rowsPerPage);
 	for (let i = 1; i < page_count + 1; i++) {
 		let btn = PaginationButton(i, items);
 		wrapper.appendChild(btn);
@@ -46,12 +46,12 @@ function PaginationButton (page, items) {
 	button.setAttribute("id",page)
     button.innerText = page;
 
-	if (current_page === page) button.classList.add('active');
+	if (currentPage === page) button.classList.add('active');
     
     
 	button.addEventListener('click', function () {
-		current_page = page;
-		DisplayList(items, list_element, rows, current_page);
+		currentPage = page;
+		displayList(items, listElement, rows, currentPage);
         
 		let current_btn = document.querySelector('.mainFeatured__Container--pagenumbers button.active');
 		current_btn.classList.remove('active');
@@ -77,19 +77,19 @@ const addProduct = (title, price, imgPath, className) => {
 };
 
 prevPage.addEventListener("click", () =>{
-	let pag =document.getElementById(current_page)
+	let pag =document.getElementById(currentPage)
 	pag.classList.remove("active")
-	current_page--
-	DisplayList()
-	pag = document.getElementById(current_page)
+	currentPage--
+	displayList()
+	pag = document.getElementById(currentPage)
 	pag.classList.add('active');
 })
 
 nextPage.addEventListener("click", ()=>{
-	let pag =document.getElementById(current_page)
+	let pag =document.getElementById(currentPage)
 	pag.classList.remove("active")
-	current_page++
-	DisplayList()
-	pag = document.getElementById(current_page)
+	currentPage++
+	displayList()
+	pag = document.getElementById(currentPage)
 	pag.classList.add('active');
 })
