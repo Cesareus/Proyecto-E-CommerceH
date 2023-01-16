@@ -7,6 +7,7 @@ const nextPage = document.querySelector("#bt__SliderRight-Featured")
 
 let currentPage = 1;
 let rows = 10;
+let pageCount = 0
 
 const className ={
     classCard:"mainFeatured__Container--Card",
@@ -33,8 +34,8 @@ export function displayList (items=listProducts, wrapper=listElement, rowsPerPag
 export function setupPagination (items, wrapper=paginationElement, rowsPerPage=rows) {
 	wrapper.innerHTML = "";
 
-	let page_count = Math.ceil(items.length / rowsPerPage);
-	for (let i = 1; i < page_count + 1; i++) {
+	pageCount = Math.ceil(items.length / rowsPerPage);
+	for (let i = 1; i < pageCount + 1; i++) {
 		let btn = PaginationButton(i, items);
 		wrapper.appendChild(btn);
 	}
@@ -77,6 +78,7 @@ const addProduct = (title, price, imgPath, className) => {
 };
 
 prevPage.addEventListener("click", () =>{
+	if(currentPage===1) return
 	let pag =document.getElementById(currentPage)
 	pag.classList.remove("active")
 	currentPage--
@@ -86,6 +88,7 @@ prevPage.addEventListener("click", () =>{
 })
 
 nextPage.addEventListener("click", ()=>{
+	if(currentPage === pageCount) return
 	let pag =document.getElementById(currentPage)
 	pag.classList.remove("active")
 	currentPage++
