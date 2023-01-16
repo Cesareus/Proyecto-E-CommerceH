@@ -43,6 +43,7 @@ export function SetupPagination (items, wrapper=pagination_element, rows_per_pag
 function PaginationButton (page, items) {
 	let button = document.createElement('button')
     button.classList.add("mainFeatured__Container--pagenumbers--button");
+	button.setAttribute("id",page)
     button.innerText = page;
 
 	if (current_page === page) button.classList.add('active');
@@ -75,3 +76,20 @@ const addProduct = (title, price, imgPath, className) => {
     return card;
 };
 
+prevPage.addEventListener("click", () =>{
+	let pag =document.getElementById(current_page)
+	pag.classList.remove("active")
+	current_page--
+	DisplayList()
+	pag = document.getElementById(current_page)
+	pag.classList.add('active');
+})
+
+nextPage.addEventListener("click", ()=>{
+	let pag =document.getElementById(current_page)
+	pag.classList.remove("active")
+	current_page++
+	DisplayList()
+	pag = document.getElementById(current_page)
+	pag.classList.add('active');
+})
