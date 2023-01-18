@@ -1,12 +1,27 @@
 @import url(../variables.css);
+<<<<<<< HEAD
 .mainProducts { /*NOMBRE DE CLASE CAMBIADA*/
 /*.mainProductos {*/
 	/* REMOVIDO
     height: auto;
+=======
+.bannerBox {
+	height: auto;
+	width: 100vw;
+}
+.imgBanner {
+	height: auto;
+	width: 100vw;
+}
+/* .mainProducts { */
+.mainProductos {
+	/* height: auto;
+>>>>>>> origin/frontend
 	margin: 10vh 0 0 5vw;
 	width: 90vw; */
 	/*background-color: greenyellow;*/
 	margin-right: 1vw;
+<<<<<<< HEAD
     /*AGREGADO*/
     height: 206vw; /*976px*/
 }
@@ -44,6 +59,63 @@
     height: auto; 
 	background-color: violet;  
 	border: 1px solid blue;   */
+=======
+}
+/* .mainProductsBox {
+	width: 90vw;
+	border: 1px solid red;
+	margin: auto;
+} */
+
+.subProductsBox {
+	/* display: flex;
+	padding:2px;
+	justify-content: space-between; */
+	/* margin: 0 auto;
+	width: 80vw; */
+	/* height: auto; */
+	/* background-color: violet;  */
+	/* border: 1px solid blue;   */
+}
+
+.subProductsBox__title {
+	color: var(--fondo);
+	font-family: 'Poppins';
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 38px;
+	padding-left: 80px;
+	margin-top: 34px;
+	margin-bottom: 26px;
+}
+.bt__Slider {
+	background: transparent;
+	border: none;
+}
+.btbox__Slider {
+	border: 1px solid #dedbdb;
+	margin-left: 1rem;
+	margin-bottom: 1rem;
+	border-radius: 50%;
+	height: 3rem;
+	position: relative;
+	width: 3rem;
+	/* background-color: aqua; */
+}
+.btnimg__Slider {
+	color: #dedbdb;
+	height: auto;
+	position: absolute;
+	right: 38%;
+	top: 18%;
+	width: 0.9rem;
+}
+
+.btbox__Slider:hover {
+	background-color: var(--color-primary);
+	transform: scale(1.3);
+>>>>>>> origin/frontend
 }
 /* .contenedor__Products{
     margin: 0 3vw 3vw 3vw;
@@ -55,6 +127,7 @@
 } */
 .container__Products {
 	align-items: center;
+<<<<<<< HEAD
     justify-content: center;  
 	margin: 0 auto;
 	overflow-x: hidden;
@@ -73,6 +146,37 @@
 
 /* REMOVIDO
 .container__Products::-webkit-scrollbar{
+=======
+
+	/* display:flex;
+    flex-direction: column;
+    flex-wrap: wrap; */
+
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr 1fr;
+	justify-items: center;
+	/* grid-template-areas:
+		'card card card card'
+		'card card card card'; */
+
+	width: 95%;
+	height: 100%;
+	/* justify-content:flex-start;    */
+	margin: 0 auto 1rem;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	padding: 0 5%;
+}
+
+/* .buttons{ */
+.botones {
+	/*se cambió el nombre de la clase*/
+	display: flex;
+	justify-content: center;
+}
+/*.container__Products::-webkit-scrollbar{
+>>>>>>> origin/frontend
     background: #e5e5e5;
     border:1px solid #d5d5d5;
     height:5px;
@@ -114,6 +218,7 @@
 .mainFeatured__Container--Card {
 	border: 1px solid #dedbdb;
 	border-radius: 5%;
+<<<<<<< HEAD
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
     object-fit: contain;
@@ -125,6 +230,15 @@
 	height: 85%;
 	width: 90%;
 	max-width: 266px;*/
+=======
+	cursor: pointer;
+	/* flex: 0 0 auto; */
+	height: 85%;
+	object-fit: cover;
+	text-align: center;
+	width: 90%;
+	max-width: 266px;
+>>>>>>> origin/frontend
 }
 
 .mainFeatured__Container--Card:hover {
@@ -135,7 +249,11 @@
 
 .mainFeatured__Container--cardImg {
 	object-fit: contain;
+<<<<<<< HEAD
 	width: 100%;
+=======
+	width: 90%;
+>>>>>>> origin/frontend
 	height: 70%;
 	padding: 1vw 0;
 	border-bottom: 0.3rem solid #000000;
@@ -155,15 +273,24 @@
 
 .mainFeatured__Container--CardDescription {
 	font-family: 'Poppins';
+<<<<<<< HEAD
 	font-size: 2.7vw; /*13px*/
 	font-style: normal;
 	font-weight: 400;
 	line-height: 4.4vw; /*21px*/
 	height: 5vw; /*24px*/
+=======
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 21px;
+	height: 24px;
+>>>>>>> origin/frontend
 }
 
 .mainFeatured__Container--CardPrice {
 	font-family: 'Poppins';
+<<<<<<< HEAD
 	font-size: 3.6vw; /*17px*/
 	font-weight: 800;
 	line-height: 3.8vw; /*18px*/
@@ -225,11 +352,21 @@
 	height: auto;
 	width: 100vw;
 }
+=======
+	font-size: 17px;
+	/* font-style: bold; */
+	font-weight: 800;
+	line-height: 18px;
+	max-height: 23px;
+}
+
+>>>>>>> origin/frontend
 .mainBanner__bottom {
 	margin-top: 5vh;
 }
 
 @media screen and (max-width: 800px) {
+<<<<<<< HEAD
 	.mainProducts{
         height: 109.1vw; /*517*/
     }
@@ -321,4 +458,79 @@
         height: 3.5rem;
         width: 3.5rem;
     }
+=======
+	.mainProducts {
+		height: 517px;
+	}
+	/* .mainProductsBox {
+		margin: auto;
+	} */
+	.subProductsBox {
+		margin: 0 20px;
+	}
+	.subProductsBox__title {
+		font-size: 20px;
+		line-height: 30px;
+		padding: 0;
+		margin: 0.5rem;
+	}
+	.container__Products {
+		/*display: grid;
+        grid-template-columns: repeat(4,1fr);
+	    grid-template-rows: 1fr 1fr;
+	    grid-template-areas:
+		'card card card card'
+		'card card card card';*/
+		/* margin: 0;
+		gap: 3.2%; */
+		/* height: 26vw; 517 */
+		/* width: 47vw; */
+	}
+	.card {
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		border-radius: 20px;
+		height: 10vw;
+		object-fit: cover;
+		width: 5vw;
+		max-width: 136px;
+	}
+	.mainFeatured__Container--CardDescription {
+		font-size: 10px;
+		line-height: 15px;
+	}
+
+	.mainFeatured__Container--CardPrice {
+		font-size: 12px;
+		line-height: 18px;
+	}
+}
+
+@media screen and (max-width: 475px) {
+	.subProductsBox__title {
+		font-size: 20px;
+		line-height: 30px;
+	}
+	.container__Products {
+		gap: 2%;
+		height: 35vw; /*700*/
+		width: 18vw;
+	}
+	.card {
+		box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
+		border-radius: 20px;
+		height: 14vw;
+		object-fit: cover;
+		width: 8vw;
+		max-width: 184px;
+	}
+	.mainFeatured__Container--CardDescription {
+		font-size: 10px;
+		line-height: 15px;
+	}
+
+	.mainFeatured__Container--CardPrice {
+		font-size: 12px;
+		line-height: 18px;
+	}
+>>>>>>> origin/frontend
 }

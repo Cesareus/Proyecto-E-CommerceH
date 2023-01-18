@@ -1,4 +1,4 @@
-import {listProducts} from "./indexLeerProductos.js"
+import {listProducts} from './indexLeerProductos.js';
 
 const listElement = document.querySelector("[mainDestacadosP]")
 const paginationElement  =document.getElementById("pages")
@@ -9,13 +9,13 @@ let currentPage = 1;
 let rows = 10;
 let pageCount = 0
 
-const className ={
-    classCard:"mainFeatured__Container--Card",
-    classImg:"mainFeatured__Container--cardImg",
-    classDiv:"mainFeatured__Container--CardDescriptionBox",
-    classDescrip:"mainFeatured__Container--CardDescription",
-    ClassPrice:"mainFeatured__Container--CardPrice"
-}
+const className = {
+	classCard: 'mainFeatured__Container--Card',
+	classImg: 'mainFeatured__Container--cardImg',
+	classDiv: 'mainFeatured__Container--CardDescriptionBox',
+	classDescrip: 'mainFeatured__Container--CardDescription',
+	ClassPrice: 'mainFeatured__Container--CardPrice',
+};
 
 export function displayList (items=listProducts, wrapper=listElement, rowsPerPage=rows, page=currentPage) {
 	wrapper.innerHTML = "";
@@ -25,9 +25,14 @@ export function displayList (items=listProducts, wrapper=listElement, rowsPerPag
 	let paginatedItems = items.slice(start, end);
 
 	for (let i = 0; i < paginatedItems.length; i++) {
-        wrapper.appendChild(
-            addProduct(paginatedItems[i].titulo, paginatedItems[i].precio, paginatedItems[i].dir_imagen, className)
-            )
+		wrapper.appendChild(
+			addProduct(
+				paginatedItems[i].titulo,
+				paginatedItems[i].precio,
+				paginatedItems[i].dir_imagen,
+				className
+			)
+		);
 	}
 }
 
@@ -57,24 +62,24 @@ function PaginationButton (page, items) {
 		let current_btn = document.querySelector('.mainFeatured__Container--pagenumbers button.active');
 		current_btn.classList.remove('active');
 		button.classList.add('active');
-	});    
-    
+	});
+
 	return button;
-}    
+}
 
 const addProduct = (title, price, imgPath, className) => {
-    const card = document.createElement("div");
-    const content = ` 
+	const card = document.createElement('div');
+	const content = ` 
     <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
     <div class="${className.classDiv}">
     <span class="${className.classDescrip}">${title}</span>
     <span class="${className.ClassPrice}">${price}</span>
     </div>
     `;
-    
-    card.innerHTML = content;
-    card.classList.add(className.classCard);    
-    return card;
+
+	card.innerHTML = content;
+	card.classList.add(className.classCard);
+	return card;
 };
 
 prevPage.addEventListener("click", () =>{
