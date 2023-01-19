@@ -8,12 +8,13 @@
 	/*background-color: greenyellow;*/
 	margin-right: 1vw;
     /*AGREGADO*/
-    height: 206vw; /*976px*/
+    /*height: 976px; 976px*/
+	height: 48.8vmax;
 }
 .mainProductsBox{
     display: flex;
     flex-wrap: wrap;
-    height: 206vw; /*976px*/
+    height: 48.8vmax; /*976px*/
     align-content: space-between;
 }
 
@@ -26,16 +27,17 @@
 .subProductsBox__title {
 	color: var(--fondo);
 	font-family: 'Poppins';
-	font-size: 5.3vw; /*25px*/
+	font-size: 1.25vh; /*25px*/
 	font-style: normal;
 	font-weight: 700;
-	line-height: 8vw; /*38px*/
-	padding-left: 16.9vw; /*80px*/
-	margin-top: 5.7vw; /*27px*/
-	margin-bottom: 4.3vw; /*20px*/
+	line-height: 1.9vmax; /*38px*/
+	padding-left: 5.55vw; /*80px*/
+	margin-top: 27px; /*27px*/
+	margin-bottom: 20px; /*20px*/
 }
 .subProductsBox {
-    height: 160.5vw; /*760.2px*/
+    /*height: 760.2px; 760.2px*/
+	height: 38.01vmax;
 	/* display: flex;
 	padding:2px;
 	justify-content: space-between;
@@ -63,7 +65,7 @@
     display:flex;
     flex-wrap: wrap;
     /*AGREGADO*/
-    height: 160.4vw; /*760px*/
+    height: 38vmax; /*760px*/
     gap: 3%;
     /*REMOVIDO
 	width: 95%;
@@ -117,8 +119,8 @@
 	cursor: pointer;
     object-fit: contain;
 	text-align: center;
-    height: 75.8vw; /*359px*/
-    width: 56.15vw; /*266px*/
+    height: 22.438rem; /*359px*/
+    width: 16.625rem; /*266px*/
 	/* REMOVIDO
     flex: 0 0 auto;
 	height: 85%;
@@ -154,19 +156,19 @@
 
 .mainFeatured__Container--CardDescription {
 	font-family: 'Poppins';
-	font-size: 2.7vw; /*13px*/
+	font-size: 0.65vh; /*13px*/
 	font-style: normal;
 	font-weight: 400;
-	line-height: 4.4vw; /*21px*/
-	height: 5vw; /*24px*/
+	line-height: 1.05vh; /*21px*/
+	height: 1.2vh; /*24px*/
 }
 
 .mainFeatured__Container--CardPrice {
 	font-family: 'Poppins';
-	font-size: 3.6vw; /*17px*/
+	font-size: 0.85vh; /*17px*/
 	font-weight: 800;
-	line-height: 3.8vw; /*18px*/
-	max-height: 4.85vw; /*23px*/
+	line-height: 0.9vh; /*18px*/
+	max-height: 1.15vh; /*23px*/
 }
 
 .botones { /*.buttons-> se sugiere cambiar el nombre de la clase*/
