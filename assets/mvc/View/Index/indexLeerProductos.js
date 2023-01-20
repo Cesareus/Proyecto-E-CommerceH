@@ -4,21 +4,15 @@ import { displayList, setupPagination } from "./pagination.js";
 export let listProducts
 const listCategory = document.querySelector(".header__category-list")
 
-
 const getProducts= async () =>{
   try {
-    await productosServices.ajax('https://talyx.com.ar/assets/mvc/controller/productos.php?op=listar', '').done(function (info) {
+    await productosServices.ajax('./assets/mvc/controller/productos.php?op=listar', '').done(function (info) {
       listProducts = JSON.parse(info);
     })}catch(e){
       console.log(e);
     }
   }
-  const addCategory = (categories,subCategories) =>{
-    
-    for (const category of categories) {
-      if (category === undefined) continue
-
-      
+  const addCategory = (category,subCategories) =>{
       let li = document.createElement("li")
       li.classList.add(`header__category-li`)
 
@@ -27,22 +21,15 @@ const getProducts= async () =>{
 
       for (const subCategory of subCategories) {
       if (subCategory === undefined) continue
-
-      let result = listProducts.filter(function(element) {
-        return element.categoria === category && element.subcategoria === subCategory;
-      });
-
-        addSubcategory(subCategory,li,result)
+        addSubcategory(subCategory,li)
       }
     }
-  
-}
 
-const addSubcategory= (subCategory,li,result) =>{
-  if(subCategory.length !== 0){
+
+const addSubcategory= (subCategory,li) =>{
     const liChildren = li.querySelector("ul")
     let liSubcategory = document.createElement("li")
-    if(liChildren && result.length>0){
+    if(liChildren){
       liSubcategory.classList.add("header__category-li")
       liSubcategory.innerHTML = `<a class="header__text" href="#">${subCategory}</a>`
       liChildren.appendChild(liSubcategory)
@@ -56,25 +43,30 @@ const addSubcategory= (subCategory,li,result) =>{
     li.appendChild(ul)
     }
   }
-  }
+
 
 
 const render = async () => {
   await getProducts()
-  //    loadPage(listProducts)
   displayList(listProducts)
   setupPagination(listProducts)
 
-  const setOfCategories = new Set()
-  const setOfSubcategories = new Set()
-  listProducts.forEach(element => {
-    console.log(element.subcategoria);
-    setOfCategories.add(element.categoria)
-    setOfSubcategories.add(element.subcategoria)
-  });
+  let listProductsFiltred = listProducts.reduce(function(result, obj) {
+    if(obj.subcategoria === "") return result
+    if (!result[obj.categoria]) {
+        result[obj.categoria] = [];
+    }
+    if (result[obj.categoria].indexOf(obj.subcategoria) === -1) {
+        result[obj.categoria].push(obj.subcategoria);
+    }
+    return result;
+}, {});
 
-  addCategory(setOfCategories,setOfSubcategories)
 
+Object.keys(listProductsFiltred).forEach(function(category) {
+  const subCategories =Object.values(listProductsFiltred[category])
+    addCategory(category,subCategories)
+})
 }
 
 render();
