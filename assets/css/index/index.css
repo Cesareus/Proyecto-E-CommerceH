@@ -1,16 +1,17 @@
 .header {
 	grid-area: header;
-	width: 100%;
+	width: 100vw;
 	height: auto;
 }
 .main {
 	grid-area: contenido;
-	width: 100%;
+	width: 100vw;
+	height: auto;
 }
 
 .footer {
 	grid-area: footer;
-	width: 100%;
+	width: 100vw;
 	height: auto;
 	background-color: var(--fondo-blue);
 }

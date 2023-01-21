@@ -1,10 +1,6 @@
 .header {
 	font-size: clamp(0.8rem, 2vw, 1.1rem);
 	height: 13.5rem;
-	width: 100vw;
-	/* para que no se oculten elementos bajo la barra */
-	padding-right: 1vw;
-
 	display: grid;
 	grid-template-columns: 1fr 3.5fr 2fr;
 	grid-template-rows: 1fr 2fr 1.5fr;
@@ -82,7 +78,7 @@
 }
 .header__user {
 	grid-area: user;
-	padding: 0 0.5em;
+	padding: 0 1.2em 0 0.5em;
 	gap: 0.7em;
 }
 .header__user-welcome {
@@ -136,6 +132,7 @@
 .header__others {
 	grid-area: others;
 	font-weight: bold;
+	padding-right: 1em;
 }
 .header__others-oportunity {
 	grid-area: oportunity;
@@ -155,15 +152,15 @@
 	align-items: center;
 }
 
-.header__list-li{
+.header__list-li {
 	height: 90%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	transition: background-color 0.5s;
-	}
+}
 
-.header__list-li:hover{
+.header__list-li:hover {
 	background-color: var(--color-muted);
 	border-radius: 5px;
 }
@@ -183,6 +180,7 @@
 	.header__nav {
 		justify-content: flex-start;
 		gap: initial;
+		padding-right: 1.2em;
 	}
 	.header__user-welcome {
 		width: initial;
@@ -235,7 +233,7 @@
 	.header__user,
 	.header__nav {
 		justify-content: end;
-		padding: 0 3vw;
+		/* padding: 0 3vw; */
 		gap: 3vw;
 	}
 	.header__logo,

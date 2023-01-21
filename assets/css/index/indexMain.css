@@ -7,56 +7,26 @@
 	height: auto;
 	width: 100vw;
 }
+
 .mainProductos {
 	margin-right: 1vw;
 }
-
 .subProductsBox__title {
-	color: var(--fondo);
 	font-family: 'Poppins';
-	font-size: 25px;
+	font-size: 2.5vw;
 	font-style: normal;
 	font-weight: 700;
-	line-height: 38px;
-	padding-left: 80px;
-	margin-top: 34px;
-	margin-bottom: 26px;
+	line-height: 6vh;
+	padding-left: 10vw;
+	margin-top: 4vh;
+	margin-bottom: 1vh;
 }
-.bt__Slider {
-	background: transparent;
-	border: none;
-}
-.btbox__Slider {
-	border: 1px solid #dedbdb;
-	margin-left: 1rem;
-	margin-bottom: 1rem;
-	border-radius: 50%;
-	height: 3rem;
-	position: relative;
-	width: 3rem;
-}
-.btnimg__Slider {
-	color: #dedbdb;
-	height: auto;
-	position: absolute;
-	right: 38%;
-	top: 18%;
-	width: 0.9rem;
-}
-
-.btbox__Slider:hover {
-	background-color: var(--color-primary);
-	transform: scale(1.3);
-}
-
 .container__Products {
 	align-items: center;
-
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1fr 1fr;
 	justify-items: center;
-
 	width: 95%;
 	height: 100%;
 	margin: 0 auto 1rem;
@@ -64,16 +34,6 @@
 	overflow-y: hidden;
 	padding: 0 5%;
 }
-
-/* .buttons{ */
-.botones {
-	/*se cambió el nombre de la clase*/
-	display: flex;
-	justify-content: center;
-	margin: 0 auto 1vw auto;
-	align-items: center;
-}
-
 .mainFeatured__Container--Card {
 	border: 1px solid #dedbdb;
 	border-radius: 5%;
@@ -82,15 +42,13 @@
 	object-fit: cover;
 	text-align: center;
 	width: 90%;
-	max-width: 266px;
+	max-width: 30vh;
 }
-
 .mainFeatured__Container--Card:hover {
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	transform: scale(1.1);
 	transition: all 0.8s ease;
 }
-
 .mainFeatured__Container--cardImg {
 	object-fit: contain;
 	width: 90%;
@@ -98,44 +56,31 @@
 	padding: 1vw 0;
 	border-bottom: 0.3rem solid #000000;
 }
-
 .mainFeatured__Container--CardDescriptionBox {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	height: 25%;
 }
-
 .mainFeatured__Container--CardDescription {
 	font-family: 'Poppins';
-	font-size: 13px;
+	font-size: 2.5vw;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 21px;
-	height: 24px;
-	font-size: 2.7vw; /*13px*/
-	font-style: normal;
-	font-weight: 400;
-	line-height: 4.4vw; /*21px*/
-	height: 5vw; /*24px*/
+	line-height: 4.4vh;
+	height: 5vh;
 }
-
 .mainFeatured__Container--CardPrice {
 	font-family: 'Poppins';
-	font-size: 17px;
+	font-size: 1.6vw;
 	font-weight: 800;
-	line-height: 18px;
-	max-height: 23px;
-
-	font-size: 3.6vw; /*17px*/
-	font-weight: 800;
-	line-height: 3.8vw; /*18px*/
-	max-height: 4.85vw; /*23px*/
+	line-height: 3.5vw;
+	max-height: 4.85vw;
 }
 
-.botones {
-	/*.buttons-> se sugiere cambiar el nombre de la clase*/
+.buttons {
 	display: flex;
+	justify-content: center;
 	margin: 0 auto 1vw auto;
 	align-items: center;
 }
@@ -145,45 +90,34 @@
 }
 .btbox__Slider {
 	border: 1px solid #dedbdb;
+	margin: 0 1rem;
+	/* margin-bottom: 1rem; */
 	border-radius: 50%;
-	height: 7rem;
-	width: 7rem;
 	position: relative;
-	align-items: center;
-}
-
-.bt__SliderRight {
-	margin-right: 1rem;
-}
-.bt__SliderLeft {
-	margin-left: 1rem;
-}
-.btnimg__Slider {
-	color: #dedbdb;
-	height: auto;
-	position: absolute;
-	right: 38%;
-	top: 18%;
-	width: 0.9rem;
+	height: 3rem;
+	width: 3rem;
 }
 .btbox__Slider:hover {
 	background-color: var(--color-primary);
 	transform: scale(1.3);
 }
+.btnimg__Slider {
+	color: #dedbdb;
+	height: auto;
+	position: absolute;
+	right: 37%;
+	top: 23%;
+	width: 1em;
+}
 
 .mainFeatured__Container--pagenumbers {
-	margin: 2.1vw;
+	margin: 0 2vw;
 }
-.bannerBox {
-	height: auto;
-	width: 100vw;
-}
-.imgBanner {
-	height: auto;
-	width: 100vw;
+.mainFeatured__Container--pagenumbers--button {
+	font-size: 1.5rem;
 }
 .mainBanner__bottom {
-	margin-top: 5vh;
+	/* margin-top: 5vh; */
 }
 
 @media screen and (max-width: 800px) {
@@ -191,84 +125,72 @@
 		margin: 0 20px;
 	}
 	.subProductsBox__title {
-		font-size: 20px;
-		line-height: 30px;
-		padding: 0;
+		font-size: 3.5vw;
 		margin: 0.5rem;
 	}
+
 	.mainFeatured__Container--CardDescription {
 		font-size: 10px;
 		line-height: 15px;
 	}
 
-	.mainFeatured__Container--CardPrice {
-		font-size: 12px;
-		line-height: 18px;
-	}
-	.botones {
-		/*83px de alto incluidos paddings*/
+	.buttons {
 		margin-top: 1vw;
 		margin-bottom: 0.7vw;
 	}
-	.btbox__Slider {
-		height: 4rem;
-		width: 4rem;
+
+	.mainFeatured__Container--pagenumbers--button {
+		font-size: 1.2rem;
 	}
 }
 
 @media screen and (max-width: 475px) {
-	.mainProducts {
-		max-height: 148vw;
-		/*height: 699px;*/
-	}
-	.mainProductsBox {
-		max-height: 147.89vw;
-	}
 	.subProductsBox__title {
-		/*46px de alto*/
-		font-size: 4.3vw; /*20px*/
-		line-height: 6.3vw; /*30px*/
-		padding-left: 10.3; /*49px*/
+		font-size: 5.3vw;
 	}
 	.subProductsBox {
-		/*579px de alto*/
-		max-height: 122.1vw; /*579*/
+		max-height: 122.1vw;
 		margin: 0 auto;
 	}
 	.container__Products {
 		display: flex;
 		flex-wrap: wrap;
-		height: 160.4vw; /*760px*/
+		height: 160.4vw;
 		gap: 3%;
 		max-height: 122.1vw;
 		width: 70vw;
+		justify-content: center;
 	}
 	.mainFeatured__Container--Card {
 		box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
-		border-radius: 4.2vw; /*20px*/
-		width: 39vw; /*184px;*/
-		max-height: 58.3vw; /* = 275px;*/
+		border-radius: 4.2vw;
+		width: 39vw;
+		max-height: 58.3vw;
 	}
 	.mainFeatured__Container--cardImg {
 		width: 100%;
 	}
 	.mainFeatured__Container--CardDescription {
-		font-size: 2vw; /*10px*/
-		line-height: 3vw; /*15px;*/
+		font-size: 2vw;
+		line-height: 3vw;
 	}
 
 	.mainFeatured__Container--CardPrice {
-		font-size: 2.5vw; /*12px;*/
-		line-height: 3.8vw; /*18px;*/
-		max-height: 4.85vw; /*23px*/
-	}
-	.botones {
-		/*80px de alto incluidos paddings*/
-		margin-top: 1vw;
-		margin-bottom: 0.7vw;
+		font-size: 4.5vw;
 	}
 	.btbox__Slider {
-		height: 3.5rem;
-		width: 3.5rem;
+		height: 2rem;
+		width: 2rem;
+	}
+	.mainFeatured__Container--pagenumbers--button {
+		font-size: 1.3rem;
+	}
+	.btnimg__Slider {
+		color: #dedbdb;
+		height: auto;
+		position: absolute;
+		right: 30%;
+		top: 15%;
+		width: 0.7rem;
 	}
 }
