@@ -10,15 +10,6 @@
 
 .mainProductos {
 	margin-right: 1vw;
-    /*AGREGADO*/
-    /*height: 976px; 976px*/
-	height: 48.8vmax;
-}
-.mainProductsBox{
-    display: flex;
-    flex-wrap: wrap;
-    height: 48.8vmax; /*976px*/
-    align-content: space-between;
 }
 .subProductsBox__title {
 	font-family: 'Poppins';
@@ -42,29 +33,14 @@
 	overflow-x: hidden;
 	overflow-y: hidden;
 	padding: 0 5%;
-    display:flex;
-    flex-wrap: wrap;
-    /*AGREGADO*/
-    height: 38vmax; /*760px*/
-    gap: 3%;
-    /*REMOVIDO
-	width: 95%;
-	height: 100%;
-	justify-content:flex-start;*/
 }
 .mainFeatured__Container--Card {
 	border: 1px solid #dedbdb;
 	border-radius: 5%;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
 	height: 85%;
 	object-fit: contain;
 	text-align: center;
-    height: 22.438rem; /*359px*/
-    width: 16.625rem; /*266px*/
-	/* REMOVIDO
-    flex: 0 0 auto;
-	height: 85%;
 	width: 90%;
 	max-width: 30vh;
 }
@@ -75,7 +51,7 @@
 }
 .mainFeatured__Container--cardImg {
 	object-fit: contain;
-	width: 100%;
+	width: 90%;
 	height: 70%;
 	padding: 1vw 0;
 	border-bottom: 0.3rem solid #000000;
@@ -162,8 +138,8 @@
 	}
 
 	.mainFeatured__Container--CardDescription {
-		font-size: 2.1vw; /*10px*/
-		line-height: 3.16vw; /*15px*/ 
+		font-size: 10px;
+		line-height: 15px;
 	}
 
 	.buttons {
