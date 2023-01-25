@@ -1,0 +1,172 @@
+.modalRegister {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	overflow: auto;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.418);
+}
+.modalRegister__container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+@keyframes modal {
+	from {
+		top: -200%;
+		opacity: 0;
+	}
+	to {
+		top: 50%;
+		opacity: 1;
+	}
+}
+
+.modalRegister__base {
+   	position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	font-family: 'Poppins', sans-serif;
+	width: 45rem;
+	height: 20rem;
+    margin: auto;
+	background-color: rgba(46, 54, 123, 1);
+	display: flex;
+	flex-direction: row-reverse;
+	animation-name: modal;
+	animation-duration: 1s;
+}
+.modalRegister__empty {
+	width: 48%;
+}
+.modalRegister__login{
+    width: 52%;
+    display: flex;
+    flex-direction: column;
+	padding-left: 2.5rem;
+}
+.modalRegister__close {
+	color: #ffffff;
+	font-size: 1.2rem;
+	font-weight: bold;
+    position: relative;
+    right: -41.5rem ;
+    top: 0.5rem;
+}
+.modalRegister__close:hover {
+	color: #f80303;
+	cursor: pointer;
+}
+
+.modalRegister__question {
+	padding: 3.5rem 0;
+	color: white;
+	font-weight: bold;
+	font-size: 1.2rem;
+}
+.modalRegister__phrase {
+    color: #fff;
+	font-size: 0.9rem;
+    padding-bottom: 2rem;
+}
+.modalRegister__toAccount {
+	width: 7rem;
+	height: 2rem;
+	border: 1px solid white;
+	background: #2e367b;
+	color: #fff;
+	cursor: pointer;
+}
+
+.modalRegister__principal {
+	font-family: 'Poppins', sans-serif;
+	position: absolute;
+	top: -1rem;
+	left: 25.5rem;
+	background: #ffffff;
+	width: 18rem;
+	height: 22rem;
+	border-radius: 9px;
+}
+.modalRegister__title {
+	color: rgba(46, 54, 123, 1);
+	font-weight: bold;
+	font-size: 1.2rem;
+	display: flex;
+	justify-content: center;
+	padding: 1.8rem 0;
+}
+.modalRegister__form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: 12rem;
+    gap: 0.5rem;
+}
+.modalRegister__input {
+	display: flex;
+	justify-content: center;
+	width: 90%;
+	background: #2e367b36;
+    /* background-color: #efeaf3; */
+	border: none;
+	box-shadow: inset 0px 5px 5px 0px rgba(0, 0, 0, 0.3);
+	/* border-radius: 5px; */
+	height: 2.5rem;
+}
+
+::placeholder {
+	color: rgba(46, 54, 123, 1);
+    padding: 0 1rem;
+    font-weight: bold;
+}
+
+.modalRegister__footer {
+	display: flex;
+	justify-content: space-around;
+	padding: 1.7rem 0;
+}
+.modalRegister__access {
+    width: 6.5rem;
+    height: 1.8rem;
+    background-color: rgba(46, 54, 123, 1);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.modalRegister__logo {
+	height: 1.6rem;
+	width: 6rem;
+}
+
+@media screen and (max-width: 735px) {
+	.modalRegister__base{
+		width: 22rem;
+		transform: translate(-50%, 0%);
+	}
+    .modalRegister__empty{
+        display: none;
+    }
+	.modalRegister__close {
+		z-index: 5;
+		color: #000;
+		/* font-size: 1.5rem; */
+		right: -16rem ;
+		top: -17.5rem;
+	}
+	.modalRegister__login{
+		width: 100%;
+		padding: 2rem 2.5rem;
+	}
+    .modalRegister__principal {
+        top: -18rem;
+        left: 2rem;
+    }
+}

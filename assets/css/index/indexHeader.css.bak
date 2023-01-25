@@ -108,7 +108,7 @@
 	left: 4em;
 	border-radius: 7px;
 	width: 14em;
-	height: auto;
+	height: 9em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -124,7 +124,7 @@
 	background-color: var(--color-muted);
 	border-radius: 7px;
 }
-.header__category-li:hover > ul {
+.header__category-li:hover >ul{
 	visibility: visible;
 }
 .header__text {
@@ -153,11 +153,14 @@
 	text-align: center;
 	align-items: center;
 }
-.header__list > li:hover {
+.header__list>li{
+	padding: 1.2rem;
+}
+.header__list>li:hover{
 	background-color: var(--color-muted);
 }
 
-.header__subCategory-list {
+.header__subCategory-list{
 	position: absolute;
 	top: 0;
 	left: 8em;

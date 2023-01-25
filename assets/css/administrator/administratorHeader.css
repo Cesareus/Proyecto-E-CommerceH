@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+.header{
+    grid-area: header;
+	width: 100%;
+	height: 100%;
+    font-size: clamp(0.875rem, 1.39vw, 1.875rem); /*minimum value, a preferred value, and a maximum allowed value.*/
+    background: var(--fondo-blue);
+	color: var(--color-white);
+    align-items: center;
+    display: grid;
+    grid-template-columns: 7.85% 14.86% 50.03% 17.8125% 9.44%;
+	grid-template-rows: 1fr;
+	grid-template-areas:
+		'category logo btnAdd user btnBack';
+}
+.header__category,
+.header__logo,
+.header__btnAdd,
+.header__user,
+.header__btnBack{
+	width: 100%;
+	height: 100%;
+	justify-content: left;
+}
+/*PASAR LOS PX A PROCENTAJE TENIENDO EN CUENTA EL TAMAÑO 
+DE CADA SECCION*/
+/*---CATEGORY---*/
+.header__category{
+    grid-area: category;
+    display: flex;
+    align-items: center;
+	justify-content: space-evenly;
+    font-weight: bold;
+	position: relative;
+	padding-left: 31.86%; /*36px;*/
+	padding-right: 23.9%; /*27px;*/
+}
+.header__category-down {
+	color: var(--color-red);
+	padding: 0.5vw;
+}
+.header__category-list {
+	visibility: hidden;
+	position: absolute;
+	top: 3em;
+	left: 4em;
+	border-radius: 7px;
+	width: 14em;
+	height: 9em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background: var(--color-ligth);
+}
+.header__category-li {
+	padding: 1em;
+	transition: background-color 0.5s;
+}
+.header__category-li:hover {
+	background-color: var(--color-muted);
+	border-radius: 7px;
+}
+/*---END OF CATEGORY---*/
+
+
+.header__logo{
+	grid-area: logo;
+    display: flex;
+    align-items: center;
+}
+.header__logo-img {
+	width: 100%;
+	padding-right: 16.36%;/*35px;*/
+}
+
+.header__btnAdd{
+    grid-area: btnAdd;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: left;
+}
+.header__btnAdd--addProduct{
+	width: 32.34%;
+	background: var(--color-primary);
+	color: var(--color-white);
+}
+
+.header__user{
+    grid-area: user;
+    display: flex;
+	align-items: center;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 80%; /*16px;*/
+	line-height: 1.875rem; /*24px;*/
+}
+.header__user-welcome {
+	width: 100%;
+}
+
+.header__btnBack{
+    grid-area: btnBack;
+	display: flex;
+	align-items: center;
+	padding-right: 22.8%; /*31px;*/
+}
+.header__btnBack--goBack{
+	width: 100%;
+	background: #DEDBDB;
+	color: var(--fondo-black);
+	
+}
+
+.header__btnAdd--addProduct,
+.header__btnBack--goBack{
+	height: 50%;
+	border-radius: 10px;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 100%; /*20px;*/
+	line-height: 1.875rem; /*30px;*/
+}
+
+/*OTHERS*/
+.header__links {
+	display: flex;
+	align-items: center;
+}
+.header__icons {
+	padding: 0 0.5em;
+	transform: scale(1.3);
+}
+
+@media screen and (max-width: 920px) {
+	.header{
+		font-size: clamp(0.875rem, 1.39vw, 1.875rem); /*minimum value, a preferred value, and a maximum allowed value.*/
+		grid-template-columns: 7.85% 14.86% 50.03% 17.8125% 9.44%;
+		grid-template-rows: 1fr;
+		grid-template-areas:
+			'category logo user btnBack';
+	}
+
+}
+
+@media screen and (max-width: 425px) {
+
+}
