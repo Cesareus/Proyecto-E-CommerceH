@@ -39,7 +39,7 @@
 	border-radius: 5%;
 	cursor: pointer;
 	height: 85%;
-	object-fit: cover;
+	object-fit: contain;
 	text-align: center;
 	width: 90%;
 	max-width: 30vh;
@@ -87,26 +87,28 @@
 .bt__Slider {
 	background: transparent;
 	border: none;
+	/* width: 3em;
+	height: 3em; */
 }
 .btbox__Slider {
 	border: 1px solid #dedbdb;
-	margin: 0 1rem;
+	/* margin: 0 1rem; */
 	/* margin-bottom: 1rem; */
 	border-radius: 50%;
 	position: relative;
-	height: 3rem;
-	width: 3rem;
+	height: 3em;
+	width: 3em;
 }
 .btbox__Slider:hover {
 	background-color: var(--color-primary);
-	transform: scale(1.3);
+	transform: scale(1.2);
 }
 .btnimg__Slider {
 	color: #dedbdb;
 	height: auto;
 	position: absolute;
-	right: 37%;
-	top: 23%;
+	right: 32%;
+	top: 15%;
 	width: 1em;
 }
 
@@ -114,16 +116,22 @@
 	margin: 0 2vw;
 }
 .mainFeatured__Container--pagenumbers--button {
-	font-size: 1.5rem;
+	background-color: #ffffff;
+	border: 1px solid var(--color-primary);
+	width: 2.1rem;
+	cursor: pointer;
+	appearance: none;
+	transition: 0.5s;
+	font-size: 1.1rem;
 }
-.mainBanner__bottom {
-	/* margin-top: 5vh; */
+.mainFeatured__Container--pagenumbers--button:hover {
+	background-color: var(--color-primary);
+}
+.mainFeatured__Container--pagenumbers--button.active {
+	background-color: var(--color-primary);
 }
 
 @media screen and (max-width: 800px) {
-	.subProductsBox {
-		margin: 0 20px;
-	}
 	.subProductsBox__title {
 		font-size: 3.5vw;
 		margin: 0.5rem;
@@ -140,7 +148,7 @@
 	}
 
 	.mainFeatured__Container--pagenumbers--button {
-		font-size: 1.2rem;
+		font-size: 1rem;
 	}
 }
 
@@ -181,9 +189,6 @@
 	.btbox__Slider {
 		height: 2rem;
 		width: 2rem;
-	}
-	.mainFeatured__Container--pagenumbers--button {
-		font-size: 1.3rem;
 	}
 	.btnimg__Slider {
 		color: #dedbdb;

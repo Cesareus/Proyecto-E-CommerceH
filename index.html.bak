@@ -80,9 +80,9 @@
 			<!--header__search-->
 
 			<nav class="header__user">
-				<a id="openLogin" class="header__user-welcome header__links" href="#">
+				<a class="header__user-welcome header__links" href="#">
 					<i class="fa-solid fa-circle-user header__icons"></i>
-					<p class="header__p">Bienvenido/a Usuario</p>
+					<p id="openLogin" class="header__p">Bienvenido/a Usuario</p>
 				</a>
 				<a class="header__user-cart header__links" href="#">
 					<i class="fa-solid fa-cart-shopping header__icons"></i>
@@ -160,7 +160,7 @@
 							  PARTICULAS DE PLATA)</span>
 							<span class="mainFeatured__Container--CardPrice cardPrice">$694,44</span>
 						  </div>
-							</div>-->
+						</div>-->
 						</div>
 					</div>
 
@@ -195,7 +195,7 @@
 						</button>
 					</div>
 				</div>
-				</div>
+				<!-- </div>  -->
 			</section>
 
 			<section class="mainBanner__Bottom bannerBox">
