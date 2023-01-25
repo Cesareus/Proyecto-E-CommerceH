@@ -9,7 +9,7 @@
 
 			protected function Connection(){
 				try{
-					$conectar = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce;port=3306;","cesar","cesar"); //root ""
+					$conectar = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce;port=3310;","cesar","cesar");
 					return $conectar;
 	
 				}catch(Exception $e){

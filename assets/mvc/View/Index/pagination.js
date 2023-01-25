@@ -6,7 +6,7 @@ const prevPage = document.querySelector("#bt__SliderLeft-Featured")
 const nextPage = document.querySelector("#bt__SliderRight-Featured")
 
 let currentPage = 1;
-let rows = 10;
+let rows = 8;
 let pageCount = 0
 
 const className = {
