@@ -15,18 +15,19 @@
             echo json_encode($datos);
             break;
             
-        case "Create":
-            $info['user'] = $_POST['user']; //agregar names de los formularios
-            $info['email'] = $_POST['email']; 
-            $info['password'] = $_POST['password']; 
-            $info['permisions'] = $_POST['permisions']; 
+        case "register":
+            $info['user_name'] = $_POST['name']; 
+            $info['lastname'] = $_POST['lastname']; 
+            $info['email'] = $_POST['email'];
+            $info['pass'] = $_POST['pass']; 
+            
             $datos = $user->create_user(json_encode($info));                                 
             echo json_encode($datos);
             break;
         
         case "Modify":
             $info['ID'] = $_POST['ID'];
-            $info['user'] = $_POST['user']; //agregar names de los formularios
+            $info['user'] = $_POST['user']; 
             $info['email'] = $_POST['email']; 
             $info['password'] = $_POST['password']; 
             $info['permisions'] = $_POST['permisions']; 

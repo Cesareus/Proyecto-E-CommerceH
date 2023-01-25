@@ -247,18 +247,19 @@
 					</div>
 					<div class="modalRegister__principal">
 						<h5 class="modalRegister__title">Registrarse</h5>
-						<form class="modalRegister__form">
-							<input class="modalRegister__input" type="text" placeholder="Nombre" />
-							<input class="modalRegister__input" type="text" placeholder="Apellido" />
+						<form id="modalRegister__form" class="modalRegister__form">
+							<input class="modalRegister__input" name="name" type="text" placeholder="Nombre" />
+							<input class="modalRegister__input" name="lastname" type="text" placeholder="Apellido" />
 							<input
 								class="modalRegister__input"
+								name="email"
 								type="email"
 								placeholder="Correo Electronico"
 							/>
-							<input class="modalRegister__input" type="password" placeholder="Contraseña" />
+							<input class="modalRegister__input" name="pass" type="password" placeholder="Contraseña" />
 						</form>
 						<div class="modalRegister__footer">
-							<button class="modalRegister__access">Crear</button>
+							<button form="modalRegister__form" type="submit" class="modalRegister__access">Crear</button>
 							<img class="modalRegister__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx"/>
 
 						</div>
@@ -310,4 +311,5 @@
 		</footer>
 	</body>
 	<script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
+	<script type="module" src="./assets/mvc/View/Index/register.js"></script>
 </html>

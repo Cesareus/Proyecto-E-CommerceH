@@ -1,4 +1,4 @@
-import { productosServices } from "../servicesJS/services.js";
+import { services } from "../servicesJS/services.js";
 import { displayList, setupPagination } from "./pagination.js";
 
 export let listProducts
@@ -6,7 +6,7 @@ const listCategory = document.querySelector(".header__category-list")
 
 const getProducts= async () =>{
   try {
-    await productosServices.ajax('https://talyx.com.ar/assets/mvc/controller/productos.php?op=listar', '').done(function (info) {
+    await services.ajax('https://talyx.com.ar/assets/mvc/controller/productos.php?op=listar', '').done(function (info) {
       listProducts = JSON.parse(info);
     })}catch(e){
       console.log(e);

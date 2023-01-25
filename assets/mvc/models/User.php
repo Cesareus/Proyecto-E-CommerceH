@@ -75,14 +75,15 @@
             try {
                 $cnn = parent::Connection();
                 parent::set_names();
-                $sql = "INSERT INTO users(user,email,pass) VALUES (?,?,?)";
+                $sql = "INSERT INTO users(user_name,lastname,email,pass) VALUES (?,?,?,?)";
                 $statement = $cnn->prepare($sql);
                 $reply = false;
                 
 
-                $statement->bindParam(1, $data['user'], PDO::PARAM_STR);
-                $statement->bindParam(2, $data['email'], PDO::PARAM_STR);
-                $statement->bindParam(3, $data['pass'], PDO::PARAM_STR);
+                $statement->bindParam(1, $data['user_name'], PDO::PARAM_STR);
+                $statement->bindParam(2, $data['lastname'], PDO::PARAM_STR);
+                $statement->bindParam(3, $data['email'], PDO::PARAM_STR);
+                $statement->bindParam(4, $data['pass'], PDO::PARAM_STR);
 
                 $reply = $statement->execute();
 
