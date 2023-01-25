@@ -1,0 +1,20 @@
+@import url(../variables.css);
+body{
+    font-family: var(--fuente_principal);
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+.adminBody{
+    display: grid;
+    width: 100vw;
+    height: 100vh; 
+    grid-template-columns: 1fr;
+    grid-template-rows: 9.78% 90.22%;
+    grid-template-areas:
+        "header"
+        "contenido";
+}

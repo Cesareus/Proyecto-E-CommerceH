@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="./assets/img/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+		<link rel="stylesheet" href="./assets/css/normalize.css" />
+		<link rel="stylesheet" href="./assets/css/administrator/administrator.css" />
+		<link rel="stylesheet" href="./assets/css/administrator/administratorHeader.css" />
+		<link rel="stylesheet" href="./assets/css/administrator/administratorMain.css" />
+
+		<!-- Fuente del Proyecto Poppins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- KIT Fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/8e46837a7d.js"
+			crossorigin="anonymous"
+		></script>
+
+		<!-- jQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+		<title>Talyx</title>
+	</head>
+    <body class="adminBody">
+		<header class="header">
+			<nav class="header__category">
+				<i class="fa-solid fa-bars"></i>
+				<!--
+				<a class="header__category-menu header__text" href="#">CATEGORIAS</a>
+				<i class="fa fa-angle-down header__category-down"></i>
+				<ul class="header__category-list">
+					<li class="header__category-li">
+						<a class="header__text" href="#">Componentes de PC</a>
+					</li>
+					<li class="header__category-li"><a class="header__text" href="#">Notebook</a></li>
+					<li class="header__category-li"><a class="header__text" href="#">Perifericos</a></li>
+				</ul>
+				-->
+			</nav>
+			<!--header__category-->
+
+			<div class="header__logo">
+				<img
+					class="header__logo-img"
+					src="./assets/img/logo/logo_talyx.svg"
+					alt="Logo Talyx"
+				/>
+			</div>
+			<!--header__logo-->
+
+			<section class="header__btnAdd">
+				<button class="header__btnAdd--addProduct">
+					Agregar productos
+				</button>
+			</section>
+			<!--header__btnAdd-->
+
+			<nav class="header__user">
+				<a class="header__user-welcome header__links" href="#">
+					<i class="fa-solid fa-circle-user header__icons"></i>
+					<p class="header__p">Bienvenido/a Usuario</p>
+				</a>
+			</nav>
+			<!--header__user-->
+
+			<section class="header__btnBack">
+				<button class="header__btnBack--goBack">
+					Volver
+				</button>
+			</section>
+			<!--header__btnBack-->
+			
+		</header>
+
+		<main class="main">
+			<!--section class="mainProducts"-->
+				<div class="mainFeatured"> <!--mainProductsBox-->
+						<div class="mainFeatured__Container" id="container__Products" mainDestacadosP> <!--container__Products-->
+						</div> 
+				</div>
+				<div class="buttons">
+					<button class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft" id="bt__SliderLeft-Featured">
+						<div class="mainFeatured__Container--buttonleftbox btbox__Slider">
+							<img src="./assets/img/main/flechaIzquierda.svg" alt=""
+						  	class="mainFeatured__Container--buttonleftimg btnimg__Slider">
+					  	</div>
+					</button>
+					<div id="pages" class="mainFeatured__Container--pagenumbers"></div>
+					<button class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight" id="bt__SliderRight-Featured">
+						<div class="mainFeatured__Container--buttonrightbox btbox__Slider" id="bt__SliderLeft-Featured">
+							<img src="./assets/img/main/flechaDerecha.svg" alt=""
+							class="mainFeatured__Container--buttonrigthimg btnimg__Slider">
+						</div>
+					</button>
+				</div>
+			<!--/section-->
+		</main>
+
+    </body>
+	<script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
+</html>
