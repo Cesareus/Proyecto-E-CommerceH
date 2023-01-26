@@ -24,12 +24,13 @@ export function displayList (items=listProducts, wrapper=listElement, rowsPerPag
 	let end = start + rowsPerPage;
 	let paginatedItems = items.slice(start, end);
 
-	for (let i = 0; i < paginatedItems.length; i++) {
+	for (let i = 0; i < paginatedItems.length; i++){
 		wrapper.appendChild(
 			addProduct(
 				paginatedItems[i].titulo,
 				paginatedItems[i].precio,
 				paginatedItems[i].dir_imagen,
+				
 				className
 			)
 		);

@@ -62,12 +62,12 @@
                 $statement = $cnn->prepare($sql);
                 $reply = false;
 
-                $statement->bindParam(1, $data['categoria'], PDO::PARAM_STR);
-                $statement->bindParam(2, $data['subcategoria'], PDO::PARAM_STR);
-                $statement->bindParam(3, $data['dir_imagen'], PDO::PARAM_STR);
+                $statement->bindParam(1, $data['category'], PDO::PARAM_STR);
+                $statement->bindParam(2, $data['subcategory'], PDO::PARAM_STR);
+                $statement->bindParam(3, $data['img'], PDO::PARAM_STR);
                 $statement->bindParam(4, $data['titulo'], PDO::PARAM_STR);
-                $statement->bindParam(5, $data['descripcion'], PDO::PARAM_STR);
-                $statement->bindParam(6, $data['precio'], PDO::PARAM_INT);
+                $statement->bindParam(5, $data['description'], PDO::PARAM_STR);
+                $statement->bindParam(6, $data['price'], PDO::PARAM_INT);
 
                 $reply = $statement->execute();
 

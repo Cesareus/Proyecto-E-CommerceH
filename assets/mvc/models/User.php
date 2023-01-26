@@ -1,94 +1,81 @@
 <?php
+    session_start();
     class User extends Conectar{
+        public function checkSession(){
+            if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == 0){
+                echo json_encode(array("error" => false, "logged_in" => true));
+            }else{
+                echo json_encode(array("error" => false, "logged_in" => false));
+            }
+        }
 
-        public function login(){
+        public function checkAdminSession(){
+            
+            if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === 1) {
+                // La sesión tiene los permisos necesarios
+                return true;
+              } else {
+                // La sesión no tiene los permisos necesarios
+               return false;
+              }
+        }
+
+        public function login($data){
             try {
+                
                 $cnn = parent::Connection();
                 parent::set_names();
-                $sql = "SELECT email,pass FROM users WHERE email=:email and pass=:pass";
-
-                $statement=$cnn->prepare($sql);
-                $statement->execute();
-                return $result = $statement->fetchAll(); #devuelve todos los valores de la consulta
-
+                
+                if(!empty($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER["HTTP_X_REQUESTED_WITH"])== "xmlhttprequest"){
+                    $sql = "SELECT email,permisions,user_name FROM users WHERE email=:email and pass=:pass";
+                    if($statement=$cnn->prepare($sql)){
+                        
+                        $statement->bindParam(":email", $data['email'], PDO::PARAM_STR);
+                        $statement->bindParam(":pass", $data['pass'], PDO::PARAM_STR);
+                        $statement->execute();
+                        
+                        if($statement->rowCount() > 0):
+                            $result = $statement -> fetch(PDO::FETCH_ASSOC);
+                            $_SESSION['logged_in'] = $result["permisions"];
+                            $_SESSION["user_name"] = $result["user_name"];
+                            echo json_encode(array("permisions" => $result["permisions"],"user_name"=>$result["user_name"]));
+                        else:
+                            echo json_encode(array("error"=>true));
+                        endif;
+                    }
+                }
                 $statement->closeCursor();
                 $cnn = null;
             } catch (PDOException $e) {
                 echo 'PDOException : ' . $e->getMessage();
             } 
         }
+
         public function logOut(){
             try {
-                $cnn = parent::Connection();
-                parent::set_names();
-                $sql = "SELECT email,pass FROM users WHERE email=:email and pass=:pass";
-
-                $statement=$cnn->prepare($sql);
-                $statement->execute();
-                return $result = $statement->fetchAll(); #devuelve todos los valores de la consulta
-
-                $statement->closeCursor();
-                $cnn = null;
+                session_destroy();
+                echo json_encode(array("error" => false));
             } catch (PDOException $e) {
                 echo 'PDOException : ' . $e->getMessage();
             } 
         }
-        //ésta función no está asignada en el controller ni tiene View, también hay que hacer la de 
-        //busqueda
-        public function get_user_x_id($id){
-            $cnn = parent::Connection();
-            parent::set_names();
-            $sql = "SELECT * FROM tm_producto WHERE prod_id = ?";
 
-            $sql=$cnn->prepare($sql);
-            $sql->bindValue(1,$id);
-            $sql->execute();
-            return $result = $sql->fetchAll(); #devuelve todos los valores de la consulta
-        }
-
-        public function delete_user($id){           
-
-          try{
-            $cnn = parent::Connection();
-            parent::set_names();
-            $sql = "DELETE FROM `users` WHERE `ID`=:id";
-            $statement = $cnn->prepare($sql);
-            $statement -> bindParam(':id', $id, PDO::PARAM_INT);
-
-            if ($statement->execute() && $statement->rowCount() > 0) {
-                
-                echo true;                     
-            } else {
-                echo false;        
-            }
-            $statement->closeCursor();
-            $cnn = null;
-          } catch (PDOException $e){
-                echo 'PDOException : '.$e->getMessage();
-          }
-        }
-
-        
-        public function create_user($info){
-            $data = JSON_decode($info, true);           
-
+        public function create_user($data){
             try {
                 $cnn = parent::Connection();
                 parent::set_names();
-                $sql = "INSERT INTO users(user_name,lastname,email,pass) VALUES (?,?,?,?)";
-                $statement = $cnn->prepare($sql);
-                $reply = false;
+                $sql = "INSERT INTO `users`(user_name, lastname, email, pass) VALUES (:user_name, :lastname, :email, :pass)";
+                if($statement=$cnn->prepare($sql)){
                 
-
-                $statement->bindParam(1, $data['user_name'], PDO::PARAM_STR);
-                $statement->bindParam(2, $data['lastname'], PDO::PARAM_STR);
-                $statement->bindParam(3, $data['email'], PDO::PARAM_STR);
-                $statement->bindParam(4, $data['pass'], PDO::PARAM_STR);
+                $statement->bindParam(":user_name", $data['user_name'], PDO::PARAM_STR);
+                $statement->bindParam(":lastname", $data['lastname'], PDO::PARAM_STR);
+                $statement->bindParam(":email", $data['email'], PDO::PARAM_STR);
+                $statement->bindParam(":pass", $data['pass'], PDO::PARAM_STR);
 
                 $reply = $statement->execute();
 
-                echo  json_encode($reply);
-
+                echo  $reply;
+                }
                 $statement->closeCursor();
                 $cnn = null;
             } catch (PDOException $e) {
@@ -96,29 +83,8 @@
             }
         }
 
-        public function modify_user($info){
-            $data = JSON_decode($info, true);           
-
-            try {
-                $cnn = parent::Connection();
-                parent::set_names();
-                $sql = "UPDATE users SET user=:user, email=:email, pass=:pass, permisions=:permisions WHERE ID=:id";
-                $statement = $cnn->prepare($sql);
-                $statement->bindParam(":user", $data['user'], PDO::PARAM_STR);
-                $statement->bindParam(":email", $data['email'], PDO::PARAM_STR);
-                $statement->bindParam(":pass", $data['pass'], PDO::PARAM_STR);
-                if ($statement->execute() && $statement->rowCount() > 0) {
-                    echo true;        
-                } else {
-                    echo false;        
-                }
-            
-                $statement->closeCursor();
-                $cnn = null;
-            } catch (PDOException $e) {
-                echo 'PDOException : ' . $e->getMessage();
-            }
+        public function getUser(){
+           echo json_encode($_SESSION);
         }
     }
-
 ?>

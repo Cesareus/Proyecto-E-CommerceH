@@ -1,7 +1,7 @@
 import { services } from "../servicesJS/services.js"
 
 const registerForm = document.getElementById("modalRegister__form")
-console.log(registerForm);
+
 registerForm.addEventListener("submit",(e)=>{
     e.preventDefault()
     let data = new FormData(registerForm)

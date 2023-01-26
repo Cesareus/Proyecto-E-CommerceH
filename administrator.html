@@ -24,6 +24,7 @@
 
 	<!-- jQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="module" src="./assets/mvc/View/servicesJS/validateAdminSesion.js"></script>
 
 	<title>Talyx</title>
 </head>
@@ -67,12 +68,12 @@
 					</div>
 					<div class="modal__formContainer">
 						<form action="" class="modal__form">
-							<input class="modal__input" type="text" placeholder="Categoría:" />
-							<input class="modal__input" type="text" placeholder="Subcategoría:" />
-							<input class="modal__input" type="text" placeholder="Dirección de imagen:" />
-							<input class="modal__input" type="text" placeholder="Título:" />
-							<textarea class="modal__input modal__input--desc" placeholder="Descripción:"></textarea>
-							<input class="modal__input modal__input--price" type="number" placeholder="Precio:" />
+							<input class="modal__input" name="category" type="text" placeholder="Categoría:" />
+							<input class="modal__input" name="subcategory" type="text" placeholder="Subcategoría:" />
+							<input class="modal__input" name="img" type="text" placeholder="Dirección de imagen:" />
+							<input class="modal__input" name="title" type="text" placeholder="Título:" />
+							<textarea class="modal__input modal__input--desc" name="description" placeholder="Descripción:"></textarea>
+							<input class="modal__input modal__input--price" name="price" type="number" placeholder="Precio:" />
 							<div class="modal__btns">
 								<button id="modal__close" class="modal__btn">Volver</button>
 								<button class="modal__btn modal__btn--save" type="submit">Guardar</button>

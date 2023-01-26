@@ -4,7 +4,7 @@ const ajax = (url, data) =>{
         "url": url,
         "data": data,
         processData: false,
-        contentType: false,
+        contentType: false
     })
     return ajax;
 }

@@ -11,12 +11,12 @@
             break;
 
         case "Create":
-            $info['categoria'] = $_POST['categoria']; //agregar names de los formularios
-            $info['subcategoria'] = $_POST['subcategoria']; 
-            $info['dir_imagen'] = $_POST['dir_imagen']; 
-            $info['titulo'] = $_POST['titulo']; 
+            $info['category'] = $_POST['category']; //agregar names de los formularios
+            $info['subcategory'] = $_POST['subcategory']; 
+            $info['img'] = $_POST['img']; 
+            $info['title'] = $_POST['title']; 
             $info['descripcion'] = $_POST['descripcion']; 
-            $info['precio'] = $_POST['precio']; 
+            $info['price'] = $_POST['price']; 
             $datos = $producto->create_product(json_encode($info));                                 
             echo json_encode($datos);
             break;
