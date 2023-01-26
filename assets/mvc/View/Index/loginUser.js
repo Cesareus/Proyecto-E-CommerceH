@@ -7,7 +7,7 @@ const userName = document.getElementById("welcome__username")
 formLogin.addEventListener("submit", (e)=>{
     e.preventDefault()
     let data = new FormData(formLogin)
-    services.ajax("./assets/mvc/controller/Users.php?op=login",data).done(res =>{
+    services.ajax("https://talyx.com.ar/assets/mvc/controller/Users.php?op=login",data).done(res =>{
         res= JSON.parse(res);
         if(res.permisions===1){
             window.location=("https://talyx.com.ar/administrator.html")
