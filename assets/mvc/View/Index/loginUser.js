@@ -10,14 +10,14 @@ formLogin.addEventListener("submit", (e)=>{
     services.ajax("./assets/mvc/controller/Users.php?op=login",data).done(res =>{
         res= JSON.parse(res);
         if(res.permisions===1){
-            window.location=("http://localhost/hunteando6/Proyecto-E-CommerceH/administrator.html")
+            window.location=("https://talyx.com.ar/administrator.html")
         }
         location.reload()
     })
 })
 $(document).ready(function() {
     $.ajax({
-        url: './assets/mvc/controller/Users.php?op=getSession',
+        url: 'https://talyx.com.ar/assets/mvc/controller/Users.php?op=getSession',
         success: function(data) {
             data = JSON.parse(data)
             if(data.user_name){
@@ -27,7 +27,7 @@ $(document).ready(function() {
         })
 });
 logOut.addEventListener("click",()=>{
-    services.ajax("./assets/mvc/controller/Users.php?op=logout",null).done(res =>{
+    services.ajax("https://talyx.com.ar/assets/mvc/controller/Users.php?op=logout",null).done(res =>{
         //TODO: añadir funcionalidad de la respuesta
         location.reload()
     })

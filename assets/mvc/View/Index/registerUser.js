@@ -7,7 +7,7 @@ registerForm.addEventListener("submit",(e)=>{
     let data = new FormData(registerForm)
     try{
         console.log(data);
-        services.ajax("./assets/mvc/controller/Users.php?op=register",data).done(res=>{
+        services.ajax("https://talyx.com.ar/assets/mvc/controller/Users.php?op=register",data).done(res=>{
             console.log(res)
         })
         return false

@@ -7,7 +7,7 @@ productsForm.addEventListener("submit",(e)=>{
     const data = new FormData(productsForm)
     try{
 
-        services.ajax("./assets/mvc/controller/productos.php?op=Create",data).done((info)=>{
+        services.ajax("https://talyx.com.ar/assets/mvc/controller/productos.php?op=Create",data).done((info)=>{
             const res = JSON.parse(info)
         })
     }catch(e){
