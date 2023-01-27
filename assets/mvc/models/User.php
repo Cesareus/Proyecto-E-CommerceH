@@ -65,6 +65,10 @@
             try {
                 $cnn = parent::Connection();
                 parent::set_names();
+                $repited = searchRepeatedUsers($data,$cnn);
+                if($repited === true){
+                    return "usuario ya existente";
+                }
                 $sql = "INSERT INTO `users`(user_name, lastname, email, pass) VALUES (:user_name, :lastname, :email, :pass)";
                 if($statement=$cnn->prepare($sql)){
                 
@@ -84,8 +88,19 @@
             }
         }
 
+
         public function getUser(){
            echo json_encode($_SESSION);
         }
     }
+
+    function searchRepeatedUsers($data,$cnn){
+        $sql = "SELECT * FROM users WHERE email=:email";
+        if($statement=$cnn->prepare($sql)){
+        $statement->bindParam(":email", $data['email'], PDO::PARAM_STR);
+        $statement->execute();
+        return $statement->rowCount() > 0;
+    }
+
+}
 ?>

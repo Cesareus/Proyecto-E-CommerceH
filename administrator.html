@@ -67,7 +67,7 @@
 						<span id="modal__add" class="modal__add">+</span>
 					</div>
 					<div class="modal__formContainer">
-						<form action="" class="modal__form">
+						<form id="modal_Products" action="" class="modal__form">
 							<input class="modal__input" name="category" type="text" placeholder="Categoría:" />
 							<input class="modal__input" name="subcategory" type="text" placeholder="Subcategoría:" />
 							<input class="modal__input" name="img" type="text" placeholder="Dirección de imagen:" />
@@ -76,7 +76,7 @@
 							<input class="modal__input modal__input--price" name="price" type="number" placeholder="Precio:" />
 							<div class="modal__btns">
 								<button id="modal__close" class="modal__btn">Volver</button>
-								<button class="modal__btn modal__btn--save" type="submit">Guardar</button>
+								<button form="modal_Products" class="modal__btn modal__btn--save" type="submit">Guardar</button>
 							</div>
 						</form>
 					</div>
@@ -129,6 +129,7 @@
 	</main>
 
 </body>
-<script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
+<script type="module" src="./assets/mvc/View/Index/getProducts.js"></script>
+<script type="module" src="./assets/mvc/View/administrador/CreateProduct.js"></script>
 
 </html>

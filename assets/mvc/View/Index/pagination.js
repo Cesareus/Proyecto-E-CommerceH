@@ -1,4 +1,4 @@
-import { listProducts } from './indexLeerProductos.js'
+import { listProducts } from './getProducts.js'
 
 const listElement = document.querySelector('[mainDestacadosP]')
 const paginationElement = document.getElementById('pages')
@@ -23,14 +23,13 @@ export function displayList (items = listProducts, wrapper = listElement, rowsPe
   const start = rowsPerPage * page
   const end = start + rowsPerPage
   const paginatedItems = items.slice(start, end)
-
   for (let i = 0; i < paginatedItems.length; i++) {
     wrapper.appendChild(
       addProduct(
         paginatedItems[i].titulo,
         paginatedItems[i].precio,
         paginatedItems[i].dir_imagen,
-
+        paginatedItems[i].ID,
         className
       )
     )
@@ -67,9 +66,10 @@ function PaginationButton (page, items) {
   return button
 }
 
-const addProduct = (title, price, imgPath, className) => {
+const addProduct = (title, price, imgPath, id, className) => {
   const card = document.createElement('div')
   const content = ` 
+    <input type="hidden" name="id" value="${id}">
     <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
     <div class="${className.classDiv}">
     <span class="${className.classDescrip}">${title}</span>

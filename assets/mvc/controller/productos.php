@@ -15,10 +15,10 @@
             $info['subcategory'] = $_POST['subcategory']; 
             $info['img'] = $_POST['img']; 
             $info['title'] = $_POST['title']; 
-            $info['descripcion'] = $_POST['descripcion']; 
+            $info['description'] = $_POST['description']; 
             $info['price'] = $_POST['price']; 
-            $datos = $producto->create_product(json_encode($info));                                 
-            echo json_encode($datos);
+            $datos = $producto->createProduct($info);                                 
+            echo $datos;
             break;
         
         case "Modify":
@@ -29,13 +29,13 @@
             $info['titulo'] = $_POST['titulo']; 
             $info['descripcion'] = $_POST['descripcion']; 
             $info['precio'] = $_POST['precio']; 
-            $datos = $producto->modify_product(json_encode($info));                                 
-            echo json_encode($datos);
+            $datos = $producto->modifyProduct($info);                                 
+            echo $datos;
             break;
 
         case "Delete":
             $id = $_POST['ID'];
-            $datos = $producto->delete_product($id);                                 
+            $datos = $producto->deleteProduct($id);                                 
             echo json_encode($datos);
             break;
         }

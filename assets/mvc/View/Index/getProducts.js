@@ -3,10 +3,11 @@ import { displayList, setupPagination } from './pagination.js'
 export let listProducts
 const listCategory = document.querySelector('.header__category-list')
 
-const getProducts = async () => {
+export const getProducts = async () => {
   try {
     await services.ajax(`${URL}/assets/mvc/controller/productos.php?op=getProducts`, '').done(function (info) {
       listProducts = JSON.parse(info)
+      return JSON.parse(info)
     })
   } catch (e) {
     console.log(e)

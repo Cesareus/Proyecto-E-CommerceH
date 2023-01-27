@@ -4,10 +4,8 @@ $(document).ready(function () {
   $.ajax({
     url: `${URL}/assets/mvc/controller/Users.php?op=checkAdminSession`,
     success: function (data) {
-      console.log(JSON.parse(data))
       data = JSON.parse(data)
       if (data.status === 403) {
-        console.log('hola')
         window.location = ('http://localhost/hunteando6/Proyecto-E-CommerceH/')
       }
     }

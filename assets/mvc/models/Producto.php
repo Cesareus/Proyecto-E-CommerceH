@@ -17,22 +17,9 @@
                 echo 'PDOException : ' . $e->getMessage();
             } 
         }
-        //ésta función no está asignada en el controller ni tiene View, también hay que hacer la de 
-        //busqueda
-        public function get_product_x_id($id){
-            $cnn = parent::Connection();
-            parent::set_names();
-            $sql = "SELECT * FROM tm_producto WHERE prod_id = ?";
 
-            $sql=$cnn->prepare($sql);
-            $sql->bindValue(1,$id);
-            $sql->execute();
-            return $result = $sql->fetchAll(); #devuelve todos los valores de la consulta
-        }
-
-        public function delete_product($id){           
-
-          try{
+        public function deleteProduct($id){
+        try{
             $cnn = parent::Connection();
             parent::set_names();
             $sql = "DELETE FROM `productos` WHERE `ID`=:id";
@@ -46,32 +33,29 @@
             }
             $statement->closeCursor();
             $cnn = null;
-          } catch (PDOException $e){
+        } catch (PDOException $e){
                 echo 'PDOException : '.$e->getMessage();
-          }
+        }
         }
 
-        
-        public function create_product($info){
-            $data = JSON_decode($info, true);           
-
+        public function createProduct($data){
             try {
                 $cnn = parent::Connection();
                 parent::set_names();
-                $sql = "INSERT INTO productos(categoria, subcategoria, dir_imagen, titulo, descripcion, precio) VALUES (?,?,?,?,?,?)";
+                $sql = "INSERT INTO productos(categoria, subcategoria, dir_imagen, titulo, descripcion, precio) VALUES (:category, :subcategory, :img, :title,:description, :price)";
                 $statement = $cnn->prepare($sql);
                 $reply = false;
 
-                $statement->bindParam(1, $data['category'], PDO::PARAM_STR);
-                $statement->bindParam(2, $data['subcategory'], PDO::PARAM_STR);
-                $statement->bindParam(3, $data['img'], PDO::PARAM_STR);
-                $statement->bindParam(4, $data['titulo'], PDO::PARAM_STR);
-                $statement->bindParam(5, $data['description'], PDO::PARAM_STR);
-                $statement->bindParam(6, $data['price'], PDO::PARAM_INT);
+                $statement->bindParam(":category", $data['category'], PDO::PARAM_STR);
+                $statement->bindParam(":subcategory", $data['subcategory'], PDO::PARAM_STR);
+                $statement->bindParam(":img", $data['img'], PDO::PARAM_STR);
+                $statement->bindParam(":title", $data['title'], PDO::PARAM_STR);
+                $statement->bindParam(":description", $data['description'], PDO::PARAM_STR);
+                $statement->bindParam(":price", $data['price'], PDO::PARAM_INT);
 
                 $reply = $statement->execute();
 
-                echo  json_encode($reply);
+                echo $reply;
 
                 $statement->closeCursor();
                 $cnn = null;
@@ -80,9 +64,7 @@
             }
         }
 
-        public function modify_product($info){
-            $data = JSON_decode($info, true);           
-
+        public function modifyProduct($data){         
             try {
                 $cnn = parent::Connection();
                 parent::set_names();
