@@ -1,7 +1,7 @@
 <?php
     class Producto extends Conectar{
 
-        public function get_product(){
+        public function getProducts(){
             try {
                 $cnn = parent::Connection();
                 parent::set_names();

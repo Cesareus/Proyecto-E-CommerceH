@@ -5,8 +5,8 @@
 
     switch($_GET["op"]){
 
-        case "listar":
-            $datos = $producto->get_product();                                 
+        case "getProducts":
+            $datos = $producto->getProducts();                                 
             echo json_encode($datos);
             break;
 

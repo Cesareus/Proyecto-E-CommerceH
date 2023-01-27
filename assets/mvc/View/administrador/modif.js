@@ -1,34 +1,34 @@
-import { productosServices } from "../servicesJS/services.js";
+import { productosServices } from '../servicesJS/services.js'
 
-const modificar = ( id, categoria, subcategoria, dir_imagen, titulo, descripcion, precio) => {
-  let data = JSON.stringify({
-    id: id,
-    categoria: categoria,
-    subcategoria: subcategoria,
-    dir_imagen: dir_imagen,
-    titulo: titulo,
-    descripcion: descripcion,
-    precio: precio,
-  });
+const modificar = (id, categoria, subcategoria, dirImagen, titulo, descripcion, precio) => {
+  const data = JSON.stringify({
+    id,
+    categoria,
+    subcategoria,
+    dirImagen,
+    titulo,
+    descripcion,
+    precio
+  })
 
   productosServices
-    .ajax("./assets/php/controllersproductos/modificar.php", { data: data })
+    .ajax('./assets/php/controllersproductos/modificar.php', { data })
     .done(function (info) {
-        console.log(info);
+      console.log(info)
       if (info) {
-        console.log("Datos modificados");
+        console.log('Datos modificados')
       } else {
-        console.log("No se han podido modificar los datos");
+        console.log('No se han podido modificar los datos')
       }
-    });
-};
+    })
+}
 
 modificar(
   32,
-  "computadoras",
-  "Intel",
-  "../img/main/destacados/image 10.png",
-  "AMD-K6",
-  "Microprocesador con alta funcionalidad",
+  'computadoras',
+  'Intel',
+  '../img/main/destacados/image 10.png',
+  'AMD-K6',
+  'Microprocesador con alta funcionalidad',
   12345
-);
+)

@@ -11,12 +11,12 @@
 
         public function checkAdminSession(){
             
-            if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === 1) {
+            if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === 1 ) {
                 // La sesión tiene los permisos necesarios
-                return true;
+                echo json_encode(['status' => 200, 'message' => 'Permisos válidos']);
               } else {
                 // La sesión no tiene los permisos necesarios
-               return false;
+                echo json_encode(['status' => 403, 'message' => 'Permisos inválidos']);
               }
         }
 
@@ -53,6 +53,7 @@
 
         public function logOut(){
             try {
+                
                 session_destroy();
                 echo json_encode(array("error" => false));
             } catch (PDOException $e) {

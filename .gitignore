@@ -5,3 +5,4 @@ assets/php/conection
 prueba.html
 .vscode
 *.bak
+node_modules

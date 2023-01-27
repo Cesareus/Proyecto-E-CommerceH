@@ -1,13 +1,15 @@
-
-$(document).ready(function() {
+/* eslint-disable no-undef */
+import { URL } from './services.js'
+$(document).ready(function () {
   $.ajax({
-		url: 'https://talyx.com.ar/assets/mvc/controller/Users.php?op=checkAdminSession',
-		success: function(data) {
-			console.log(data);
-		  if (data === false || data ==="false") {
-			console.log("hola");
-			window.location=("https://talyx.com.ar")
-		  }
-		}
-	  })
-});
+    url: `${URL}/assets/mvc/controller/Users.php?op=checkAdminSession`,
+    success: function (data) {
+      console.log(JSON.parse(data))
+      data = JSON.parse(data)
+      if (data.status === 403) {
+        console.log('hola')
+        window.location = ('http://localhost/hunteando6/Proyecto-E-CommerceH/')
+      }
+    }
+  })
+})
