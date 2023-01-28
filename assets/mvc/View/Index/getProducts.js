@@ -1,18 +1,18 @@
 import { services, URL } from '../servicesJS/services.js'
 import { displayList, setupPagination } from './pagination.js'
+
 export let listProducts
 const listCategory = document.querySelector('.header__category-list')
 
 export const getProducts = async () => {
   try {
-    await services.ajax(`${URL}/assets/mvc/controller/productos.php?op=getProducts`, '').done(function (info) {
-      listProducts = JSON.parse(info)
-      return JSON.parse(info)
-    })
+    return await services.ajax(`${URL}/assets/mvc/controller/productos.php?op=getProducts`, '')
+      .then(info => JSON.parse(info))
   } catch (e) {
     console.log(e)
   }
 }
+
 const addCategory = (category, subCategories) => {
   const li = document.createElement('li')
   li.classList.add('header__category-li')
@@ -43,11 +43,7 @@ const addSubcategory = (subCategory, li) => {
   }
 }
 
-const render = async () => {
-  await getProducts()
-  displayList(listProducts)
-  setupPagination(listProducts)
-
+const createCategoryList = (listProducts) => {
   const listProductsFiltred = listProducts.reduce(function (result, obj) {
     if (obj.subcategoria === '') return result
     if (!result[obj.categoria]) {
@@ -63,6 +59,13 @@ const render = async () => {
     const subCategories = Object.values(listProductsFiltred[category])
     addCategory(category, subCategories)
   })
+}
+
+const render = async () => {
+  const products = await getProducts()
+  displayList(products)
+  setupPagination(products)
+  createCategoryList(products)
 }
 
 render()
