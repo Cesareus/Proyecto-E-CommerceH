@@ -12,8 +12,7 @@
 		<link rel="stylesheet" href="./assets/css/index/index.css" />
 		<link rel="stylesheet" href="./assets/css/index/indexHeader.css" />
 		<link rel="stylesheet" href="./assets/css/index/indexFooter.css" />
-		<link rel="stylesheet" href="./assets/css/modals/modalLogin.css">
-		<link rel="stylesheet" href="./assets/css/modals/modalRegister.css">
+		<link rel="stylesheet" href="./assets/css/modals/modalUsers.css">
 		
 		<!-- Fuente del Proyecto Poppins -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -207,59 +206,59 @@
 			</section>
 		</main>
 
-		<section id="modalLogin" class="modalLogin">
-			<div id="modalLogin__container" class="modalLogin__container">
-				<div id="modalLogin__base" class="modalLogin__base">
-					<div class="modalLogin__empty"></div>
-					<div class="modalLogin__register">
-						<span id="modalLogin__close" class="modalLogin__close">x</span>
-						<p class="modalLogin__question">¿Aún no tienes una cuenta?</p>
-						<p class="modalLogin__phrase">Registrate para que puedas iniciar sesión</p>
-						<button id="modalLogin__newAccount" class="modalLogin__newAccount">
+		<section id="modalLogin" class="modal">
+			<div id="" class="modal__container">
+				<div class="modal__base">
+					<div class="modal__empty"></div>
+					<div class="modal__register">
+						<span id="" class="modal__close">x</span>
+						<p class="modal__question">¿Aún no tienes una cuenta?</p>
+						<p class="modal__phrase">Registrate para que puedas iniciar sesión</p>
+						<button id="modalNewAccount" class="modal__newAccount">
 							Registrarse
 						</button>
 					</div>
-					<div class="modalLogin__principal">
-						<h5 class="modalLogin__title">Iniciar Sesión</h5>
-						<form class="modalLogin__form">
-							<input class="modalLogin__input" type="email" placeholder="Correo Electronico" />
-							<input class="modalLogin__input" type="password" placeholder="Contraseña" />
+					<div class="modal__principal">
+						<h5 class="modal__title">Iniciar Sesión</h5>
+						<form class="modal__form">
+							<input class="modal__input" type="email" placeholder="Correo Electronico" />
+							<input class="modal__input" type="password" placeholder="Contraseña" />
 						</form>
-						<div class="modalLogin__footer">
-							<button class="modalLogin__access">Entrar</button>
-							<img class="modalLogin__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx"/>
+						<div class="modal__footer">
+							<button id="modalAccess" class="modal__access">Entrar</button>
+							<img class="modal__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx"/>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section id="modalRegister" class="modalRegister">
-			<div id="modalRegister__container" class="modalRegister__container">
-				<div id="modalRegister__base" class="modalRegister__base">
-					<div class="modalRegister__empty"></div>
-					<div class="modalRegister__login">
-						<span id="modalRegister__close" class="modalRegister__close">x</span>
-						<p class="modalRegister__question">¿Ya tienes una cuenta?</p>
-						<p class="modalRegister__phrase">Iniciar sesión para entrar en la página</p>
-						<button id="modalRegister__toAccount" class="modalRegister__toAccount">
+		<section id="modalRegister" class="modal">
+			<div id="" class="modal__container">
+				<div class="modal__base modal__base--reg">
+					<div class="modal__empty modal__empty--reg"></div>
+					<div class="modal__login">
+						<span id="" class="modal__close modal__close--reg">x</span>
+						<p class="modal__question">¿Ya tienes una cuenta?</p>
+						<p class="modal__phrase">Iniciar sesión para entrar en la página</p>
+						<button id="toAccount" class="modal__toAccount">
 							Iniciar Sesión
 						</button>
 					</div>
-					<div class="modalRegister__principal">
-						<h5 class="modalRegister__title">Registrarse</h5>
-						<form class="modalRegister__form">
-							<input class="modalRegister__input" type="text" placeholder="Nombre" />
-							<input class="modalRegister__input" type="text" placeholder="Apellido" />
+					<div class="modal__principal modal__principal--reg">
+						<h5 class="modal__title modal__title--reg">Registrarse</h5>
+						<form class="modal__form modal__form--reg">
+							<input class="modal__input" type="text" placeholder="Nombre" />
+							<input class="modal__input" type="text" placeholder="Apellido" />
 							<input
-								class="modalRegister__input"
+								class="modal__input"
 								type="email"
 								placeholder="Correo Electronico"
 							/>
-							<input class="modalRegister__input" type="password" placeholder="Contraseña" />
+							<input class="modal__input" type="password" placeholder="Contraseña" />
 						</form>
-						<div class="modalRegister__footer">
-							<button class="modalRegister__access">Crear</button>
-							<img class="modalRegister__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx"/>
+						<div class="modal__footer modal__footer--reg">
+							<button id="modalCreate" class="modal__access">Crear</button>
+							<img class="modal__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx"/>
 
 						</div>
 					</div>
