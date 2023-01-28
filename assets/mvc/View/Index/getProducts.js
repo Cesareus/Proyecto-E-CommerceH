@@ -63,6 +63,7 @@ const createCategoryList = (listProducts) => {
 
 const render = async () => {
   const products = await getProducts()
+  listProducts = products
   displayList(products)
   setupPagination(products)
   createCategoryList(products)

@@ -3,7 +3,6 @@ import { services, URL } from '../servicesJS/services.js'
 
 const formLogin = document.getElementById('modalLogin__form')
 const logOut = document.getElementById('cerrarsesion')
-const userName = document.getElementById('welcome__username')
 
 formLogin.addEventListener('submit', (e) => {
   e.preventDefault()
@@ -17,17 +16,7 @@ formLogin.addEventListener('submit', (e) => {
     }
   })
 })
-$(document).ready(function () {
-  $.ajax({
-    url: `${URL}/assets/mvc/controller/Users.php?op=getSession`,
-    success: function (data) {
-      data = JSON.parse(data)
-      if (data.user_name) {
-        userName.innerHTML = `Bienvenido/a ${data.user_name}`
-      }
-    }
-  })
-})
+
 logOut.addEventListener('click', () => {
   services.ajax(`${URL}/assets/mvc/controller/Users.php?op=logout`, null).done(res => {
     // TODO: añadir funcionalidad de la respuesta
