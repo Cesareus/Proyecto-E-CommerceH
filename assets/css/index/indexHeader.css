@@ -1,5 +1,5 @@
 .header {
-	font-size: clamp(0.8rem, 2vw, 1.1rem);
+	font-size: clamp(0.8rem, 1.8vw, 1.2rem);
 	height: 13.5rem;
 	display: grid;
 	grid-template-columns: 1fr 3.5fr 2fr;
@@ -72,10 +72,16 @@
 	background-position: right 1vw center;
 	background-size: auto 60%;
 	border: 1px solid #ffffff;
-	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: var(--color_shadow_input);
 	padding-left: 2em;
 	border-radius: 6px;
 }
+.header__search-input::-webkit-input-placeholder {
+	color: var(--color_input_lettle);
+	font-size: clamp(0.8rem, 1.8vw, 1rem);
+	padding-left: 0;
+}
+
 .header__user {
 	grid-area: user;
 	padding: 0 1.2em 0 0.5em;
@@ -153,8 +159,17 @@
 	text-align: center;
 	align-items: center;
 }
-.header__list > li:hover {
+.header__list-li {
+	height: 90%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background-color 0.5s;
+}
+
+.header__list-li:hover {
 	background-color: var(--color-muted);
+	border-radius: 5px;
 }
 
 .header__subCategory-list {
@@ -170,18 +185,6 @@
 	background: var(--color-ligth);
 }
 
-.header__list-li {
-	height: 90%;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	transition: background-color 0.5s;
-}
-
-.header__list-li:hover {
-	background-color: var(--color-muted);
-	border-radius: 5px;
-}
 
 /* MEDIAS QUERYS */
 
