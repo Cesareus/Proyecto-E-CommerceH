@@ -104,7 +104,7 @@
 	position: relative;
 }
 .header__category-down {
-	color: var(--color-red);
+	color: var(--color-primary);
 	padding: 0.5vw;
 }
 .header__category-list {

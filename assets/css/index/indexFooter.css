@@ -62,7 +62,7 @@
 	font-size: clamp(0.8rem, 1.8vw, 1rem);
 	width: 30%;
 	height: 2rem;
-	background: var(--color-red);
+	background: var(--color-primary);
 	border: none;
 	box-shadow: var(--color_shadow_input);
     border-top-right-radius: 6px;
