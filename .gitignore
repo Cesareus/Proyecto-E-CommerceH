@@ -4,3 +4,5 @@ assets/php/conection/Conexion.php
 assets/php/conection
 prueba.html
 .vscode
+node_modules
+*.bak
