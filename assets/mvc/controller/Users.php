@@ -44,7 +44,19 @@
                 $datos = $user->checkAdminSession();                                 
                 echo $datos;
                 break;
+
+        case "recoveryPasswordSendMail":
+                $info['email'] = $_POST['email'];
+                $datos = $user->recoveryPasswordSendMail($info);
+                echo $datos;
+                break;
+
+        case "resetPassword":
+            $info['email'] = $_POST['email'];
+            $info['pass'] = $_POST['pass'];
+            $datos = $user->resetPassword($info);
+            break;
+            
         }
-        
 
 ?>

@@ -1,9 +1,22 @@
 /* eslint-disable no-undef */
-import { services, URL } from '../servicesJS/services.js'
+// import { services, URL } from '../servicesJS/services.js'
 // falta intregarlos
-const productsForm = document.getElementById('')
-
-productsForm.addEventListener('submit', (e) => {
+// const modifyProductsForm = document.getElementById('')
+// const cards = document.querySelectorAll('modificar')
+document.addEventListener('DOMContentLoaded', function () {
+  setTimeout(() => {
+    const buttons = document.querySelectorAll('.modify-button')
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const card = button.parentElement
+        const productId = card.querySelector('input[type="hidden"]').value
+        console.log(productId)
+      })
+    })
+  }, 51)
+})
+/*
+modifyProductsForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const data = new FormData(productsForm)
   try {
@@ -15,4 +28,4 @@ productsForm.addEventListener('submit', (e) => {
   } catch (e) {
     console.log(e)
   }
-})
+}) */
