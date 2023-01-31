@@ -38,8 +38,14 @@
 <body class="adminBody">
 	<header class="header">
 		<nav class="header__category">
-			<i class="fa-solid fa-bars header__category-down"></i>
-			<ul class="header__category-list"></ul>
+			<div class="header__category--desktop">
+				<i class="fa-solid fa-bars header__category-down-desktop"></i>
+				<ul class="header__category-list"></ul>
+			</div>
+			<div class="header__category--mobile">
+				<a class="header__category-menu header__text" href="#">CATEGORIAS</a>
+				<i class="fa fa-angle-down header__category-down-mobile"></i>
+			</div>
 		</nav>
 		<!--header__category-->
 
@@ -79,7 +85,6 @@
 				</div>
 			</div>
 		</section>
-
 		<!-- MODAL PRODUCTS-->
 
 		<nav class="header__user">
@@ -94,6 +99,7 @@
 			<button class="header__btnBack--goBack">
 				Volver
 			</button>
+			<a class="header__btnBack--text header__text" href="#">VOLVER</a>
 		</section>
 		<!--header__btnBack-->
 

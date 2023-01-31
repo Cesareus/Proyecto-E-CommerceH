@@ -102,7 +102,7 @@
 	border: 1px solid #dedbdb;
 	border-radius: 50%;
 	position: relative;
-	height: 33.3%;
+	height: 40.3%;
 	width: 87%;
 }
 .btbox__Slider:hover {
@@ -133,4 +133,43 @@
 	font-size: 120%;
 	height: 100%;
     padding: 0 10px;
+}
+
+@media screen and (max-width: 950px) {
+	.mainFeatured{
+		padding-top: 20px;
+		height: 100%;
+	}
+	.mainFeatured__Container {
+		margin-bottom: 20px;
+		padding-bottom: 0px;
+	}
+	.mainFeatured__Container--Card{
+		min-width: 40%;
+		min-height: 40%;
+		height: 45%;
+	}
+	.bt__Slider{
+		width: 7em;
+	}
+	.btbox__Slider{
+		height: 35%;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.mainFeatured__Container {
+		margin: 20px 0px;
+		padding: 0;
+	}
+	.mainFeatured__Container--Card{
+		min-width: 75%;
+		min-height: 70%;
+		height: 95%;
+		margin-bottom: 10px;
+	}
+	.bt__Slider{
+		width: 4.5em;
+	}
 }
