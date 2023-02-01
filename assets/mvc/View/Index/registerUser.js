@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import { services, URL } from '../servicesJS/services.js'
 
-const registerForm = document.getElementById('modalRegister__form')
+const registerForm = document.getElementById('modal-Reg')
 
 registerForm.addEventListener('submit', (e) => {
   e.preventDefault()

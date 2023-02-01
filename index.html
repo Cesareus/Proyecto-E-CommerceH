@@ -220,13 +220,13 @@
 					</div>
 					<div class="modal__principal">
 						<h5 class="modal__title">Iniciar Sesión</h5>
-						<form class="modal__form">
-							<input class="modal__input" type="email" placeholder="Correo Electronico" />
-							<input class="modal__input" type="password" placeholder="Contraseña" />
+						<form id="modal-Login" class="modal__form">
+							<input class="modal__input" name="email" type="email" placeholder="Correo Electronico" />
+							<input class="modal__input" name="pass" type="password" placeholder="Contraseña" />
 							<a class="modal__forget" href="./forgetPassword.html">¿Olvidaste tu Contraseña?</a>
 							</form>
 						<div class="modal__footer">
-							<button id="modalAccess" class="modal__access">Entrar</button>
+							<button form="modal-Login" type="submit" id="modalAccess" class="modal__access">Entrar</button>
 							<img class="modal__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx"/>
 						</div>
 					</div>
@@ -247,18 +247,19 @@
 					</div>
 					<div class="modal__principal modal__principal--reg">
 						<h5 class="modal__title modal__title--reg">Registrarse</h5>
-						<form class="modal__form modal__form--reg">
-							<input class="modal__input" type="text" placeholder="Nombre" />
-							<input class="modal__input" type="text" placeholder="Apellido" />
+						<form id="modal-Reg" class="modal__form modal__form--reg">
+							<input class="modal__input" name="name" type="text" placeholder="Nombre" />
+							<input class="modal__input" name="lastname" type="text" placeholder="Apellido" />
 							<input
+								name="email"
 								class="modal__input"
 								type="email"
 								placeholder="Correo Electronico"
 							/>
-							<input class="modal__input" type="password" placeholder="Contraseña" />
+							<input name="pass" class="modal__input" type="password" placeholder="Contraseña" />
 						</form>
 						<div class="modal__footer modal__footer--reg">
-							<button id="modalCreate" class="modal__access">Crear</button>
+							<button type="submit" form="modal-Reg" id="modalCreate" class="modal__access">Crear</button>
 							<img class="modal__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx"/>
 
 						</div>
