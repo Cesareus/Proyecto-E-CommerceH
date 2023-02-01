@@ -15,28 +15,9 @@
 	'products'
 	'buttons';
 }
-/*
 .mainFeatured{
-	height: 53.2%;
-	width: 100%;
 	padding: 0 3%;
-	margin-top: 10vh;
-}
-.mainFeatured__Container{
-	align-items: center;
-    justify-content: center;  
-	margin: 0 auto;
-	overflow-x: hidden;
-	overflow-y: hidden; 
-    display:flex;
-    flex-wrap: wrap;
-	height: 100%;
-	gap: 3%
-}*/
-.mainFeatured{
-	/*margin-top: 19.75em;*/
-	padding: 0 3%;
-	height: 53.2%;/*21.875em;*/
+	height: 75%;/*21.875em; Lo cambio de 53.2 a 60*/
 	width: 100%;
 }
 .mainFeatured__Container{
@@ -48,7 +29,8 @@
     display:flex;
     flex-wrap: wrap;
 	height: 100%;
-	gap: 3%
+	gap: 3%;
+	padding: 20px 0;
 }
 
 .mainFeatured__Container--Card {
@@ -60,6 +42,7 @@
 	text-align: center;
     height: 98%; /*343px*/
     width: 16.45%; /*221.5px*/
+	margin-bottom: 20px;
 }
 .mainFeatured__Container--Card:hover {
 	box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
@@ -119,7 +102,7 @@
 	border: 1px solid #dedbdb;
 	border-radius: 50%;
 	position: relative;
-	height: 33.3%;
+	height: 40.3%;
 	width: 87%;
 }
 .btbox__Slider:hover {
@@ -150,4 +133,43 @@
 	font-size: 120%;
 	height: 100%;
     padding: 0 10px;
+}
+
+@media screen and (max-width: 950px) {
+	.mainFeatured{
+		padding-top: 20px;
+		height: 100%;
+	}
+	.mainFeatured__Container {
+		margin-bottom: 20px;
+		padding-bottom: 0px;
+	}
+	.mainFeatured__Container--Card{
+		min-width: 40%;
+		min-height: 40%;
+		height: 45%;
+	}
+	.bt__Slider{
+		width: 7em;
+	}
+	.btbox__Slider{
+		height: 35%;
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.mainFeatured__Container {
+		margin: 20px 0px;
+		padding: 0;
+	}
+	.mainFeatured__Container--Card{
+		min-width: 75%;
+		min-height: 70%;
+		height: 95%;
+		margin-bottom: 10px;
+	}
+	.bt__Slider{
+		width: 4.5em;
+	}
 }
