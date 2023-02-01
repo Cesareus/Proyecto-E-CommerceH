@@ -19,8 +19,15 @@
 
 	<!-- KIT Fontawesome -->
 	<script src="https://kit.fontawesome.com/8e46837a7d.js" crossorigin="anonymous"></script>
+	
 	<!--MODAL PRODUCTS  -->
 	<script type="module" src="./assets/js/modalsProducts.js"></script>
+
+	<!-- Despliegue Lista Header -->
+	<script type="module" src="./assets/js/indexHeader.js"></script>
+
+	<!-- Manejo de modales de usuario -->
+	<script type="module" src="./assets/js/modalsUsers.js"></script>
 
 	<!-- jQuery-->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -37,19 +44,14 @@
 		</script>
 	<header class="header">
 		<nav class="header__category">
-			<i class="fa-solid fa-bars header__category-down"></i>
-			<ul class="header__category-list"></ul>
-			<!--
+			<div class="header__category--desktop">
+				<i class="fa-solid fa-bars header__category-down-desktop"></i>
+				<ul class="header__category-list"></ul>
+			</div>
+			<div class="header__category--mobile">
 				<a class="header__category-menu header__text" href="#">CATEGORIAS</a>
-				<i class="fa fa-angle-down header__category-down"></i>
-				<ul class="header__category-list">
-					<li class="header__category-li">
-						<a class="header__text" href="#">Componentes de PC</a>
-					</li>
-					<li class="header__category-li"><a class="header__text" href="#">Notebook</a></li>
-					<li class="header__category-li"><a class="header__text" href="#">Perifericos</a></li>
-				</ul>
-				-->
+				<i class="fa fa-angle-down header__category-down-mobile"></i>
+			</div>
 		</nav>
 		<!--header__category-->
 
@@ -89,11 +91,10 @@
 				</div>
 			</div>
 		</section>
-
 		<!-- MODAL PRODUCTS-->
 
 		<nav class="header__user">
-			<a class="header__user-welcome header__links" href="#">
+			<a id="openLogin" class="header__user-welcome header__links" href="#">
 				<i class="fa-solid fa-circle-user header__icons"></i>
 				<p id="welcome__username" class="header__p">Bienvenido/a Usuario</p>
 			</a>
@@ -104,6 +105,7 @@
 			<button class="header__btnBack--goBack">
 				Volver
 			</button>
+			<a class="header__btnBack--text header__text" href="#">VOLVER</a>
 		</section>
 		<!--header__btnBack-->
 
