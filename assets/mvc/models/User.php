@@ -11,12 +11,12 @@
 
         public function checkAdminSession(){
             
-            if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === 1 ) {
+            if (isset($_SESSION['logged_in']) && ($_SESSION['logged_in'] === "1" || $_SESSION['logged_in'] === 1)) {
                 // La sesión tiene los permisos necesarios
                 echo json_encode(['status' => 200, 'message' => 'Permisos válidos']);
               } else {
                 // La sesión no tiene los permisos necesarios
-                echo json_encode(['status' => 403, 'message' => 'Permisos inválidos']);
+                echo json_encode(['status' => 403,"permisos"=> $_SESSION['logged_in'] , 'message' => 'Permisos inválidos']);
               }
         }
 
