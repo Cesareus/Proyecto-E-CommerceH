@@ -153,9 +153,15 @@
 }
 
 ::placeholder {
-	color: rgba(46, 54, 123, 1);
+	color: var(--color_input_lettle);
     padding: 0 1rem;
     font-weight: bold;
+}
+
+.modal__forget{
+	color: var(--color_input_lettle);
+	font-size: 0.9rem;
+	font-style: italic;
 }
 
 .modal__footer {
