@@ -1,14 +1,10 @@
-const abrirLogin = document.getElementById('openLogin')
-const cerrarLogin = document.getElementById('modalLogin__close')
-const modalLogin = document.getElementById('modalLogin')
-const containerLogin = document.getElementById('modalLogin__container')
-
-const abrirRegister = document.getElementById('modalLogin__newAccount')
-const cerrarRegister = document.getElementById('modalRegister__close')
-const modalRegister = document.getElementById('modalRegister')
-const containerRegister = document.getElementById('modalRegister__container')
-
-const cuenta = document.getElementById('modalRegister__toAccount')
+const abrir = document.getElementById('openLogin');
+const modalLogin = document.getElementById('modalLogin');
+const modalRegister = document.getElementById('modalRegister');
+const newAccount = document.getElementById('modalNewAccount');
+const toAccount = document.getElementById('toAccount');
+const container = document.getElementsByClassName('modal__container');
+const cerrar = document.getElementsByClassName('modal__close');
 
 function showModal (modal) {
   modal.style.display = 'block'
@@ -20,26 +16,30 @@ function hideModal (modal) {
   document.body.style.overflow = 'auto'
 }
 
-abrirLogin.addEventListener('click', () => showModal(modalLogin))
-cerrarLogin.addEventListener('click', () => hideModal(modalLogin))
-window.addEventListener('click', (e) => {
-  if (e.target === containerLogin) {
-    hideModal(modalLogin)
-  }
-})
-
-abrirRegister.addEventListener('click', () => {
-  hideModal(modalLogin)
-  showModal(modalRegister)
-})
-cerrarRegister.addEventListener('click', () => hideModal(modalRegister))
-window.addEventListener('click', (e) => {
-  if (e.target === containerRegister) {
-    hideModal(modalRegister)
-  }
-})
-
-cuenta.addEventListener('click', () => {
+abrir.addEventListener('click', () => {
   hideModal(modalRegister)
-  showModal(modalLogin)
+	showModal(modalLogin)
+})
+
+toAccount.addEventListener('click', () => {
+  hideModal(modalRegister)
+	showModal(modalLogin)
+})
+newAccount.addEventListener('click', () => {
+  hideModal(modalLogin)
+	showModal(modalRegister)
+})
+for (let i = 0; i < cerrar.length; i++) {
+  cerrar[i].addEventListener('click', () => {
+    hideModal(modalLogin)
+		hideModal(modalRegister)
+	})
+}
+window.addEventListener('click', (e) => {
+  for (let i = 0; i < container.length; i++) {
+    if (e.target === container[i]) {
+      hideModal(modalLogin)
+			hideModal(modalRegister)
+		}
+  }
 })

@@ -30,22 +30,45 @@
 .footer__copyright-title {
 	color: var(--color-primary);
 	font-size: 0.8em;
+	width: 100%;
 }
 
 .footer__subscribe {
 	grid-area: subscribe;
-	padding: 3vw 0;
+	padding: 2vh 0;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	height: 4.5rem;
 }
 .footer__subscribe-input {
-	box-sizing: border-box;
-	width: 100%;
-	height: 2.5em;
-	background: #fdf9f9;
-	border: 1px solid #ffffff;
-	box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-	border-radius: 6px;
+	width: 70%;
+	height: 2rem;
+	background: var(--color_fondo_claro);
+	border: 1px solid var(--color-white);
+	box-shadow: var(--color_shadow_input);
+	border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
 	padding-left: 1.5rem;
-	margin-top: 0.3em;
+}
+.footer__subscribe-input::-webkit-input-placeholder {
+	color: var(--color_input_lettle);
+	font-size: clamp(0.8rem, 1.8vw, 1rem);
+	padding-left: 0;
+}
+
+.footer__subscribe-button {
+	display: inline-block;
+	font-size: clamp(0.8rem, 1.8vw, 1rem);
+	width: 30%;
+	height: 2rem;
+	background: var(--color-red);
+	border: none;
+	box-shadow: var(--color_shadow_input);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+	text-align: center;
+	color: var(--color-white);
 }
 
 .footer__info {
@@ -67,12 +90,15 @@
 	padding: 1vh;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 820px) {
 	.footer {
 		line-height: 3vw;
 	}
+	.footer__subscribe-input {
+		padding-left: 0.5rem;
+	}
 }
-@media screen and (max-width: 475px) {
+@media screen and (max-width: 480px) {
 	.footer {
 		line-height: 4vw;
 		grid-template-columns: 50vw 50vw;
