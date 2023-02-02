@@ -185,6 +185,14 @@
 	width: 6rem;
 }
 
+.modal__access:active,
+.modal__toAccount:active,
+.modal__newAccount:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+	background: var(--color-primary);
+}
+
 @media screen and (max-width: 735px) {
 	.modal__base {
 		width: 22rem;

@@ -134,6 +134,11 @@
 	font-size: 100%; /*20px;*/
 	line-height: 1.875rem; /*30px;*/
 }
+.header__btnAdd--addProduct:active,
+.header__btnBack--goBack:active{
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+}
 
 /*OTHERS*/
 .header__links {
