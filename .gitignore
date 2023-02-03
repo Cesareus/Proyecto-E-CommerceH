@@ -3,4 +3,4 @@ prueba.html
 .vscode
 *.bak
 node_modules
-assets/mvc/config
+assets/mvc/config/Conexion.php
