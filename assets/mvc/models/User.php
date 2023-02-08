@@ -103,47 +103,85 @@
             if($statement->rowCount() > 0){
                 ini_set( 'display_errors', 1 );
                 error_reporting( E_ALL );
-                $from = "no-reply@talyx.com.ar";
-                $to = $data['email'];
-                $name = $data['name'];
-                $subject = "Recuperacion de contraseña de Talyx";
-                $link= "";
-                $message = "
-                Hola $name,
-                
-                desde Talyx recibimos una peticion de reestablecer tu contraseña!
-                
-                Si tu no lo solicitaste por favor ignora este mail.
-                
-                Si fuiste tu, por favor haz click en este enlace: $link";
-                $headers = "From:" . $from;
-                mail($to,$subject,$message, $headers);
-                echo $to;
 
+                $to  =$data["email"];
+                $email = $to;
+                // título
+                $title = 'Restablecer contraseña - Talyx';
+                $code= rand(1000,9999);
+                $bytes = random_bytes(5);
+                $token =bin2hex($bytes);
+
+                // mensaje
+                $mensaje = '
+                <html>
+                <head>
+                <title>Restablecer contraseña</title>
+                </head>
+                <body>
+                <header  style="background-color:#2e367b; padding: 10px; display:flex; justify-content:center;">
+                    <img src="https://talyx.com.ar/assets/img/logo/logo_talyx.svg" />
+                    </header>
+                    <div style="text-align:center; background-color:#ccc">
+                        <p>Restablecer contraseña</p>
+                        <h3>'.$code.'</h3>
+                        <p> <a 
+                            href="http://localhost/hunteando6/Proyecto-E-CommerceH/forgetPassword.html?email='.$email.'&token='.$token.'"> 
+                            to restablecer da click aqui </a> </p>
+                        <p> <small>Si usted no envio este codigo favor de omitir</small> </p>
+                    </div>
+                </body>
+                </html>
+                ';
+
+                // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+                $headers =  'MIME-Version: 1.0' . "\r\n"; 
+                $headers .= 'From: Talyx <Papercut@user.com>' . "\r\n";
+                $headers .= 'Content-type: text/html; charset=\"UTF-8\"\r\n' . "\r\n"; 
+                // Enviarlo
+                $enviado =false;
+                if(mail($to, $title, $mensaje, $headers)){
+                    $enviado=true;
+                }
+                if($enviado){
+
+                    $sql = "INSERT INTO passwords(email, token, code) 
+                    values('$email','$token','$code')";
+                    if($statement=$cnn->prepare($sql)){
+                        $statement->execute();
+                    }
             }else{
                 echo false;
             }
 
             }
-    }
+    }}
     public function resetPassword($data){         
         try {
             $cnn = parent::Connection();
             parent::set_names();
-            $sql = "UPDATE users SET pass=:pass WHERE email=:email";
-            $statement = $cnn->prepare($sql);
-            $statement->bindParam(":email", $data['email'], PDO::PARAM_INT);
-            $statement->bindParam(":pass", $data['pass'], PDO::PARAM_STR);
-            
-            if ($statement->execute() && $statement->rowCount() > 0) {
-                echo true;        
-            } else {
-                echo false;        
-            }
-        
+            $email = $data['email'];
+            $pass = $data['pass'];
+            $token = $data['token'];
+            $code = $data['code'];
+            $sql = "SELECT * FROM passwords WHERE email='$email' and code='$code' and token='$token'";
+            if($statement=$cnn->prepare($sql)){
+
+                $statement->execute();
+
+            if($statement->rowCount() > 0){
+            $sqlpass = "UPDATE users SET pass='$pass' WHERE email='$email'";
+            $passReset = $cnn->prepare($sqlpass);
+                
+                if ($passReset->execute()) {
+                    echo true;        
+                } else {
+                    echo false;        
+                }
+        }
             $statement->closeCursor();
             $cnn = null;
-        } catch (PDOException $e) {
+        }} catch (PDOException $e) {
             echo 'PDOException : ' . $e->getMessage();
         }
     }

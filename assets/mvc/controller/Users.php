@@ -54,7 +54,10 @@
         case "resetPassword":
             $info['email'] = $_POST['email'];
             $info['pass'] = $_POST['pass'];
+            $info['token'] = $_POST['token'];
+            $info['code'] = $_POST['code'];
             $datos = $user->resetPassword($info);
+            echo $datos;
             break;
             
         }
