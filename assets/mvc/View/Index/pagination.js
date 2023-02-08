@@ -1,24 +1,32 @@
 import {listProducts} from './indexLeerProductos.js';
 
-const listElement = document.querySelector("[mainDestacadosP]")
-const paginationElement  =document.getElementById("pages")
-const prevPage = document.querySelector("#bt__SliderLeft-Featured")
-const nextPage = document.querySelector("#bt__SliderRight-Featured")
+const listElement = document.querySelector('[mainDestacadosP]');
+const paginationElement = document.getElementById('pages');
+const prevPage = document.querySelector('#bt__SliderLeft-Featured');
+const nextPage = document.querySelector('#bt__SliderRight-Featured');
 
 let currentPage = 1;
 let rows = 8;
-let pageCount = 0
+let pageCount = 0;
 
 const className = {
 	classCard: 'mainFeatured__Container--Card',
 	classImg: 'mainFeatured__Container--cardImg',
 	classDiv: 'mainFeatured__Container--CardDescriptionBox',
 	classDescrip: 'mainFeatured__Container--CardDescription',
-	ClassPrice: 'mainFeatured__Container--CardPrice',
+	classPrice: 'mainFeatured__Container--CardPrice',
+	classIcons: 'mainFeatured__Container--CardIcons',
+	classDelete: 'mainFeatured__Container--CardDelete',
+	classEdit: 'mainFeatured__Container--CardEdit',
 };
 
-export function displayList (items=listProducts, wrapper=listElement, rowsPerPage=rows, page=currentPage) {
-	wrapper.innerHTML = "";
+export function displayList(
+	items = listProducts,
+	wrapper = listElement,
+	rowsPerPage = rows,
+	page = currentPage
+) {
+	wrapper.innerHTML = '';
 	page--;
 	let start = rowsPerPage * page;
 	let end = start + rowsPerPage;
@@ -36,8 +44,8 @@ export function displayList (items=listProducts, wrapper=listElement, rowsPerPag
 	}
 }
 
-export function setupPagination (items, wrapper=paginationElement, rowsPerPage=rows) {
-	wrapper.innerHTML = "";
+export function setupPagination(items, wrapper = paginationElement, rowsPerPage = rows) {
+	wrapper.innerHTML = '';
 
 	pageCount = Math.ceil(items.length / rowsPerPage);
 	for (let i = 1; i < pageCount + 1; i++) {
@@ -46,20 +54,21 @@ export function setupPagination (items, wrapper=paginationElement, rowsPerPage=r
 	}
 }
 
-function PaginationButton (page, items) {
-	let button = document.createElement('button')
-    button.classList.add("mainFeatured__Container--pagenumbers--button");
-	button.setAttribute("id",page)
-    button.innerText = page;
+function PaginationButton(page, items) {
+	let button = document.createElement('button');
+	button.classList.add('mainFeatured__Container--pagenumbers--button');
+	button.setAttribute('id', page);
+	button.innerText = page;
 
 	if (currentPage === page) button.classList.add('active');
-    
-    
+
 	button.addEventListener('click', function () {
 		currentPage = page;
 		displayList(items, listElement, rows, currentPage);
-        
-		let current_btn = document.querySelector('.mainFeatured__Container--pagenumbers button.active');
+
+		let current_btn = document.querySelector(
+			'.mainFeatured__Container--pagenumbers button.active'
+		);
 		current_btn.classList.remove('active');
 		button.classList.add('active');
 	});
@@ -72,9 +81,15 @@ const addProduct = (title, price, imgPath, className) => {
 	const content = ` 
     <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
     <div class="${className.classDiv}">
-    <span class="${className.classDescrip}">${title}</span>
-    <span class="${className.ClassPrice}">${price}</span>
-    </div>
+    	<span class="${className.classDescrip}">${title}</span>
+    	<span class="${className.classPrice}">
+			${price}
+			<div class="${className.classIcons}">
+				<a id=""><i class="fa-solid fa-trash-can ${className.classDelete}"></i></a>
+				<a id=""><i class="fa-solid fa-pen ${className.classEdit}"></i></a>
+			</div>
+		</span>
+	</div>
     `;
 
 	card.innerHTML = content;
@@ -82,22 +97,22 @@ const addProduct = (title, price, imgPath, className) => {
 	return card;
 };
 
-prevPage.addEventListener("click", () =>{
-	if(currentPage===1) return
-	let pag =document.getElementById(currentPage)
-	pag.classList.remove("active")
-	currentPage--
-	displayList()
-	pag = document.getElementById(currentPage)
+prevPage.addEventListener('click', () => {
+	if (currentPage === 1) return;
+	let pag = document.getElementById(currentPage);
+	pag.classList.remove('active');
+	currentPage--;
+	displayList();
+	pag = document.getElementById(currentPage);
 	pag.classList.add('active');
-})
+});
 
-nextPage.addEventListener("click", ()=>{
-	if(currentPage === pageCount) return
-	let pag =document.getElementById(currentPage)
-	pag.classList.remove("active")
-	currentPage++
-	displayList()
-	pag = document.getElementById(currentPage)
+nextPage.addEventListener('click', () => {
+	if (currentPage === pageCount) return;
+	let pag = document.getElementById(currentPage);
+	pag.classList.remove('active');
+	currentPage++;
+	displayList();
+	pag = document.getElementById(currentPage);
 	pag.classList.add('active');
-})
+});

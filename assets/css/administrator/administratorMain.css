@@ -3,7 +3,11 @@
 	grid-area: contenido;
 	width: 100%;
 	height: 100%;
-	font-size: clamp(0.875rem, 1.39vw, 1.875rem); /*minimum value, a preferred value, and a maximum allowed value.*/
+	font-size: clamp(
+		0.875rem,
+		1.39vw,
+		1.875rem
+	); /*minimum value, a preferred value, and a maximum allowed value.*/
 	background: var(--color-white);
 	color: var(--fondo-black);
 	justify-items: center;
@@ -11,23 +15,23 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-template-rows: 71.36% 28.64%;
-	grid-template-areas: 
-	'products'
-	'buttons';
+	grid-template-areas:
+		'products'
+		'buttons';
 }
-.mainFeatured{
+.mainFeatured {
 	padding: 0 3%;
-	height: 75%;/*21.875em; Lo cambio de 53.2 a 60*/
+	height: 75%; /*21.875em; Lo cambio de 53.2 a 60*/
 	width: 100%;
 }
-.mainFeatured__Container{
+.mainFeatured__Container {
 	align-items: center;
-    justify-content: center;  
+	justify-content: center;
 	margin: 0 auto;
 	overflow-x: hidden;
-	overflow-y: hidden; 
-    display:flex;
-    flex-wrap: wrap;
+	overflow-y: hidden;
+	display: flex;
+	flex-wrap: wrap;
 	height: 100%;
 	gap: 3%;
 	padding: 20px 0;
@@ -36,13 +40,14 @@
 .mainFeatured__Container--Card {
 	border: 1px solid #dedbdb;
 	border-radius: 20px;
-    box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
-    object-fit: contain;
+	object-fit: contain;
 	text-align: center;
-    height: 98%; /*343px*/
-    width: 16.45%; /*221.5px*/
+	height: 98%; /*343px*/
+	width: 16.45%; /*221.5px*/
 	margin-bottom: 20px;
+	position: relative;
 }
 .mainFeatured__Container--Card:hover {
 	box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
@@ -82,6 +87,18 @@
 	line-height: 18px; /*18px*/
 	/*height: 1.15vh; 23px*/
 }
+.mainFeatured__Container--CardIcons {
+	position: absolute;
+	width: 2.5em;
+	bottom: 12px;
+	right: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+}
+.mainFeatured__Container--CardDelete:hover,
+.mainFeatured__Container--CardEdit:hover {
+	color: var(--color-primary);
+}
 
 .buttons {
 	grid-area: buttons;
@@ -109,11 +126,11 @@
 	background-color: var(--color-primary);
 	transform: scale(1.3);
 }
-.bt__SliderRight{
-    margin-right: 1rem;
+.bt__SliderRight {
+	margin-right: 1rem;
 }
-.bt__SliderLeft{
-    margin-left: 1rem;
+.bt__SliderLeft {
+	margin-left: 1rem;
 }
 .btnimg__Slider {
 	color: #dedbdb;
@@ -127,16 +144,15 @@
 .mainFeatured__Container--pagenumbers {
 	margin: 0 2vw;
 	height: 26.47%;
-	
 }
 .mainFeatured__Container--pagenumbers--button {
 	font-size: 120%;
 	height: 100%;
-    padding: 0 10px;
+	padding: 0 10px;
 }
 
 @media screen and (max-width: 950px) {
-	.mainFeatured{
+	.mainFeatured {
 		padding-top: 20px;
 		height: 100%;
 	}
@@ -144,15 +160,15 @@
 		margin-bottom: 20px;
 		padding-bottom: 0px;
 	}
-	.mainFeatured__Container--Card{
+	.mainFeatured__Container--Card {
 		min-width: 40%;
 		min-height: 40%;
 		height: 45%;
 	}
-	.bt__Slider{
+	.bt__Slider {
 		width: 7em;
 	}
-	.btbox__Slider{
+	.btbox__Slider {
 		height: 35%;
 		width: 100%;
 	}
@@ -163,13 +179,13 @@
 		margin: 20px 0px;
 		padding: 0;
 	}
-	.mainFeatured__Container--Card{
+	.mainFeatured__Container--Card {
 		min-width: 75%;
 		min-height: 70%;
 		height: 95%;
 		margin-bottom: 10px;
 	}
-	.bt__Slider{
+	.bt__Slider {
 		width: 4.5em;
 	}
 }
