@@ -1,136 +1,262 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="./assets/img/favicon.png" type="image/png" />
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+		<link rel="stylesheet" href="./assets/css/normalize.css" />
+		<link rel="stylesheet" href="./assets/css/administrator/administrator.css" />
+		<link rel="stylesheet" href="./assets/css/administrator/administratorHeader.css" />
+		<link rel="stylesheet" href="./assets/css/administrator/administratorMain.css" />
+		<link rel="stylesheet" href="./assets/css/modals/modalUsers.css" />
+		<link rel="stylesheet" href="./assets/css/modals/modalProducts.css" />
 
-<head>
-	<meta charset="UTF-8" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="icon" href="./assets/img/favicon.png" type="image/png" />
-	<link rel="stylesheet" href="./assets/css/reset.css" />
-	<link rel="stylesheet" href="./assets/css/normalize.css" />
-	<link rel="stylesheet" href="./assets/css/administrator/administrator.css" />
-	<link rel="stylesheet" href="./assets/css/administrator/administratorHeader.css" />
-	<link rel="stylesheet" href="./assets/css/administrator/administratorMain.css" />
+		<!-- Fuente del Proyecto Poppins -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
 
-	<!-- Fuente del Proyecto Poppins -->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+		<!-- KIT Fontawesome -->
+		<script
+			src="https://kit.fontawesome.com/8e46837a7d.js"
+			crossorigin="anonymous"
+		></script>
 
-	<!-- KIT Fontawesome -->
-	<script src="https://kit.fontawesome.com/8e46837a7d.js" crossorigin="anonymous"></script>
-	
-	<!--MODAL PRODUCTS  -->
-	<script type="module" src="./assets/js/modalsProducts.js"></script>
+		<!--MODAL PRODUCTS  -->
+		<script type="module" src="./assets/js/modalsProducts.js"></script>
 
-	<!-- Despliegue Lista Header -->
-	<script type="module" src="./assets/js/indexHeader.js"></script>
+		<!--MODAL MODIFY  -->
+		<script type="module" src="./assets/js/modalsModify.js"></script>
 
-	<!-- Manejo de modales de usuario -->
-	<script type="module" src="./assets/js/modalsUsers.js"></script>
+		<!-- Despliegue Lista Header -->
+		<script type="module" src="./assets/js/indexHeader.js"></script>
 
-	<!-- jQuery-->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Manejo de modales de usuario -->
+		<script type="module" src="./assets/js/modalsUsers.js"></script>
 
-	<title>Talyx</title>
-</head>
+		<!-- jQuery-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-<body class="adminBody">
-	<header class="header">
-		<nav class="header__category">
-			<div class="header__category--desktop">
-				<i class="fa-solid fa-bars header__category-down-desktop"></i>
-				<ul class="header__category-list"></ul>
+		<title>Talyx</title>
+	</head>
+
+	<body class="adminBody">
+		<header class="header">
+			<nav class="header__category">
+				<div class="header__category--desktop">
+					<i class="fa-solid fa-bars header__category-down-desktop"></i>
+					<ul class="header__category-list"></ul>
+				</div>
+				<div class="header__category--mobile">
+					<a class="header__category-menu header__text" href="#">CATEGORIAS</a>
+					<i class="fa fa-angle-down header__category-down-mobile"></i>
+				</div>
+			</nav>
+			<!--header__category-->
+
+			<div class="header__logo">
+				<img
+					class="header__logo-img"
+					src="./assets/img/logo/logo_talyx.svg"
+					alt="Logo Talyx"
+				/>
 			</div>
-			<div class="header__category--mobile">
-				<a class="header__category-menu header__text" href="#">CATEGORIAS</a>
-				<i class="fa fa-angle-down header__category-down-mobile"></i>
-			</div>
-		</nav>
-		<!--header__category-->
+			<!--header__logo-->
 
-		<div class="header__logo">
-			<img class="header__logo-img" src="./assets/img/logo/logo_talyx.svg" alt="Logo Talyx" />
-		</div>
-		<!--header__logo-->
+			<section class="header__btnAdd">
+				<button class="header__btnAdd--addProduct" id="open">Agregar productos</button>
+			</section>
+			<!--header__btnAdd-->
 
-		<section class="header__btnAdd">
-			<button class="header__btnAdd--addProduct" id="open">
-				Agregar productos
-			</button>
-		</section>
-		<!--header__btnAdd-->
+			<nav class="header__user">
+				<a id="openLogin" class="header__user-welcome header__links" href="#">
+					<i class="fa-solid fa-circle-user header__icons"></i>
+					<p class="header__p">Bienvenido/a Usuario</p>
+				</a>
+			</nav>
+			<!--header__user-->
 
-		<section id="modal" class="modal">
-			<div id="modal__container" class="modal__container">
-				<div class="modal__content">
-					<div class="modal__header">
+			<section class="header__btnBack">
+				<button class="header__btnBack--goBack">Volver</button>
+				<a class="header__btnBack--text header__text" href="#">VOLVER</a>
+			</section>
+			<!--header__btnBack-->
+		</header>
+		<!-- * MODAL PRODUCTS -->
+		<section id="modal" class="modalProducts">
+			<div id="modal__container" class="modalProducts__container">
+				<div class="modalProducts__content">
+					<div class="modalProducts__header">
 						<h2>Agregar Producto</h2>
-						<span id="modal__add" class="modal__add">+</span>
+						<span id="modal__add" class="modalProducts__add">+</span>
 					</div>
-					<div class="modal__formContainer">
-						<form action="" class="modal__form">
-							<input class="modal__input" type="text" placeholder="Categoría:" />
-							<input class="modal__input" type="text" placeholder="Subcategoría:" />
-							<input class="modal__input" type="text" placeholder="Dirección de imagen:" />
-							<input class="modal__input" type="text" placeholder="Título:" />
-							<textarea class="modal__input modal__input--desc" placeholder="Descripción:"></textarea>
-							<input class="modal__input modal__input--price" type="number" placeholder="Precio:" />
-							<div class="modal__btns">
-								<button id="modal__close" class="modal__btn">Volver</button>
-								<button class="modal__btn modal__btn--save" type="submit">Guardar</button>
+					<div class="modalProducts__formContainer">
+						<form action="" class="modalProducts__form">
+							<input class="modalProducts__input" type="text" placeholder="Categoría:" />
+							<input class="modalProducts__input" type="text" placeholder="Subcategoría:" />
+							<input
+								class="modalProducts__input"
+								type="text"
+								placeholder="Dirección de imagen:"
+							/>
+							<input class="modalProducts__input" type="text" placeholder="Título:" />
+							<textarea
+								class="modalProducts__input modalProducts__input--desc"
+								placeholder="Descripción:"
+							></textarea>
+							<input
+								class="modalProducts__input modalProducts__input--price"
+								type="number"
+								placeholder="Precio:"
+							/>
+							<div class="modalProducts__btns">
+								<button id="modal__close" class="modalProducts__btn">Volver</button>
+								<button class="modalProducts__btn modalProducts__btn--save" type="submit">
+									Guardar
+								</button>
 							</div>
 						</form>
 					</div>
 				</div>
 			</div>
 		</section>
-		<!-- MODAL PRODUCTS-->
-
-		<nav class="header__user">
-			<a id="openLogin" class="header__user-welcome header__links" href="#">
-				<i class="fa-solid fa-circle-user header__icons"></i>
-				<p class="header__p">Bienvenido/a Usuario</p>
-			</a>
-		</nav>
-		<!--header__user-->
-
-		<section class="header__btnBack">
-			<button class="header__btnBack--goBack">
-				Volver
-			</button>
-			<a class="header__btnBack--text header__text" href="#">VOLVER</a>
-		</section>
-		<!--header__btnBack-->
-
-	</header>
-
-	<main class="main">
-		<!--section class="mainProducts"-->
-		<div class="mainFeatured"> <!--mainProductsBox-->
-			<div class="mainFeatured__Container" id="container__Products" mainDestacadosP> <!--container__Products-->
+		<!-- MODAL ADDPRODUCTS-->
+		<!-- * MODAL MODIFYPRODUCTS -->
+		<section id="modalModify" class="modalProducts">
+			<div id="modalModify__container" class="modalProducts__container">
+				<div class="modalProducts__content">
+					<div class="modalProducts__header">
+						<h2>Modificar Producto</h2>
+					</div>
+					<div class="modalProducts__formContainer">
+						<form action="" class="modalProducts__form">
+							<input class="modalProducts__input" type="text" placeholder="Categoría:" />
+							<input class="modalProducts__input" type="text" placeholder="Subcategoría:" />
+							<input
+								class="modalProducts__input"
+								type="text"
+								placeholder="Dirección de imagen:"
+							/>
+							<input class="modalProducts__input" type="text" placeholder="Título:" />
+							<textarea
+								class="modalProducts__input modalProducts__input--desc"
+								placeholder="Descripción:"
+							></textarea>
+							<input
+								class="modalProducts__input modalProducts__input--price"
+								type="number"
+								placeholder="Precio:"
+							/>
+							<div class="modalProducts__btns">
+								<button id="modalModify__close" class="modalProducts__btn">Volver</button>
+								<button class="modalProducts__btn modalProducts__btn--save" type="submit">
+									Guardar
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="buttons">
-			<button class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft" id="bt__SliderLeft-Featured">
-				<div class="mainFeatured__Container--buttonleftbox btbox__Slider">
-					<img src="./assets/img/main/flechaIzquierda.svg" alt=""
-						class="mainFeatured__Container--buttonleftimg btnimg__Slider">
+		</section>
+		<!-- MODAL MODIFYPRODUCTS-->
+		<!-- * MODAL USERS -->
+		<section id="modalLogin" class="modal">
+			<div id="" class="modal__container">
+				<div class="modal__base">
+					<div class="modal__empty"></div>
+					<div class="modal__register">
+						<span id="" class="modal__close">x</span>
+						<p class="modal__question">¿Aún no tienes una cuenta?</p>
+						<p class="modal__phrase">Registrate para que puedas iniciar sesión</p>
+						<button id="modalNewAccount" class="modal__newAccount">Registrarse</button>
+					</div>
+					<div class="modal__principal">
+						<h5 class="modal__title">Iniciar Sesión</h5>
+						<form class="modal__form">
+							<input class="modal__input" type="email" placeholder="Correo Electronico" />
+							<input class="modal__input" type="password" placeholder="Contraseña" />
+							<a class="modal__forget" href="./forgetPassword.html">¿Olvidaste tu Contraseña?</a>
+						</form>
+						<div class="modal__footer">
+							<button id="modalAccess" class="modal__access">Entrar</button>
+							<img class="modal__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx" />
+						</div>
+					</div>
 				</div>
-			</button>
-			<div id="pages" class="mainFeatured__Container--pagenumbers"></div>
-			<button class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight"
-				id="bt__SliderRight-Featured">
-				<div class="mainFeatured__Container--buttonrightbox btbox__Slider" id="bt__SliderLeft-Featured">
-					<img src="./assets/img/main/flechaDerecha.svg" alt=""
-						class="mainFeatured__Container--buttonrigthimg btnimg__Slider">
+			</div>
+		</section>
+		<section id="modalRegister" class="modal">
+			<div id="" class="modal__container">
+				<div class="modal__base modal__base--reg">
+					<div class="modal__empty modal__empty--reg"></div>
+					<div class="modal__login">
+						<span id="" class="modal__close modal__close--reg">x</span>
+						<p class="modal__question">¿Ya tienes una cuenta?</p>
+						<p class="modal__phrase">Iniciar sesión para entrar en la página</p>
+						<button id="toAccount" class="modal__toAccount">Iniciar Sesión</button>
+					</div>
+					<div class="modal__principal modal__principal--reg">
+						<h5 class="modal__title modal__title--reg">Registrarse</h5>
+						<form class="modal__form modal__form--reg">
+							<input class="modal__input" type="text" placeholder="Nombre" />
+							<input class="modal__input" type="text" placeholder="Apellido" />
+							<input class="modal__input" type="email" placeholder="Correo Electronico" />
+							<input class="modal__input" type="password" placeholder="Contraseña" />
+						</form>
+						<div class="modal__footer modal__footer--reg">
+							<button id="modalCreate" class="modal__access">Crear</button>
+							<img class="modal__logo" src="./assets/img/logo/talyx.png" alt="Logo Talyx" />
+						</div>
+					</div>
 				</div>
-			</button>
-		</div>
-		<!--/section-->
-	</main>
-
-</body>
-<script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
-
+			</div>
+		</section>
+		<!-- MODAL USERS-->
+		<main class="main">
+			<!--section class="mainProducts"-->
+			<div class="mainFeatured">
+				<!--mainProductsBox-->
+				<div class="mainFeatured__Container" id="container__Products" mainDestacadosP>
+					<!--container__Products-->
+				</div>
+			</div>
+			<div class="buttons">
+				<button
+					class="mainFeatured__Container--buttonleft bt__Slider bt__SliderLeft"
+					id="bt__SliderLeft-Featured"
+				>
+					<div class="mainFeatured__Container--buttonleftbox btbox__Slider">
+						<img
+							src="./assets/img/main/flechaIzquierda.svg"
+							alt=""
+							class="mainFeatured__Container--buttonleftimg btnimg__Slider"
+						/>
+					</div>
+				</button>
+				<div id="pages" class="mainFeatured__Container--pagenumbers"></div>
+				<button
+					class="mainFeatured__Container--buttonright bt__Slider bt__SliderRight"
+					id="bt__SliderRight-Featured"
+				>
+					<div
+						class="mainFeatured__Container--buttonrightbox btbox__Slider"
+						id="bt__SliderLeft-Featured"
+					>
+						<img
+							src="./assets/img/main/flechaDerecha.svg"
+							alt=""
+							class="mainFeatured__Container--buttonrigthimg btnimg__Slider"
+						/>
+					</div>
+				</button>
+			</div>
+			<!--/section-->
+		</main>
+	</body>
+	<script type="module" src="./assets/mvc/View/Index/indexLeerProductos.js"></script>
 </html>

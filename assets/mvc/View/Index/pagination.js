@@ -86,7 +86,7 @@ const addProduct = (title, price, imgPath, className) => {
 			${price}
 			<div class="${className.classIcons}">
 				<a id=""><i class="fa-solid fa-trash-can ${className.classDelete}"></i></a>
-				<a id=""><i class="fa-solid fa-pen ${className.classEdit}"></i></a>
+				<a id="modify"><i class="fa-solid fa-pen ${className.classEdit}"></i></a>
 			</div>
 		</span>
 	</div>
