@@ -101,8 +101,6 @@
                 $statement->bindParam(":email", $data['email'], PDO::PARAM_STR);
                 $statement->execute();
             if($statement->rowCount() > 0){
-                ini_set( 'display_errors', 1 );
-                error_reporting( E_ALL );
 
                 $to  =$data["email"];
                 $email = $to;
@@ -127,7 +125,7 @@
                         <h3>'.$code.'</h3>
                         <p> <a 
                             href="http://localhost/hunteando6/Proyecto-E-CommerceH/forgetPassword.html?email='.$email.'&token='.$token.'"> 
-                            to restablecer da click aqui </a> </p>
+                            to restablecer da click aqui </a> este codigo sera valido por 1 hora</p>
                         <p> <small>Si usted no envio este codigo favor de omitir</small> </p>
                     </div>
                 </body>
@@ -150,11 +148,12 @@
                     if($statement=$cnn->prepare($sql)){
                         $statement->execute();
                     }
+                    return $enviado;
             }else{
                 echo false;
             }
 
-            }
+            } else{echo false;}
     }}
     public function resetPassword($data){         
         try {
@@ -169,19 +168,32 @@
 
                 $statement->execute();
 
+
             if($statement->rowCount() > 0){
-            $sqlpass = "UPDATE users SET pass='$pass' WHERE email='$email'";
-            $passReset = $cnn->prepare($sqlpass);
-                
-                if ($passReset->execute()) {
-                    echo true;        
-                } else {
-                    echo false;        
+                while ($row = $statement->fetch(PDO::FETCH_NUM)) {
+                    $result[] = $row;
                 }
-        }
-            $statement->closeCursor();
-            $cnn = null;
-        }} catch (PDOException $e) {
+                $date = $result[0][4];
+                $date_now=date("Y-m-d h:m:s");
+                $seconds = strtotime($date_now) - strtotime($date);
+                $minutes=$seconds / 60;
+                if($minutes > 59 ){
+                    return "vencido";
+                }else{
+
+                    $sqlpass = "UPDATE users SET pass='$pass' WHERE email='$email'";
+                    $passReset = $cnn->prepare($sqlpass);
+                    
+                    if ($passReset->execute()) {
+                        echo true;        
+                    } else {
+                        echo false;        
+                    }
+                }
+                $statement->closeCursor();
+                $cnn = null;
+            }
+            }} catch (PDOException $e) {
             echo 'PDOException : ' . $e->getMessage();
         }
     }

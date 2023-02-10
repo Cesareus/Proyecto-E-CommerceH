@@ -5,15 +5,21 @@ const token = getParameterByName('token')
 const email = getParameterByName('email')
 const textParagrap = document.querySelector('.forgotPassword__phase')
 if (token === null && email === null) {
-  console.log('a')
   mailForm.addEventListener('submit', (e) => {
+    textParagrap.style.display = 'none'
     e.preventDefault()
     // eslint-disable-next-line no-undef
     data = new FormData(mailForm)
     try {
-      console.log(data)
       services.ajax(`${URL}/assets/mvc/controller/Users.php?op=recoveryPasswordSendMail`, data).done(res => {
-        console.log(res)
+        res = Number(res)
+        if (res === 1) {
+          const passwordForm = `<p>Hemos enviado un correo a ${data.get('email')} por favor revisa tu correo para reestablecer la contraseña</p>`
+          mailForm.innerHTML = passwordForm
+        } else {
+          const passwordForm = `<p>El correo ${data.get('email')} no esta registrado en Talyx</p>`
+          mailForm.innerHTML = passwordForm
+        }
       })
       return false
     } catch (e) {
@@ -21,8 +27,6 @@ if (token === null && email === null) {
     }
   })
 } else {
-  console.log(token)
-  console.log(email)
   textParagrap.style.display = 'none'
   const passwordForm = `
   <input type="email"
@@ -59,12 +63,12 @@ if (token === null && email === null) {
     e.preventDefault()
     // eslint-disable-next-line no-undef
     data = new FormData(mailForm)
-    for (const [key, value] of data.entries()) {
-      console.log(key + ': ' + value)
-    }
     try {
       services.ajax(`${URL}/assets/mvc/controller/Users.php?op=resetPassword`, data).done(res => {
-        console.log(res)
+        if (res === 'vencido') {
+          const passwordForm = '<p>Este codigo ya esta vencido solicite uno nuevo</p>'
+          mailForm.innerHTML = passwordForm
+        }
       })
       return false
     } catch (e) {
