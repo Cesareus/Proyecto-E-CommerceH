@@ -14,7 +14,10 @@ const className = {
   classImg: 'mainFeatured__Container--cardImg',
   classDiv: 'mainFeatured__Container--CardDescriptionBox',
   classDescrip: 'mainFeatured__Container--CardDescription',
-  ClassPrice: 'mainFeatured__Container--CardPrice'
+  classPrice: 'mainFeatured__Container--CardPrice',
+  classIcons: 'mainFeatured__Container--CardIcons',
+  classDelete: 'mainFeatured__Container--CardDelete',
+  classEdit: 'mainFeatured__Container--CardEdit'
 }
 
 export function displayList (items = listProducts, wrapper = listElement, rowsPerPage = rows, page = currentPage) {
@@ -58,7 +61,9 @@ function PaginationButton (page, items) {
     currentPage = page
     displayList(items, listElement, rows, currentPage)
 
-    const currentBtn = document.querySelector('.mainFeatured__Container--pagenumbers button.active')
+    const currentBtn = document.querySelector(
+      '.mainFeatured__Container--pagenumbers button.active'
+    )
     currentBtn.classList.remove('active')
     button.classList.add('active')
   })
@@ -68,14 +73,31 @@ function PaginationButton (page, items) {
 
 const addProduct = (title, price, imgPath, id, className) => {
   const card = document.createElement('div')
-  const content = ` 
-    <input type="hidden" name="id" value="${id}">
+  let content
+  if (document.URL.indexOf('administrator') > -1) {
+    content = ` 
+<input type="hidden" name="id" value="${id}">
+<img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
+<div class="${className.classDiv}">
+<span class="${className.classDescrip}">${title}</span>
+<span class="${className.classPrice}">
+${price}
+<div class="${className.classIcons}">
+<a id=""><i class="fa-solid fa-trash-can ${className.classDelete}"></i></a>
+<a id="modify"><i class="fa-solid fa-pen ${className.classEdit}"></i></a>
+</div>
+</span>
+</div>
+`
+  } else {
+    content = ` 
     <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
     <div class="${className.classDiv}">
     <span class="${className.classDescrip}">${title}</span>
     <span class="${className.ClassPrice}">${price}</span>
     </div>
     `
+  }
 
   card.innerHTML = content
   card.classList.add(className.classCard)

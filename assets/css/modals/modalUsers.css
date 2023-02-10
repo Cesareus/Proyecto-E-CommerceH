@@ -78,7 +78,7 @@
 }
 
 .modal__close:hover {
-	color: #f80303;
+	color: var(--color-primary);
 	cursor: pointer;
 }
 
@@ -162,6 +162,10 @@
 	color: var(--color_input_lettle);
 	font-size: 0.9rem;
 	font-style: italic;
+	transition: font-weight 0.5s;
+}
+.modal__forget:hover{
+	font-weight: bold;
 }
 
 .modal__footer {
@@ -183,6 +187,14 @@
 .modal__logo {
 	height: 1.6rem;
 	width: 6rem;
+}
+
+.modal__access:active,
+.modal__toAccount:active,
+.modal__newAccount:active {
+	transform: scale(0.98);
+	box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+	background: var(--color-primary);
 }
 
 @media screen and (max-width: 735px) {
