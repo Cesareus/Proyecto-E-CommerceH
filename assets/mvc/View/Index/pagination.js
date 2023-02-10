@@ -78,19 +78,32 @@ function PaginationButton(page, items) {
 
 const addProduct = (title, price, imgPath, className) => {
 	const card = document.createElement('div');
-	const content = ` 
-    <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
-    <div class="${className.classDiv}">
+	let content
+	if(document.URL.indexOf("administrator") > -1){
+
+		content = ` 
+		<img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
+		<div class="${className.classDiv}">
     	<span class="${className.classDescrip}">${title}</span>
     	<span class="${className.classPrice}">
-			${price}
-			<div class="${className.classIcons}">
-				<a id=""><i class="fa-solid fa-trash-can ${className.classDelete}"></i></a>
-				<a id="modify"><i class="fa-solid fa-pen ${className.classEdit}"></i></a>
-			</div>
+		${price}
+		<div class="${className.classIcons}">
+		<a id=""><i class="fa-solid fa-trash-can ${className.classDelete}"></i></a>
+		<a id="modify"><i class="fa-solid fa-pen ${className.classEdit}"></i></a>
+		</div>
 		</span>
-	</div>
-    `;
+		</div>
+		`
+	}else{
+		content = ` 
+    <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
+    <div class="${className.classDiv}">
+    <span class="${className.classDescrip}">${title}</span>
+    <span class="${className.ClassPrice}">${price}</span>
+    </div>
+    `
+	}
+		
 
 	card.innerHTML = content;
 	card.classList.add(className.classCard);
