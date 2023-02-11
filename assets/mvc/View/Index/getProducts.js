@@ -61,7 +61,7 @@ const createCategoryList = (listProducts) => {
   })
 }
 
-const render = async () => {
+export const render = async () => {
   const products = await getProducts()
   listProducts = products
   displayList(products)

@@ -70,7 +70,7 @@
                 parent::set_names();
                 $sql = "UPDATE productos SET categoria=:categoria, subcategoria=:subcategoria, dir_imagen=:dir_imagen, titulo=:titulo, descripcion=:descripcion, precio=:precio WHERE ID=:id";
                 $statement = $cnn->prepare($sql);
-                $statement->bindParam(":id", $data['id'], PDO::PARAM_INT);
+                $statement->bindParam(":id", $data['ID'], PDO::PARAM_INT);
                 $statement->bindParam(":categoria", $data['categoria'], PDO::PARAM_STR);
                 $statement->bindParam(":subcategoria", $data['subcategoria'], PDO::PARAM_STR);
                 $statement->bindParam(":dir_imagen", $data['dir_imagen'], PDO::PARAM_STR);
@@ -78,16 +78,16 @@
                 $statement->bindParam(":descripcion", $data['descripcion'], PDO::PARAM_STR);
                 $statement->bindParam(":precio", $data['precio'], PDO::PARAM_INT);
                 
-                if ($statement->execute() && $statement->rowCount() > 0) {
-                    echo true;        
+                if ($statement->execute() ) {
+                    return json_encode($data); 
                 } else {
-                    echo false;        
+                    return false;        
                 }
             
                 $statement->closeCursor();
                 $cnn = null;
             } catch (PDOException $e) {
-                echo 'PDOException : ' . $e->getMessage();
+                return false;
             }
         }
     }

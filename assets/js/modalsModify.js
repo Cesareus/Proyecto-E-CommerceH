@@ -1,18 +1,44 @@
-let abrirModify = document.getElementById('modify');
-let cerrarModify = document.getElementById('modalModify__close');
-let modalModify = document.getElementById('modalModify');
-let modalModifyContainer = document.getElementById('modalModify__container');
+import { modifyProduct } from '../mvc/View/administrador/modifyProduct.js'
+import { render } from '../mvc/View/Index/getProducts.js'
 
-abrirModify.addEventListener('click', function () {
-	modalModify.style.display = 'block';
-});
+const closeModifyButton = document.getElementById('modalModify__close')
+const modalModify = document.getElementById('modalModify')
+const modalModifyContainer = document.getElementById('modalModify__container')
 
-cerrarModify.addEventListener('click', function () {
-	modalModify.style.display = 'none';
-});
+async function renderModals () {
+  await render()
+  const buttonsModify = document.getElementsByClassName('modify')
+  const arbuttonsModify = Array.from(buttonsModify)
+
+  setupModifyModal(arbuttonsModify, modalModify, modalModifyContainer)
+}
+let card
+function setupModifyModal (buttons, modal) {
+  buttons.forEach(button => {
+    button.addEventListener('click', async (e) => {
+      e.preventDefault()
+      let productId = null
+      card = button.parentNode
+      while (card && !card.classList.contains('mainFeatured__Container--Card')) {
+        card = card.parentNode
+      }
+      productId = card.querySelector('input[type="hidden"]').value
+      modifyProduct(productId)
+      modal.style.display = 'block'
+    })
+  })
+}
+
+closeModifyButton.addEventListener('click', function (e) {
+  modalModify.style.display = 'none'
+  window.location.reload()
+})
 
 window.addEventListener('click', function (e) {
-	if (e.target === modalModifyContainer) {
-		modalModify.style.display = 'none';
-	}
-});
+  if (e.target === modalModifyContainer) {
+    modalModify.style.display = 'none'
+    window.location.reload()
+  }
+})
+
+renderModals()

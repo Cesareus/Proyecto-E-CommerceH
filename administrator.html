@@ -31,7 +31,7 @@
 		<script type="module" src="./assets/js/modalsProducts.js"></script>
 
 		<!--MODAL MODIFY  -->
-		<script type="module" src="./assets/js/modalsModify.js"></script>
+		
 
 		<!-- Despliegue Lista Header -->
 		<script type="module" src="./assets/js/indexHeader.js"></script>
@@ -47,6 +47,11 @@
 	</head>
 
 <body class="adminBody">
+	<script>
+		function imgErrorHTML(image) {
+			image.src = './assets/img/main/destacados/default-img.png';
+		}
+		</script>
 	<header class="header">
 		<nav class="header__category">
 			<div class="header__category--desktop">
@@ -135,27 +140,30 @@
 						<h2>Modificar Producto</h2>
 					</div>
 					<div class="modalProducts__formContainer">
-						<form action="" class="modalProducts__form">
-							<input class="modalProducts__input" type="text" placeholder="Categoría:" />
-							<input class="modalProducts__input" type="text" placeholder="Subcategoría:" />
+						<form id="modalModifyProducts__form" action="" class="modalProducts__form">
+							<input class="modalProducts__input" name="categoria" type="text" placeholder="Categoría:" />
+							<input class="modalProducts__input" name="subcategoria" type="text" placeholder="Subcategoría:" />
 							<input
 								class="modalProducts__input"
+								name="dir_imagen"
 								type="text"
 								placeholder="Dirección de imagen:"
 							/>
-							<input class="modalProducts__input" type="text" placeholder="Título:" />
+							<input class="modalProducts__input" name="titulo" type="text" placeholder="Título:" />
 							<textarea
+								name="descripcion"
 								class="modalProducts__input modalProducts__input--desc"
 								placeholder="Descripción:"
 							></textarea>
 							<input
 								class="modalProducts__input modalProducts__input--price"
+								name="precio"
 								type="number"
 								placeholder="Precio:"
 							/>
 							<div class="modalProducts__btns">
 								<button id="modalModify__close" class="modalProducts__btn">Volver</button>
-								<button class="modalProducts__btn modalProducts__btn--save" type="submit">
+								<button form="modalModifyProducts__form" class="modalProducts__btn modalProducts__btn--save" type="submit">
 									Guardar
 								</button>
 							</div>
@@ -259,5 +267,6 @@
 			<!--/section-->
 		</main>
 	</body>
-	<script type="module" src="./assets/mvc/View/Index/getProducts.js"></script>
+	<script defer type="module" src="./assets/js/modalsModify.js"></script>
+	<script type="module" src="assets/mvc/View/administrador/modifyProduct.js"></script>
 </html>
