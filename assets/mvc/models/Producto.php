@@ -26,7 +26,7 @@
             $statement = $cnn->prepare($sql);
             $statement -> bindParam(':id', $id, PDO::PARAM_INT);
 
-            if ($statement->execute() && $statement->rowCount() > 0) {
+            if ($statement->execute()) {
                 echo true;                     
             } else {
                 echo false;        

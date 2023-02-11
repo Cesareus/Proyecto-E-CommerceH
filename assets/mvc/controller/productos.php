@@ -36,7 +36,7 @@
         case "Delete":
             $id = $_POST['ID'];
             $datos = $producto->deleteProduct($id);                                 
-            echo json_encode($datos);
+            echo $datos;
             break;
         }
 

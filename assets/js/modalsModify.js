@@ -15,7 +15,7 @@ async function renderModals () {
 let card
 function setupModifyModal (buttons, modal) {
   buttons.forEach(button => {
-    button.addEventListener('click', async (e) => {
+    button.addEventListener('click', (e) => {
       e.preventDefault()
       let productId = null
       card = button.parentNode

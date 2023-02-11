@@ -16,11 +16,10 @@ export function handleSubmit (productId) {
   data.append('ID', productId)
   try {
     services.ajax(`${URL}/assets/mvc/controller/productos.php?op=Modify`, data).done((info) => {
-      console.log(info)
       if (info === true) {
         window.location.reload()
       } else {
-        console.log('error')
+        console.log(info)
       }
     })
   } catch (e) {
