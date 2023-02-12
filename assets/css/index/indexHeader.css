@@ -104,7 +104,7 @@
 .header__user {
 	grid-area: user;
 	padding: 0 1.2em 0 0.5em;
-	gap: 0.7em;
+	gap: 0.5em;
 }
 .header__user-welcome {
 	width: 53%;
