@@ -108,6 +108,18 @@
 }
 .header__user-welcome {
 	width: 53%;
+	position: relative;
+}
+.signOff{
+	visibility: hidden;
+    position: absolute;
+    top: 3.5em;
+    right: 0em;
+    border-radius: 7px;
+    width: 10em;
+    height: 3em;
+    background: var(--color-ligth);
+    z-index: 1;
 }
 
 .header__category,
@@ -223,6 +235,9 @@
 	}
 	.header__user-welcome {
 		width: initial;
+	}
+	.signOff{
+		
 	}
 	.header__p,
 	.header__list {
