@@ -130,7 +130,6 @@
 .mainFeatured__Container--pagenumbers--button.active {
 	background-color: var(--color-primary);
 }
-
 @media screen and (max-width: 800px) {
 	.subProductsBox__title {
 		font-size: 3.5vw;

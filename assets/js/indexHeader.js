@@ -1,5 +1,5 @@
 //  SCRIPT PARA DESPLIEGUE DE LISTA CATEGORIAS
-/*
+
 const down = document.querySelector('.header__category-down')
 const list = document.querySelector('.header__category-list')
 
@@ -52,4 +52,3 @@ list.addEventListener('mouseout', function () {
     list.style.visibility = 'hidden'
   }, 600)
 })
-*/
