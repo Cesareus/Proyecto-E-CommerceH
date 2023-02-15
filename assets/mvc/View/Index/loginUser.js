@@ -2,7 +2,7 @@
 import { services, URL } from '../servicesJS/services.js'
 
 const formLogin = document.getElementById('modal-Login')
-const logOut = document.getElementById('cerrarsesion')
+const logOut = document.getElementById('signOff')
 
 formLogin.addEventListener('submit', (e) => {
   e.preventDefault()

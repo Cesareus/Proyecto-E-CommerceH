@@ -9,8 +9,8 @@
 
 			protected function Connection(){
 				try{
-					$connect = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce;port=3310;","cesar","cesar");
-					return $connect;
+					$conectar = $this->dbhost = new PDO("mysql:local=localhost;dbname=e_commerce;port=3310;","cesar","cesar");
+					return $conectar;
 	
 				}catch(Exception $e){
 					print "¡Error BD!: " . $e->getMessage() . "<br/>";
