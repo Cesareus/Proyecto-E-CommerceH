@@ -96,11 +96,9 @@
         public function recoveryPasswordSendMail($data)
         {
             $cnn=parent::Connection();
-            $sql = "SELECT * FROM users WHERE email=:email";
-            if($statement=$cnn->prepare($sql)){
-                $statement->bindParam(":email", $data['email'], PDO::PARAM_STR);
-                $statement->execute();
-            if($statement->rowCount() > 0){
+            $exist = searchRepeatedUsers($data,$cnn);
+
+            if($exist){
 
                 $to  =$data["email"];
                 $email = $to;
@@ -124,7 +122,7 @@
                         <p>Restablecer contraseña</p>
                         <h3>'.$code.'</h3>
                         <p> <a 
-                            href="http://localhost/hunteando6/Proyecto-E-CommerceH/forgetPassword.html?email='.$email.'&token='.$token.'"> 
+                            href="https://talyx.com.ar/forgetPassword.html?email='.$email.'&token='.$token.'"> 
                             to restablecer da click aqui </a> este codigo sera valido por 1 hora</p>
                         <p> <small>Si usted no envio este codigo favor de omitir</small> </p>
                     </div>
@@ -154,7 +152,7 @@
             }
 
             } else{echo false;}
-    }}
+    }
     public function resetPassword($data){         
         try {
             $cnn = parent::Connection();

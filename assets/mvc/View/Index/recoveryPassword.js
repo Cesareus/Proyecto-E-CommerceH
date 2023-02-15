@@ -12,6 +12,8 @@ if (token === null && email === null) {
     data = new FormData(mailForm)
     try {
       services.ajax(`${URL}/assets/mvc/controller/Users.php?op=recoveryPasswordSendMail`, data).done(res => {
+        console.log(res)
+        console.log(typeof res)
         res = Number(res)
         if (res === 1) {
           const passwordForm = `<p>Hemos enviado un correo a ${data.get('email')} por favor revisa tu correo para reestablecer la contraseña</p>`
@@ -67,6 +69,9 @@ if (token === null && email === null) {
       services.ajax(`${URL}/assets/mvc/controller/Users.php?op=resetPassword`, data).done(res => {
         if (res === 'vencido') {
           const passwordForm = '<p>Este codigo ya esta vencido solicite uno nuevo</p>'
+          mailForm.innerHTML = passwordForm
+        } else {
+          const passwordForm = '<p>La contraseña fue reestablecida exitosamente</p>'
           mailForm.innerHTML = passwordForm
         }
       })
