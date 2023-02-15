@@ -1,4 +1,5 @@
 /* eslint-disable no-undef */
+import { addListeners } from '../../../js/modalsUsers.js'
 import { URL } from './services.js'
 const userName = document.getElementById('welcome__username')
 
@@ -12,6 +13,8 @@ function getSession () {
       if (data.user_name) {
         userName.innerHTML = `Bienvenido/a ${data.user_name}`
         sesion = true
+      } else {
+        addListeners()
       }
     }
   })

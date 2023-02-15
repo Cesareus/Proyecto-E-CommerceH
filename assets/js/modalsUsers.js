@@ -17,32 +17,34 @@ export function hideModal (modal) {
   modal.style.display = 'none'
   document.body.style.overflow = 'auto'
 }
-if (!sesion) {
-  open.addEventListener('click', () => {
-    hideModal(modalRegister)
-    showModal(modalLogin)
-  })
-
-  toAccount.addEventListener('click', () => {
-    hideModal(modalRegister)
-    showModal(modalLogin)
-  })
-  newAccount.addEventListener('click', () => {
-    hideModal(modalLogin)
-    showModal(modalRegister)
-  })
-  for (let i = 0; i < cerrar.length; i++) {
-    cerrar[i].addEventListener('click', () => {
-      hideModal(modalLogin)
+export function addListeners () {
+  if (!sesion) {
+    open.addEventListener('click', () => {
       hideModal(modalRegister)
+      showModal(modalLogin)
     })
-  }
-  window.addEventListener('click', (e) => {
-    for (let i = 0; i < container.length; i++) {
-      if (e.target === container[i]) {
+
+    toAccount.addEventListener('click', () => {
+      hideModal(modalRegister)
+      showModal(modalLogin)
+    })
+    newAccount.addEventListener('click', () => {
+      hideModal(modalLogin)
+      showModal(modalRegister)
+    })
+    for (let i = 0; i < cerrar.length; i++) {
+      cerrar[i].addEventListener('click', () => {
         hideModal(modalLogin)
         hideModal(modalRegister)
-      }
+      })
     }
-  })
+    window.addEventListener('click', (e) => {
+      for (let i = 0; i < container.length; i++) {
+        if (e.target === container[i]) {
+          hideModal(modalLogin)
+          hideModal(modalRegister)
+        }
+      }
+    })
+  }
 }
