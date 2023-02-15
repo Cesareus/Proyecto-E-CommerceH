@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-// import { services, URL } from '../servicesJS/services.js'
+import { services, URL } from '../servicesJS/services.js'
 
 const registerForm = document.getElementById('modal-Reg')
 const inputs = registerForm.querySelectorAll('input')
@@ -55,9 +55,11 @@ registerForm.addEventListener('submit', (e) => {
     const data = new FormData(registerForm)
     try {
       console.log(data)
-      // services.ajax(`${URL}/assets/mvc/controller/Users.php?op=register`, data).done(res => {
-      console.log(registerForm.children)
-      // })
+      services.ajax(`${URL}/assets/mvc/controller/Users.php?op=register`, data).done(res => {
+        if (res) {
+          window.location.reload()
+        }
+      })
       return false
     } catch (e) {
       console.log(e)
