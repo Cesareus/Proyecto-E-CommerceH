@@ -12,7 +12,6 @@ const names = {
   email: false
 }
 const validateForm = (e) => {
-  console.log(e.target.name)
   switch (e.target.name) {
     case 'name':
       // validateInput(expressions.name, e.target, 'name')
@@ -51,10 +50,10 @@ inputs.forEach(input => {
 
 registerForm.addEventListener('submit', (e) => {
   e.preventDefault()
-  if (names.name && names.email) {
-    const data = new FormData(registerForm)
+  if (names.pass && names.email) {
+    console.log(names)
     try {
-      console.log(data)
+      const data = new FormData(registerForm)
       services.ajax(`${URL}/assets/mvc/controller/Users.php?op=register`, data).done(res => {
         if (res) {
           window.location.reload()

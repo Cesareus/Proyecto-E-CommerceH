@@ -9,7 +9,6 @@ async function deleteProducts () {
   arDeleteButtons.forEach(button => {
     button.addEventListener('click', (e) => {
       e.preventDefault()
-      console.log(button)
       let productId = null
       let card = button.parentNode
       while (card && !card.classList.contains('mainFeatured__Container--Card')) {
@@ -20,7 +19,9 @@ async function deleteProducts () {
       data.append('ID', productId)
       try {
         services.ajax(`${URL}/assets/mvc/controller/productos.php?op=Delete`, data).done((info) => {
-          window.location.reload()
+          if (res === 1) {
+            window.location.reload()
+          }
         })
       } catch (e) {
         console.log(e)

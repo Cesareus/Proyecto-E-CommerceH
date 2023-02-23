@@ -53,14 +53,14 @@
                 $statement->bindParam(":description", $data['description'], PDO::PARAM_STR);
                 $statement->bindParam(":price", $data['price'], PDO::PARAM_INT);
 
-                $reply = $statement->execute();
+                $reply = (bool) $statement->execute();
 
-                echo $reply;
+                return $reply;
 
                 $statement->closeCursor();
                 $cnn = null;
             } catch (PDOException $e) {
-                echo 'PDOException : ' . $e->getMessage();
+                return 'PDOException : ' . $e->getMessage();
             }
         }
 

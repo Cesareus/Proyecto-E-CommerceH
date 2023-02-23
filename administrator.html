@@ -105,27 +105,30 @@
 						<span id="modal__add" class="modalProducts__add">+</span>
 					</div>
 					<div class="modalProducts__formContainer">
-						<form action="" class="modalProducts__form">
-							<input class="modalProducts__input" type="text" placeholder="Categoría:" />
-							<input class="modalProducts__input" type="text" placeholder="Subcategoría:" />
+						<form action="" id="add_Products" class="modalProducts__form">
+							<input class="modalProducts__input" name="category" type="text" placeholder="Categoría:" />
+							<input class="modalProducts__input" name="subcategory" type="text" placeholder="Subcategoría:" />
 							<input
 								class="modalProducts__input"
 								type="text"
 								placeholder="Dirección de imagen:"
+								name="img"
 							/>
-							<input class="modalProducts__input" type="text" placeholder="Título:" />
+							<input class="modalProducts__input" name="title" type="text" placeholder="Título:" />
 							<textarea
 								class="modalProducts__input modalProducts__input--desc"
 								placeholder="Descripción:"
+								name="description"
 							></textarea>
 							<input
 								class="modalProducts__input modalProducts__input--price"
 								type="number"
+								name="price"
 								placeholder="Precio:"
 							/>
 							<div class="modalProducts__btns">
 								<button id="modal__close" class="modalProducts__btn">Volver</button>
-								<button class="modalProducts__btn modalProducts__btn--save" type="submit">
+								<button class="modalProducts__btn modalProducts__btn--save" form="add_Products" type="submit">
 									Guardar
 								</button>
 							</div>
@@ -271,6 +274,7 @@
 		</main>
 	</body>
 	<script defer type="module" src="./assets/js/modalsModify.js"></script>
+	<script type="module" src="assets/mvc/View/administrador/CreateProduct.js"></script>
 	<script type="module" src="assets/mvc/View/administrador/modifyProduct.js"></script>
 	<script type="module" src="assets/mvc/View/administrador/deleteProduct.js"></script>
 </html>
