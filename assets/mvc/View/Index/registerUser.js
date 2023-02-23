@@ -51,11 +51,16 @@ inputs.forEach(input => {
 registerForm.addEventListener('submit', (e) => {
   e.preventDefault()
   if (names.pass && names.email) {
-    console.log(names)
     try {
       const data = new FormData(registerForm)
       services.ajax(`${URL}/assets/mvc/controller/Users.php?op=register`, data).done(res => {
-        if (res) {
+        console.log(res)
+        if (res === 'usuario ya existente') {
+          const err = document.getElementById('error__email')
+          err.innerText = 'Este email ya esta en uso prueba otro'
+          err.classList.add('error__active')
+          err.classList.remove('error__inactive')
+        } else {
           window.location.reload()
         }
       })
