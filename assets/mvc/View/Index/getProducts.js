@@ -1,3 +1,5 @@
+import { renderModals } from '../../../js/modalsModify.js'
+import { deleteProducts } from '../administrador/deleteProduct.js'
 import { services, URL } from '../servicesJS/services.js'
 import { displayList, setupPagination } from './pagination.js'
 
@@ -67,6 +69,10 @@ export const render = async () => {
   displayList(products)
   setupPagination(products)
   createCategoryList(products)
+  if (document.URL.indexOf('administrator') > -1) {
+    await renderModals()
+    await deleteProducts()
+  }
 }
 
 render()

@@ -1,9 +1,7 @@
 /* eslint-disable no-undef */
-import { render } from '../Index/getProducts.js'
 import { services, URL } from '../servicesJS/services.js'
 
-async function deleteProducts () {
-  await render()
+export async function deleteProducts () {
   const deleteButtons = document.getElementsByClassName('delete')
   const arDeleteButtons = Array.from(deleteButtons)
   arDeleteButtons.forEach(button => {
@@ -18,8 +16,8 @@ async function deleteProducts () {
       const data = new FormData()
       data.append('ID', productId)
       try {
-        services.ajax(`${URL}/assets/mvc/controller/productos.php?op=Delete`, data).done((info) => {
-          if (res === 1) {
+        services.ajax(`${URL}/assets/mvc/controller/productos.php?op=Delete`, data).done((res) => {
+          if (res === 1 || res === '1') {
             window.location.reload()
           }
         })
@@ -29,4 +27,3 @@ async function deleteProducts () {
     })
   })
 }
-deleteProducts()
