@@ -20,16 +20,21 @@
 		'buttons';
 }
 .mainFeatured {
-	padding: 0 3%;
-	height: 75%; /*21.875em; Lo cambio de 53.2 a 60*/
-	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(2, 50%);
+	gap: 3%;
+	align-items: center;
+	justify-content: center;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	height: 100%;
+	padding: 20px 0;
 }
 .mainFeatured__Container {
 	align-items: center;
 	justify-content: center;
 	margin: 0 auto;
-	overflow-x: hidden;
-	overflow-y: hidden;
 	display: flex;
 	flex-wrap: wrap;
 	height: 100%;
@@ -45,7 +50,7 @@
 	object-fit: contain;
 	text-align: center;
 	height: 98%; /*343px*/
-	width: 16.45%; /*221.5px*/
+	width: 20vw; /*221.5px*/
 	margin-bottom: 20px;
 	position: relative;
 }
