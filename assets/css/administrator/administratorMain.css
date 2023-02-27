@@ -14,43 +14,38 @@
 	align-items: center;
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-template-rows: 71.36% 28.64%;
+	grid-template-rows: 90% 1fr;
 	grid-template-areas:
 		'products'
 		'buttons';
 }
 .mainFeatured {
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(2, 50%);
-	gap: 3%;
-	align-items: center;
-	justify-content: center;
-	overflow-x: hidden;
-	overflow-y: hidden;
-	height: 100%;
-	padding: 20px 0;
+	height: 90%;
 }
 .mainFeatured__Container {
-	align-items: center;
-	justify-content: center;
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	height: 100%;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr 1fr;
 	gap: 3%;
-	padding: 20px 0;
+	justify-items: center;
+	align-items: center;
+	width: 100vw;
+	max-width: 90%;
+	height: 95%;
+	margin: 0 auto 1rem;
+	padding: 0 5%;
+	overflow: scroll;
 }
 
 .mainFeatured__Container--Card {
 	border: 1px solid #dedbdb;
-	border-radius: 20px;
+	border-radius: 5%;
 	box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
 	cursor: pointer;
 	object-fit: contain;
 	text-align: center;
-	height: 98%; /*343px*/
-	width: 20vw; /*221.5px*/
+	height: 85%;
+	width: 90%;
 	margin-bottom: 20px;
 	position: relative;
 }
@@ -61,17 +56,12 @@
 }
 .mainFeatured__Container--cardImg {
 	object-fit: contain;
-	width: 100%;
+	width: 90%;
 	height: 70%;
 	padding: 1vw 0;
 	border-bottom: 0.3rem solid #000000;
 }
 .mainFeatured__Container--CardDescriptionBox {
-	/* display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 2.3fr 1fr;
-	row-gap: 0.5vw;
-	max-height: 91px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
@@ -79,18 +69,18 @@
 }
 .mainFeatured__Container--CardDescription {
 	font-family: 'Poppins';
-	font-size: 16px; /*16px*/
+	font-size: 2.5vw;
 	font-style: normal;
 	font-weight: 400;
-	line-height: 15px; /*15px*/
-	height: 65px; /*65px*/
+	line-height: 4.4vh;
+	height: 5vh;
 }
 .mainFeatured__Container--CardPrice {
 	font-family: 'Poppins';
-	font-size: 18px; /*18px*/
+	font-size: 1.6vw;
 	font-weight: 800;
-	line-height: 18px; /*18px*/
-	/*height: 1.15vh; 23px*/
+	line-height: 3.5vw;
+	max-height: 4.85vw;
 }
 .mainFeatured__Container--CardIcons {
 	position: absolute;
@@ -114,13 +104,9 @@
 .bt__Slider {
 	background: transparent;
 	border: none;
-	/* width: 3em;
-	height: 3em; */
 }
 .btbox__Slider {
 	border: 1px solid #dedbdb;
-	/* margin: 0 1rem; */
-	/* margin-bottom: 1rem; */
 	border-radius: 50%;
 	position: relative;
 	height: 3em;
@@ -141,27 +127,34 @@
 
 .mainFeatured__Container--pagenumbers {
 	margin: 0 2vw;
-	height: 26.47%;
 }
 .mainFeatured__Container--pagenumbers--button {
-	font-size: 120%;
-	height: 100%;
-	padding: 0 10px;
+	background-color: #ffffff;
+	border: 1px solid var(--color-primary);
+	width: 2.1rem;
+	cursor: pointer;
+	appearance: none;
+	transition: 0.5s;
+	font-size: 1.1rem;
+}
+.mainFeatured__Container--pagenumbers--button:hover {
+	background-color: var(--color-primary);
+}
+.mainFeatured__Container--pagenumbers--button.active {
+	background-color: var(--color-primary);
 }
 
 @media screen and (max-width: 950px) {
 	.mainFeatured {
-		padding-top: 20px;
-		height: 100%;
+		padding: initial;
+		overflow: scroll;
 	}
 	.mainFeatured__Container {
-		margin-bottom: 20px;
-		padding-bottom: 0px;
+		padding: initial;
+		grid-template-columns: repeat(3, 1fr);
 	}
 	.mainFeatured__Container--Card {
-		min-width: 40%;
-		min-height: 40%;
-		height: 45%;
+		min-width: 120px;
 	}
 	.buttons {
 		margin-top: 1vw;
@@ -171,14 +164,11 @@
 
 @media screen and (max-width: 500px) {
 	.mainFeatured__Container {
-		margin: 20px 0px;
-		padding: 0;
+		grid-template-columns: 1fr;
+		width: 75vw;
 	}
 	.mainFeatured__Container--Card {
 		min-width: 75%;
-		min-height: 70%;
-		height: 95%;
-		margin-bottom: 10px;
 	}
 	.btbox__Slider {
 		height: 2rem;
