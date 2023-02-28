@@ -38,7 +38,10 @@
 		<!-- jQuery-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script type="module" src="./assets/mvc/View/servicesJS/checkSession.js"></script>
-		<script type="module" src="./assets/mvc/View/servicesJS/validateAdminSesion.js"></script>
+		<script
+			type="module"
+			src="./assets/mvc/View/servicesJS/validateAdminSesion.js"
+		></script>
 		<!-- Manejo de modales de usuario -->
 		<script type="module" src="./assets/js/modalsUsers.js"></script>
 
@@ -53,7 +56,9 @@
 		</script>
 		<header class="header">
 			<nav class="header__category">
-				<a class="header__category-menu header__text header__category--mobile" href="#">CATEGORIAS</a>
+				<a class="header__category-menu header__text header__category--mobile" href="#"
+					>CATEGORIAS</a
+				>
 				<i class="fa-solid fa-bars header__category-down"></i>
 				<ul class="header__category-list"></ul>
 			</nav>
@@ -83,8 +88,8 @@
 			<!--header__user-->
 
 			<section class="header__btnBack">
-				<button class="header__btnBack--goBack">Volver</button>
-				<a class="header__btnBack--text header__text" href="#">VOLVER</a>
+				<button class="header__btnBack--goBack" onclick="location.href='./index.html'">	Volver</button>
+				<a class="header__btnBack--text header__text" href="./index.html">VOLVER</a>
 			</section>
 			<!--header__btnBack-->
 		</header>
@@ -98,15 +103,30 @@
 					</div>
 					<div class="modalProducts__formContainer">
 						<form action="" id="add_Products" class="modalProducts__form">
-							<input class="modalProducts__input" name="category" type="text" placeholder="Categoría:" />
-							<input class="modalProducts__input" name="subcategory" type="text" placeholder="Subcategoría:" />
+							<input
+								class="modalProducts__input"
+								name="category"
+								type="text"
+								placeholder="Categoría:"
+							/>
+							<input
+								class="modalProducts__input"
+								name="subcategory"
+								type="text"
+								placeholder="Subcategoría:"
+							/>
 							<input
 								class="modalProducts__input"
 								type="text"
 								placeholder="Dirección de imagen:"
 								name="img"
 							/>
-							<input class="modalProducts__input" name="title" type="text" placeholder="Título:" />
+							<input
+								class="modalProducts__input"
+								name="title"
+								type="text"
+								placeholder="Título:"
+							/>
 							<textarea
 								class="modalProducts__input modalProducts__input--desc"
 								placeholder="Descripción:"
@@ -120,7 +140,11 @@
 							/>
 							<div class="modalProducts__btns">
 								<button id="modal__close" class="modalProducts__btn">Volver</button>
-								<button class="modalProducts__btn modalProducts__btn--save" form="add_Products" type="submit">
+								<button
+									class="modalProducts__btn modalProducts__btn--save"
+									form="add_Products"
+									type="submit"
+								>
 									Guardar
 								</button>
 							</div>
@@ -139,15 +163,30 @@
 					</div>
 					<div class="modalProducts__formContainer">
 						<form id="modalModifyProducts__form" action="" class="modalProducts__form">
-							<input class="modalProducts__input" name="categoria" type="text" placeholder="Categoría:" />
-							<input class="modalProducts__input" name="subcategoria" type="text" placeholder="Subcategoría:" />
+							<input
+								class="modalProducts__input"
+								name="categoria"
+								type="text"
+								placeholder="Categoría:"
+							/>
+							<input
+								class="modalProducts__input"
+								name="subcategoria"
+								type="text"
+								placeholder="Subcategoría:"
+							/>
 							<input
 								class="modalProducts__input"
 								name="dir_imagen"
 								type="text"
 								placeholder="Dirección de imagen:"
 							/>
-							<input class="modalProducts__input" name="titulo" type="text" placeholder="Título:" />
+							<input
+								class="modalProducts__input"
+								name="titulo"
+								type="text"
+								placeholder="Título:"
+							/>
 							<textarea
 								name="descripcion"
 								class="modalProducts__input modalProducts__input--desc"
@@ -161,7 +200,11 @@
 							/>
 							<div class="modalProducts__btns">
 								<button id="modalModify__close" class="modalProducts__btn">Volver</button>
-								<button form="modalModifyProducts__form" class="modalProducts__btn modalProducts__btn--save" type="submit">
+								<button
+									form="modalModifyProducts__form"
+									class="modalProducts__btn modalProducts__btn--save"
+									type="submit"
+								>
 									Guardar
 								</button>
 							</div>
