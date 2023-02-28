@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 .header {
 	font-size: clamp(
-		0.875rem,
-		1.39vw,
-		1.875rem
+		0.8rem,
+		1.8vw,
+		1.4rem
 	); /*minimum value, a preferred value, and a maximum allowed value.*/
 	background: var(--fondo-blue);
 	color: var(--color-white);
@@ -38,8 +38,8 @@
 	padding: 0.5vw;
 	font-size: 2em;
 }
-.header__category-list{
-	visibility: visible;
+.header__category-list {
+	visibility: hidden;
 	position: absolute;
 	top: 90%;
 	left: 3em;
@@ -54,7 +54,7 @@
 .header__category-li {
 	padding: 1em;
 	transition: background-color 0.5s;
-	color: black;
+	color: initial;
 }
 .header__category-li:hover {
 	background-color: var(--color-muted);
@@ -75,7 +75,7 @@
 	width: 10em;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	justify-content: space-between;
 	background: var(--color-ligth);
 	z-index: 3;
 }
@@ -172,7 +172,7 @@
 	transition: color 0.3s ease-in-out;
 	height: 60%;
 }
-.header__links::before{
+.header__links::before {
 	content: '';
 	position: absolute;
 	top: 130%;
@@ -182,7 +182,7 @@
 	transform: scaleX(0);
 	transition: transform 0.3s ease-in-out;
 }
-.header__links:hover::before{
+.header__links:hover::before {
 	transform: scaleX(1);
 }
 .header__icons {
@@ -276,9 +276,6 @@
 
 @media screen and (max-width: 500px) {
 	.header {
-		/*	font-size: clamp(0.875rem, 1.39vw, 1.875rem); minimum value, a preferred value, and a maximum allowed value.*/
-		/* grid-template-columns: 50% 50%;
-		grid-template-rows: 53.2% 46.8%; */
 		grid-template-areas:
 			'logo user'
 			'category btnBack';
