@@ -39,9 +39,9 @@
 	font-size: 2em;
 }
 .header__category-list{
-	visibility: hidden;
+	visibility: visible;
 	position: absolute;
-	top: 2.5em;
+	top: 90%;
 	left: 3em;
 	border-radius: 7px;
 	width: 11em;
