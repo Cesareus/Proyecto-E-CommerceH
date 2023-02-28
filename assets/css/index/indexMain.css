@@ -9,11 +9,12 @@
 }
 
 .mainProducts {
+	font-size: clamp(0.8rem, 1.8vw, 1.2rem);
 	margin-right: 1vw;
 }
 .subProductsBox__title {
 	font-family: 'Poppins';
-	font-size: 2.5vw;
+	/* font-size: 2em; */
 	font-style: normal;
 	font-weight: 700;
 	line-height: 6vh;
@@ -21,7 +22,7 @@
 	margin-top: 4vh;
 	margin-bottom: 1vh;
 }
-.container__Products {
+.mainFeatured__Container {
 	align-items: center;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -60,22 +61,21 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 25%;
+	height: 27%;
 }
 .mainFeatured__Container--CardDescription {
 	font-family: 'Poppins';
-	font-size: 2.5vw;
+	font-size: clamp(0.6rem, 2.2vw, 1.3rem);
 	font-style: normal;
 	font-weight: 400;
-	line-height: 4.4vh;
 	height: 5vh;
 }
 .mainFeatured__Container--CardPrice {
 	font-family: 'Poppins';
-	font-size: 1.6vw;
+	font-size: clamp(0.8rem, 1.7vw, 1.3rem);
 	font-weight: 800;
 	line-height: 3.5vw;
-	max-height: 4.85vw;
+	max-height: 5vh;
 }
 
 .buttons {
@@ -136,11 +136,6 @@
 		margin: 0.5rem;
 	}
 
-	.mainFeatured__Container--CardDescription {
-		font-size: 10px;
-		line-height: 15px;
-	}
-
 	.buttons {
 		margin-top: 1vw;
 		margin-bottom: 0.7vw;
@@ -159,7 +154,7 @@
 		max-height: 122.1vw;
 		margin: 0 auto;
 	}
-	.container__Products {
+	.mainFeatured__Container {
 		display: flex;
 		flex-wrap: wrap;
 		height: 160.4vw;
@@ -170,6 +165,7 @@
 		overflow-y: scroll;
 	}
 	.mainFeatured__Container--Card {
+		font-size: clamp(0.4rem, 3.5vw, 2.5rem);
 		box-shadow: 0px 4.00727px 4.00727px rgba(0, 0, 0, 0.25);
 		border-radius: 4.2vw;
 		width: 39vw;
@@ -178,13 +174,17 @@
 	.mainFeatured__Container--cardImg {
 		width: 100%;
 	}
+	.mainFeatured__Container--CardDescriptionBox {
+		gap: 2.5vw;
+		justify-content: flex-end;
+	}
 	.mainFeatured__Container--CardDescription {
-		font-size: 2vw;
-		line-height: 3vw;
+		font-size: clamp(0.6rem, 4vw, 1.9rem);
+		/* line-height: 1.5em; */
 	}
 
 	.mainFeatured__Container--CardPrice {
-		font-size: 4.5vw;
+		font-size: clamp(0.7rem, 4vw, 1.3rem);
 	}
 	.btbox__Slider {
 		height: 2rem;
