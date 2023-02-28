@@ -33,23 +33,23 @@
 	padding: 0 1rem;
 	/*	padding-right: 23.9%; 27px;*/
 }
-.header__category-down-desktop {
+.header__category-down {
 	color: var(--color-white);
 	padding: 0.5vw;
 	font-size: 2em;
 }
-.header__category-list {
+.header__category-list{
 	visibility: hidden;
 	position: absolute;
-	top: 3em;
-	left: 4em;
+	top: 2.5em;
+	left: 3em;
 	border-radius: 7px;
-	width: 14em;
-	height: 9em;
+	width: 11em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
 	background: var(--color-ligth);
+	z-index: 3;
 }
 .header__category-li {
 	padding: 1em;
@@ -59,10 +59,30 @@
 .header__category-li:hover {
 	background-color: var(--color-muted);
 	border-radius: 7px;
+	position: relative;
+	top: 0;
 }
 .header__category-li:hover > ul {
 	visibility: visible;
 }
+.header__subCategory-list {
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 10em;
+	border-radius: 7px;
+	border: ridge;
+	width: 10em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	background: var(--color-ligth);
+	z-index: 3;
+}
+.header__category-li:hover + .header__subCategory-list {
+	/* Se utiliza para mantener el foco en el elemento seleccionado */
+}
+
 .header__category--mobile {
 	display: none;
 }
@@ -148,6 +168,22 @@
 .header__links {
 	display: flex;
 	align-items: center;
+	position: relative;
+	transition: color 0.3s ease-in-out;
+	height: 60%;
+}
+.header__links::before{
+	content: '';
+	position: absolute;
+	top: 130%;
+	width: 100%;
+	height: 3px;
+	background-color: var(--color-primary);
+	transform: scaleX(0);
+	transition: transform 0.3s ease-in-out;
+}
+.header__links:hover::before{
+	transform: scaleX(1);
 }
 .header__icons {
 	padding: 0 0.5em;
@@ -167,7 +203,7 @@
 			'logo user';
 		align-items: center;
 	}
-	.header__category--desktop,
+	.header__category,
 	.header__btnAdd,
 	.header__btnBack--goBack {
 		display: none;
@@ -177,11 +213,12 @@
 		justify-content: flex-start;
 	}
 	.header__category--mobile {
-		display: flex;
+		display: initial;
 	}
-	.header__category-down-mobile {
+	.header__category-down {
 		color: var(--color-primary);
 		padding-left: 2px;
+		font-size: initial;
 	}
 	.header__category-menu {
 		color: #fff;
@@ -216,6 +253,9 @@
 		height: 100%;
 	}
 
+	.header__category {
+		display: inline-flex;
+	}
 	.header__logo-img {
 		/* height: 63.93%; */
 		width: auto;

@@ -31,40 +31,33 @@
 		<script type="module" src="./assets/js/modalsProducts.js"></script>
 
 		<!--MODAL MODIFY  -->
-		
 
 		<!-- Despliegue Lista Header -->
 		<script type="module" src="./assets/js/indexHeader.js"></script>
 
-		
 		<!-- jQuery-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script type="module" src="./assets/mvc/View/servicesJS/checkSession.js"></script>
 		<script type="module" src="./assets/mvc/View/servicesJS/validateAdminSesion.js"></script>
 		<!-- Manejo de modales de usuario -->
 		<script type="module" src="./assets/js/modalsUsers.js"></script>
-		
+
 		<title>Talyx</title>
 	</head>
 
-<body class="adminBody">
-	<script>
-		function imgErrorHTML(image) {
-			image.src = './assets/img/main/destacados/default-img.png';
-		}
+	<body class="adminBody">
+		<script>
+			function imgErrorHTML(image) {
+				image.src = './assets/img/main/destacados/default-img.png';
+			}
 		</script>
-	<header class="header">
-		<nav class="header__category">
-			<div class="header__category--desktop">
-				<i class="fa-solid fa-bars header__category-down header__category-down-desktop"></i>
+		<header class="header">
+			<nav class="header__category">
+				<a class="header__category-menu header__text header__category--mobile" href="#">CATEGORIAS</a>
+				<i class="fa-solid fa-bars header__category-down"></i>
 				<ul class="header__category-list"></ul>
-			</div>
-			<div class="header__category--mobile">
-				<a class="header__category-menu header__text" href="#">CATEGORIAS</a>
-				<i class="fa fa-angle-down header__category-down-mobile"></i>
-			</div>
-		</nav>
-		<!--header__category-->
+			</nav>
+			<!--header__category-->
 
 			<div class="header__logo">
 				<img
@@ -86,7 +79,6 @@
 					<p id="welcome__username" class="header__p">Bienvenido/a Usuario</p>
 					<button id="cerrarsesion" class="signOff">cerrar sesion</button>
 				</a>
-
 			</nav>
 			<!--header__user-->
 
@@ -274,5 +266,5 @@
 		</main>
 	</body>
 	<script type="module" src="./assets/mvc/View/Index/getProducts.js"></script>
-	<script type="module" src="./assets/mvc/View/administrador/CreateProduct.js" ></script>
+	<script type="module" src="./assets/mvc/View/administrador/CreateProduct.js"></script>
 </html>
