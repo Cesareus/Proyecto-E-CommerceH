@@ -33,6 +33,12 @@
             echo $datos;
             break;
 
+        case "getproductid":
+            $id = $_POST['ID'];
+            $datos = $producto->getProductForId($id);                                 
+            echo json_encode($datos);
+            break;
+
         case "Delete":
             $id = $_POST['ID'];
             $datos = $producto->deleteProduct($id);                                 

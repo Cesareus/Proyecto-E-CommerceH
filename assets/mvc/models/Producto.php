@@ -17,7 +17,26 @@
                 echo 'PDOException : ' . $e->getMessage();
             } 
         }
-
+        public function getProductForId($ID){
+            try{
+                $cnn = parent::Connection();
+                parent::set_names();
+                $sql = "SELECT * FROM `productos` WHERE `ID`=:id";
+                $statement = $cnn->prepare($sql);
+                $statement -> bindParam(':id', $ID, PDO::PARAM_INT);
+    
+                if ($statement->execute()) {
+                    return $result = $statement->fetchAll();;                     
+                } else {
+                    echo false;        
+                }
+                $statement->closeCursor();
+                $cnn = null;
+            } catch (PDOException $e){
+                    echo 'PDOException : '.$e->getMessage();
+            }
+            }
+        
         public function deleteProduct($id){
         try{
             $cnn = parent::Connection();
