@@ -9,10 +9,12 @@ formLogin.addEventListener('submit', (e) => {
   const data = new FormData(formLogin)
   services.ajax(`${URL}/assets/mvc/controller/Users.php?op=login`, data).done(res => {
     console.log(res)
+    console.log(data.get('email'))
+    console.log(data.get('pass'))
     res = JSON.parse(res)
     console.log(typeof res.permisions)
     if (res.permisions === 1) {
-      window.location = (`${URL}/administrator.html`)
+      // window.location = (`${URL}/administrator.html`)
     } else {
       location.reload()
     }

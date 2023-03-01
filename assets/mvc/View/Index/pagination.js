@@ -77,7 +77,7 @@ const addProduct = (title, price, imgPath, id, className) => {
   if (document.URL.indexOf('administrator') > -1) {
     content = ` 
 <input type="hidden" name="id" value="${id}">
-<img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
+<img src="./${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
 <div class="${className.classDiv}">
 <span class="${className.classDescrip}">${title}</span>
 <span class="${className.classPrice}"> $${price}
@@ -90,7 +90,7 @@ const addProduct = (title, price, imgPath, id, className) => {
 `
   } else {
     content = ` 
-    <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
+    <img src="./${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
     <div class="${className.classDiv}">
     <span class="${className.classDescrip}">${title}</span>
     <span class="${className.ClassPrice}">$${price}</span>
