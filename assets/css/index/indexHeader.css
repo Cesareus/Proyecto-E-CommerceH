@@ -110,16 +110,16 @@
 	width: 53%;
 	position: relative;
 }
-.signOff{
+.signOff {
 	visibility: hidden;
-    position: absolute;
-    top: 3.5em;
-    right: 0em;
-    border-radius: 7px;
-    width: 10em;
-    height: 3em;
-    background: var(--color-ligth);
-    z-index: 1;
+	position: absolute;
+	top: 3.5em;
+	right: 0em;
+	border-radius: 7px;
+	width: 10em;
+	height: 3em;
+	background: var(--color-ligth);
+	z-index: 1;
 }
 
 .header__category,
@@ -141,10 +141,10 @@
 .header__category-list {
 	visibility: hidden;
 	position: absolute;
-	top: 3em;
+	top: 80%;
 	left: 4em;
 	border-radius: 7px;
-	width: 14em;
+	width: 11em;
 	height: auto;
 	display: flex;
 	flex-direction: column;
@@ -160,6 +160,8 @@
 .header__category-li:hover {
 	background-color: var(--color-muted);
 	border-radius: 7px;
+	position: relative;
+	top: 0;
 }
 .header__category-li:hover > ul {
 	visibility: visible;
@@ -206,14 +208,18 @@
 .header__subCategory-list {
 	position: absolute;
 	top: 0;
-	left: 8em;
+	left: 10em;
 	border-radius: 7px;
-	width: 14em;
+	width: 10em;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 	visibility: hidden;
 	background: var(--color-ligth);
+	border: ridge;
+}
+.header__category-li:hover + .header__subCategory-list {
+	/* Se utiliza para mantener el foco en el elemento seleccionado */
 }
 
 /* MEDIAS QUERYS */
@@ -235,9 +241,6 @@
 	}
 	.header__user-welcome {
 		width: initial;
-	}
-	.signOff{
-		
 	}
 	.header__p,
 	.header__list {
