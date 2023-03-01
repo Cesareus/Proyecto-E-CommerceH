@@ -17,4 +17,5 @@ function validateAdminSesion (sesion) {
     }
   })
 }
-$(document).ready(() => validateAdminSesion(sesion))
+validateAdminSesion(sesion)
+// $(document).ready(() => validateAdminSesion(sesion))
