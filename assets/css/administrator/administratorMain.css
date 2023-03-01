@@ -58,7 +58,7 @@
 	object-fit: contain;
 	width: 90%;
 	height: 70%;
-	padding: 1vw 0;
+	padding: .5vw 0;
 	border-bottom: 0.3rem solid #000000;
 }
 .mainFeatured__Container--CardDescriptionBox {
