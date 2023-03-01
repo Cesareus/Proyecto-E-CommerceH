@@ -44,7 +44,7 @@
                         endif;
                     }
                 }
-                $statement->closeCursor();
+                
                 $cnn = null;
             } catch (PDOException $e) {
                 echo 'PDOException : ' . $e->getMessage();
@@ -98,10 +98,13 @@
             $cnn=parent::Connection();
             parent::set_names();
             $exist = User::searchRepeatedUsers($data);
-            if($exist){
-                $to  =$data["email"];
-                $email = $to;
-                // título
+            if($exist =="1"){
+                $email  =$data["email"];
+                $max_tries = 3;
+                $id = User::addTry($email);
+                $tries = User::getTries($id);
+                if($tries < $max_tries){
+                    // título
                 $title = 'Restablecer contraseña - Talyx';
                 $code= rand(1000,9999);
                 $bytes = random_bytes(5);
@@ -135,7 +138,7 @@
                 $headers .= 'Content-type: text/html; charset=\"UTF-8\"\r\n' . "\r\n"; 
                 // Enviarlo
                 $enviado =false;
-                if(mail($to, $title, $mensaje, $headers)){
+                if(mail($email, $title, $mensaje, $headers)){
                     $enviado=true;
                 }
                 if($enviado){
@@ -149,7 +152,42 @@
                 }else{
                     return "error";
                 }
-
+                
+            }else{
+                
+                        // título
+                    $title = 'Restablecer contraseña - Talyx';
+                    // mensaje
+                    $mensaje = '
+                    <html>
+                    <head>
+                    <title>Restablecer contraseña</title>
+                    </head>
+                    <body>
+                    <header  style="background-color:#2e367b; padding: 10px; display:flex; height:70px; justify-content:center;">
+                    <img src="https://talyx.com.ar/assets/img/logo/logo_talyx.svg" />
+                    </header>
+                    <div style="text-align:center; background-color:#ccc">
+                    <h1>Talyx - Actividad sospechosa</h1>
+                    <p>Hemos detectado actividad sospechosa y tu cuenta fue bloqueada para desbloquearla haz <a 
+                    href="http://localhost/hunteando6/Proyecto-E-CommerceH/forgetPassword.html?email='.$email.'&ID='.$id.'&reset='.true.'"> 
+                    Click aqui</a></p>
+                    </div>
+                    </body>
+                    </html>
+                    ';
+                    
+                    // Para enviar un correo HTML, debe establecerse la cabecera Content-type
+                    $headers =  'MIME-Version: 1.0' . "\r\n"; 
+                    $headers .= 'From: Talyx <no-reply@talyx.com.ar>' . "\r\n";
+                    $headers .= 'Content-type: text/html; charset=\"UTF-8\"\r\n' . "\r\n"; 
+                    // Enviarlo
+                    $enviado =false;
+                    if(mail($email, $title, $mensaje, $headers)){
+                        $enviado=true;
+                    }
+                    return "intentos maximos alcanzados";
+            }
             } else{return "no existe";}
         }
         public function resetPassword($data){         
@@ -209,8 +247,51 @@
                 }
             }}catch (PDOException $e){
                 return 'PDOException : ' . $e->getMessage();
+            }}
+            function addTry($email){
+                try{
+                    $cnn = parent::Connection();
+                    parent::set_names();
+                    $sql = "SELECT ID FROM users WHERE email='$email'";
+                    if($result=$cnn->prepare($sql)){
+                        $result->execute();
+                        $id = $result->fetchColumn();
+                        if($id){
+                            $sql = "INSERT INTO `tries_users`(id_user) VALUES ($id)";
+                            if($statement=$cnn->prepare($sql)){  
+                                $reply = $statement->execute();
+                                return (string)$id;
+                            }
+                        }
+                    }
+                }catch (PDOException $e){
+                    return 'PDOException : ' . $e->getMessage();
+                }
             }
-        }
+    function deleteTries($id){
+    try{
+        $cnn = parent::Connection();
+        parent::set_names();
+        $sql = "DELETE FROM tries_users WHERE id_user = $id";
+        $statement=$cnn->prepare($sql);
+        $statement->execute();
+    }catch (PDOException $e){
+        return 'PDOException : ' . $e->getMessage();
+    }
 }
+function getTries($id){
+    try{
+    $cnn = parent::Connection();
+    parent::set_names();
+    $sql = "SELECT COUNT(*) AS count FROM tries_users WHERE $id";
+    $statement=$cnn->prepare($sql);
+    $statement->execute();
+    $result = $statement->fetchObject();
+    $reply = $result->count;
+    return $reply;
+}catch (PDOException $e){
+    return 'PDOException : ' . $e->getMessage();
+}
+}}
 
 ?>

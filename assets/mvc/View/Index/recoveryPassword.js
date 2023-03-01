@@ -3,8 +3,19 @@ const mailForm = document.getElementById('mailForm')
 let data
 const token = getParameterByName('token')
 const email = getParameterByName('email')
+const reset = Boolean(getParameterByName('reset'))
+const ID = getParameterByName('ID')
 const textParagrap = document.querySelector('.forgotPassword__phase')
-if (token === null && email === null) {
+if (reset && ID) {
+  // eslint-disable-next-line no-undef
+  const data = new FormData()
+  data.append('ID', Number(ID))
+  services.ajax(`${URL}/assets/mvc/controller/Users.php?op=resetTries`, data).done(res => {
+    const passwordForm = `<p>Su cuenta con el email: ${email} fue habilitada exitosamente</p>`
+    textParagrap.innerHTML = ''
+    mailForm.innerHTML = passwordForm
+  })
+} else if (token === null && email === null) {
   mailForm.addEventListener('submit', (e) => {
     textParagrap.style.display = 'none'
     e.preventDefault()
@@ -12,8 +23,11 @@ if (token === null && email === null) {
     data = new FormData(mailForm)
     try {
       services.ajax(`${URL}/assets/mvc/controller/Users.php?op=recoveryPasswordSendMail`, data).done(res => {
-        console.log(res)
-        console.log(typeof res)
+        if (res === 'intentos maximos alcanzados') {
+          const passwordForm = `<p>El email: ${data.get('email')} supero el limite de intentos de reestablecer contraseña revisa tu mail para volver a activar tu cuenta</p>`
+          mailForm.innerHTML = passwordForm
+          return
+        }
         res = Number(res)
         if (res === 1) {
           const passwordForm = `<p>Hemos enviado un correo a ${data.get('email')} por favor revisa tu correo para reestablecer la contraseña</p>`

@@ -51,6 +51,12 @@
                 echo $datos;
                 break;
 
+        case "resetTries":
+            $ID = $_POST['ID'];
+            $datos = $user->deleteTries($ID);
+            echo $datos;
+            break;
+
         case "resetPassword":
             $info['email'] = $_POST['email'];
             $info['pass'] = $_POST['pass'];
