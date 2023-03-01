@@ -80,8 +80,7 @@ const addProduct = (title, price, imgPath, id, className) => {
 <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
 <div class="${className.classDiv}">
 <span class="${className.classDescrip}">${title}</span>
-<span class="${className.classPrice}">
-${price}
+<span class="${className.classPrice}"> $${price}
 <div class="${className.classIcons}">
 <a id=""><i class="fa-solid fa-trash-can ${className.classDelete} delete"></i></a>
 <a id="modify"><i class="fa-solid fa-pen ${className.classEdit} modify"></i></a>
@@ -94,7 +93,7 @@ ${price}
     <img src="${imgPath}" alt="" onerror="imgErrorHTML(this)" class="${className.classImg}" /> 
     <div class="${className.classDiv}">
     <span class="${className.classDescrip}">${title}</span>
-    <span class="${className.ClassPrice}">${price}</span>
+    <span class="${className.ClassPrice}">$${price}</span>
     </div>
     `
   }

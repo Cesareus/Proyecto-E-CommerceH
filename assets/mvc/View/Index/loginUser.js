@@ -10,6 +10,7 @@ formLogin.addEventListener('submit', (e) => {
   services.ajax(`${URL}/assets/mvc/controller/Users.php?op=login`, data).done(res => {
     console.log(res)
     res = JSON.parse(res)
+    console.log(typeof res.permisions)
     if (res.permisions === 1) {
       window.location = (`${URL}/administrator.html`)
     } else {
@@ -20,7 +21,6 @@ formLogin.addEventListener('submit', (e) => {
 
 logOut.addEventListener('click', () => {
   services.ajax(`${URL}/assets/mvc/controller/Users.php?op=logout`, null).done(res => {
-    // TODO: añadir funcionalidad de la respuesta
     // eslint-disable-next-line no-undef
     location.reload()
   })
